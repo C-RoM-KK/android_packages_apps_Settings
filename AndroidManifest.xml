@@ -1738,6 +1738,7 @@
                 android:excludeFromRecents="true"
                 android:theme="@*android:style/Theme.Holo.Dialog.Alert" />
 
+        <activity android:name=".crom.LockscreenButtons" />
         <activity android:name=".crom.gestureanywhere.GestureAnywhereBuilderActivity" />
         <activity android:name=".crom.gestureanywhere.GestureAnywhereCreateGestureActivity" />
 
