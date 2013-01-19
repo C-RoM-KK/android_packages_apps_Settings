@@ -2419,4 +2419,9 @@ device needs to be rebooted for the setting to take effect.</string>
     <string name="add_heads_up_dnd_package">Add app to \'Do not disturb\'</string>
     <string name="heads_up_dnd_title">Do not disturb</string>
 
+    <!-- Wi-Fi settings screen, advanced, title of the item to set the Wi-Fi priority. -->
+    <string name="wifi_setting_priority_title">Wi-Fi priority</string>
+    <!-- Wi-Fi settings screen, setting summary for setting the Wi-Fi priority-->
+    <string name="wifi_setting_priority_summary">Specify the priority of the Wi-Fi networks</string>
+
 </resources>
