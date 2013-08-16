@@ -33,10 +33,6 @@
             <extra android:name="fragment" android:value="com.android.settings.crom.fragments.PowerMenuFragment" />
     </PreferenceScreen>
 
-    <PreferenceScreen
-        android:fragment="com.android.settings.crom.BatterySaverSettings"
-        android:title="@string/battery_saver_title" />
-
         <PreferenceScreen
             android:key="interface_voice_tts"
             android:fragment="com.android.settings.crom.DrivingMode"

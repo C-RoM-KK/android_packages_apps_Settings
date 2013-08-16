@@ -104,12 +104,12 @@
             android:targetClass="org.omnirom.omniswitch.SettingsActivity" />
     </PreferenceScreen>
 
-    <!-- Battery Options -->
+    <!-- Mix Options -->
    <PreferenceScreen
-        android:id="@+id/wakelock_options"
-        android:title="@string/wakelock_tab"
-        android:fragment="com.android.settings.crom.WakelockTab"
-        android:icon="@drawable/ic_crom_saver" />
+        android:id="@+id/mix_options"
+        android:title="@string/mix_tab"
+        android:fragment="com.android.settings.crom.MiscTab"
+        android:icon="@drawable/ic_crom_mix" />
 
     </PreferenceCategory>
 

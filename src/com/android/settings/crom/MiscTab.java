@@ -35,14 +35,17 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
+import com.android.settings.crom.BatterySaverSettings;
 import com.android.settings.crom.WakeLockBlocker;
+import com.android.settings.crom.InitD;
+import com.android.settings.crom.PropModder;
 
 import java.lang.Exception;
 import java.util.ArrayList;
 
-public class WakelockTab extends SettingsPreferenceFragment {
+public class MiscTab extends SettingsPreferenceFragment {
 
-    private static final String TAG = "Battery_Category";
+    private static final String TAG = "Mix_Category";
 
     PagerTabStrip mPagerTabStrip;
     ViewPager mViewPager;
@@ -89,7 +92,10 @@ public class WakelockTab extends SettingsPreferenceFragment {
 
         public NavigationAdapter(FragmentManager fm) {
             super(fm);
-            frags[0] = new WakeLockBlocker();
+            frags[0] = new BatterySaverSettingsr();
+            frags[1] = new WakeLockBlocker();
+            frags[2] = new InitD();
+            frags[3] = new PropModder();
         }
 
         @Override
@@ -111,7 +117,10 @@ public class WakelockTab extends SettingsPreferenceFragment {
     private String[] getTitles() {
         String titleString[];
         titleString = new String[]{
-                    getString(R.string.wakelock_blocker)};
+                    getString(R.string.battery_saver_title),
+                    getString(R.string.wakelock_blocker),
+                    getString(R.string.init_d_title),
+                    getString(R.string.propmodder_title)};
         return titleString;
     }
 }
