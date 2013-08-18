@@ -124,6 +124,7 @@
     </declare-styleable>
 
     <declare-styleable name="SeekBarPreference">
+        <attr name="minappbar" format="integer" />
         <attr name="minimum" format="integer" />
         <attr name="unitsLeft" format="string|reference" />
         <attr name="unitsRight" format="string|reference" />
@@ -139,5 +140,7 @@
         <attr name="defaultValue" format="float" />
         <attr name="digits" format="integer" />
     </declare-styleable>
+
+
 
 </resources>

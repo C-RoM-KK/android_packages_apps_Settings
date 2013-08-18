@@ -73,6 +73,13 @@
         android:fragment="com.android.settings.crom.PieTab"
         android:icon="@drawable/ic_crom_pie_control" />
 
+    <PreferenceScreen
+        android:id="@+id/app_sidebarstab"
+        android:title="@string/app_bars_title"
+        android:summary="@string/app_bars_summary"
+        android:icon="@drawable/ic_crom_sidebar"
+        android:fragment="com.android.settings.crom.SidebarsTab" />
+
     </PreferenceCategory>
 
     <!-- Advanced -->
