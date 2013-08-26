@@ -124,6 +124,12 @@
             <extra android:name="config_ribbon" android:value="true" />
         </PreferenceScreen>
 
+        <CheckBoxPreference
+           android:key="quick_settings_tiles_flip"
+           android:title="@string/flip_qs_tiles_title"
+           android:summary="@string/flip_qs_tiles_summary"
+           android:defaultValue="true" />
+
     </PreferenceCategory>
 
     <PreferenceCategory
