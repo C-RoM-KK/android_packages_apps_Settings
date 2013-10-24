@@ -58,6 +58,9 @@
     <!-- C-ROM OTA -->
     <string name="crom_ota_settings_title">C-RoM OTA</string>
 
+    <!-- Advanced, Device specific (DeviceParts) settings  -->
+    <string name="advanced_settings_title">Advanced</string>
+
     <!-- C-ROM Shortcuts -->
     <string name="crom_shortcut_picker">C-ROM Actions</string>
 
