@@ -19,4 +19,9 @@
     android:title="@string/interface_settings_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <PreferenceScreen
+        android:key="crom_screen_and_animations"
+        android:fragment="com.android.settings.crom.ScreenAndAnimations"
+        android:title="@string/screen_and_animations_title" />
+
 </PreferenceScreen>
