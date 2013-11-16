@@ -1920,4 +1920,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Fast charge QS tile -->
     <string name="title_tile_fcharge">Fast charge</string>
 
+    <!-- Font size sample text -->
+    <string name="font_size_sample">Sample</string>
+
 </resources>
