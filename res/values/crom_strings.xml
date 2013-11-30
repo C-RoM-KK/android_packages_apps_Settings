@@ -2006,4 +2006,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="calendar_shortcut_title">Date</string>
     <string name="default_shortcut">Default</string>
 
+    <!-- Development shortcut -->
+    <string name="development_shortcut_title">Development shortcut</string>
+    <string name="development_shortcut_summary">Enable \'wipe data\' and \'force close\' options in notification area and recent apps list</string>
+
 </resources>
