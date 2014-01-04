@@ -33,6 +33,11 @@
             <extra android:name="fragment" android:value="com.android.settings.crom.fragments.PowerMenuFragment" />
     </PreferenceScreen>
 
+        <PreferenceScreen
+            android:key="interface_voice_tts"
+            android:fragment="com.android.settings.crom.DrivingMode"
+            android:title="@string/voice_tts_title" />
+
     <PreferenceScreen
         android:id="@+id/app_sidebar"
         android:title="@string/app_circle_bar_title"
