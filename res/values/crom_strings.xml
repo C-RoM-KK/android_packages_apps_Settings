@@ -1917,4 +1917,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="time_ten_to">Ten till</string>
     <string name="time_five_to">Five till</string>
 
+    <!-- Fast charge QS tile -->
+    <string name="title_tile_fcharge">Fast charge</string>
+
 </resources>
