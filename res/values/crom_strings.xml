@@ -2261,4 +2261,12 @@ device needs to be rebooted for the setting to take effect.</string>
     <string name="dm_init_d_error">It looks like init.d isn\'t setup properly. Please contact your ROM developer.</string>
     <string name="db_exit">Exit</string>
 
+    <!-- Text for forcing expanded notifications -->
+    <string name="disable_fc_notifications_title">Diable FC Notifications</string>
+    <string name="disable_fc_notifications_summary">This will hide all force close notificaitons</string>
+
+    <!-- Text for Misc Options entry -->
+    <string name="misc_options">Miscellaneous</string>
+    <string name="misc_options_title">Miscellaneous</string>
+
 </resources>

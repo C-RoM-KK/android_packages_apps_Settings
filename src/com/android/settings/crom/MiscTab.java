@@ -36,6 +36,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
 import com.android.settings.crom.BatterySaverSettings;
+import com.android.settings.crom.MiscOptions;
 import com.android.settings.crom.WakeLockBlocker;
 import com.android.settings.crom.InitD;
 
@@ -116,6 +117,7 @@ public class MiscTab extends SettingsPreferenceFragment {
         String titleString[];
         titleString = new String[]{
                     getString(R.string.battery_saver_title),
+                    getString(R.string.misc_options_title),
                     getString(R.string.wakelock_blocker),
                     getString(R.string.init_d_title)};
         return titleString;

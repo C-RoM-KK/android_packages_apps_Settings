@@ -1830,6 +1830,7 @@
                 android:value="com.android.settings.crom.BatteryIconStyle" />
         </activity>
 
+        <activity android:name=".crom.MiscOptions" />
         <activity android:name=".crom.WakeLockBlocker" />
 
         <!-- Pseudo-activity used to provide an intent-filter entry point to rotation settings -->
