@@ -59,6 +59,13 @@
         android:fragment="com.android.settings.crom.LockscreenTab"
         android:icon="@drawable/ic_crom_lockscreen" />
 
+    <!-- Notification drawer -->
+    <PreferenceScreen
+        android:id="@+id/navigation_settings"
+        android:icon="@drawable/ic_settings_navigation"
+        android:title="@string/navigation_settings_title"
+        android:fragment="com.android.settings.crom.NavbarTab" />
+
     <!-- PIE -->
     <PreferenceScreen
         android:id="@+id/pie_control"
@@ -72,12 +79,11 @@
     <PreferenceCategory
         android:title="@string/advanced_category_title">
 
-    <!-- Notification drawer -->
-    <PreferenceScreen
-        android:id="@+id/navigation_settings"
-        android:icon="@drawable/ic_settings_navigation"
-        android:title="@string/navigation_settings_title"
-        android:fragment="com.android.settings.crom.NavbarTab" />
+   <PreferenceScreen
+        android:id="@+id/system_app_remover"
+        android:fragment="com.android.settings.crom.SystemappRemoverTab"
+        android:title="@string/system_app_remover_title"
+        android:summary="@string/system_app_remover_summary" />
 
     </PreferenceCategory>
 
