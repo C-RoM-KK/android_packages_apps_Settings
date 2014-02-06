@@ -78,7 +78,7 @@
         android:title="@string/crom_tools_title"
         android:fragment="com.android.settings.crom.CRomSettings" />
 
-    <!-- Theme settings -->
+    <!-- Themes settings -->
     <header
         android:id="@+id/theme_settings"
 	android:title="@string/theme_settings_title"

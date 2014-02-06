@@ -1835,6 +1835,8 @@
                 android:value="com.android.settings.crom.BatteryIconStyle" />
         </activity>
 
+        <activity android:name=".crom.WakeLockBlocker" />
+
         <!-- Pseudo-activity used to provide an intent-filter entry point to rotation settings -->
         <activity android:name="Settings$DisplayRotationSettingsActivity"
                 android:label="@string/display_rotation_title"
@@ -1856,7 +1858,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.liquid.RamBar" />
+                android:value="com.android.settings.crom.RamBar" />
         </activity>
 
         <!-- Pseudo-activity used to provide an intent-filter entry point to encryption settings -->

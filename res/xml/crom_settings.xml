@@ -97,6 +97,13 @@
             android:targetClass="org.omnirom.omniswitch.SettingsActivity" />
     </PreferenceScreen>
 
+    <!-- Battery Options -->
+   <PreferenceScreen
+        android:id="@+id/battery_options"
+        android:title="@string/battery_tab"
+        android:fragment="com.android.settings.crom.BatteryTab"
+        android:icon="@drawable/ic_crom_saver" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>
