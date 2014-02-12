@@ -1515,6 +1515,22 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="ad_pocket_mode_notifications">Notifications only</string>
     <string name="ad_pocket_mode_always">Always</string>
 
+    <!-- Volume Steps -->
+    <string name="volume_steps_title">Volume Steps</string>
+    <string name="volume_steps_60">60</string>
+    <string name="volume_steps_45">45</string>
+    <string name="volume_steps_30">30</string>
+    <string name="volume_steps_15">15</string>
+    <string name="volume_steps_7">7</string>
+    <string name="volume_steps_5">5</string>
+    <string name="volume_steps_alarm_title">Alarm</string>
+    <string name="volume_steps_dtmf_title">DTMF</string>
+    <string name="volume_steps_music_title">Music</string>
+    <string name="volume_steps_notification_title">Notification</string>
+    <string name="volume_steps_ring_title">Ringer</string>
+    <string name="volume_steps_system_title">System</string>
+    <string name="volume_steps_voice_call_title">Voice Call</string>
+
     <!-- Sms security limit -->
     <string name="sms_security_check_limit_title">SMS message limit</string>
     <string name="sms_security_check_limit_summary">Display an alert dialog to prevent applications from sending SMS messages too frequently. Current limit: %d messages in 15 minutes</string>
@@ -1523,7 +1539,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- Screen recorder -->
     <string name="screen_recorder_title">Screen recorder</string>
     <string name="screen_recorder_summary">Adjust screen recorder settings</string>
-    <string name="screen_recorder_summary2">Power Volume Up</string>
+    <string name="screen_recorder_summary2">Power + Volume Up</string>
     <string name="screen_recorder_video_dimensions_title">Video size</string>
     <string name="screen_recorder_video_bitrate_title">Bitrate</string>
     <string name="screen_recorder_record_audio_title">Record audio</string>
