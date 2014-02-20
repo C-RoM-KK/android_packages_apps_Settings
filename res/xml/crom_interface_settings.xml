@@ -33,6 +33,12 @@
             <extra android:name="fragment" android:value="com.android.settings.crom.fragments.PowerMenuFragment" />
     </PreferenceScreen>
 
+        <PreferenceScreen
+            android:key="lock_screen_notifications"
+            android:title="@string/lock_screen_notifications_title"
+            android:summary="@string/lock_screen_notifications_summary"
+            android:fragment="com.android.settings.crom.LockscreenNotifications" />
+
     <PreferenceScreen
         android:key="gesture_anywhere"
         android:title="@string/gesture_anywhere_title"
