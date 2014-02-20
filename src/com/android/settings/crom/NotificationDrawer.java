@@ -77,6 +77,8 @@ public class NotificationDrawer extends SettingsPreferenceFragment
             "tile_picker";
     private static final String PREF_QUICK_SETTINGS_TILES_FLIP =
             "quick_settings_tiles_flip";
+    private static final String STATUS_BAR_CUSTOM_HEADER =
+            "custom_status_bar_header";
     private static final String CLOCK_SHORTCUT =
             "clock_shortcut";
     private static final String CALENDAR_SHORTCUT =
@@ -92,6 +94,8 @@ public class NotificationDrawer extends SettingsPreferenceFragment
     ListPreference mSmartPulldown;
     CheckBoxPreference mCollapsePanel;
     CheckBoxPreference mTileFlip;
+
+    private CheckBoxPreference mStatusBarCustomHeader;
     private AppSelectListPreference mClockShortcut;
     private AppSelectListPreference mCalendarShortcut;
 
@@ -109,6 +113,11 @@ public class NotificationDrawer extends SettingsPreferenceFragment
         mHideLabels.setValue(String.valueOf(hideCarrier));
         mHideLabels.setOnPreferenceChangeListener(this);
         updateHideNotificationLabelsSummary(hideCarrier);
+
+        mStatusBarCustomHeader = (CheckBoxPreference) findPreference(STATUS_BAR_CUSTOM_HEADER);
+        mStatusBarCustomHeader.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.STATUS_BAR_CUSTOM_HEADER, 0) == 1);
+        mStatusBarCustomHeader.setOnPreferenceChangeListener(this);
 
         mClockShortcut = (AppSelectListPreference)prefs.findPreference(CLOCK_SHORTCUT);
         mClockShortcut.setOnPreferenceChangeListener(this);
@@ -293,6 +302,11 @@ public class NotificationDrawer extends SettingsPreferenceFragment
             Settings.System.putIntForUser(getContentResolver(),
                     Settings.System.QUICK_SETTINGS_TILES_FLIP,
                     (Boolean) newValue ? 1 : 0, UserHandle.USER_CURRENT);
+            return true;
+        } else if (preference == mStatusBarCustomHeader) {
+            boolean value = (Boolean) objValue;
+            Settings.System.putInt(getContentResolver(),
+                Settings.System.STATUS_BAR_CUSTOM_HEADER, value ? 1 : 0);
             return true;
         } else if (preference == mClockShortcut) {
             String value = (String) newValue;
