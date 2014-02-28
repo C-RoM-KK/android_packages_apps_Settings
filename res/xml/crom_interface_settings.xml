@@ -56,4 +56,10 @@
         android:summary="@string/header_summary_animation"
         android:fragment="com.android.settings.crom.fragments.AnimationControls" />
 
+    <PreferenceScreen
+        android:key="interface_animation_scroll"
+        android:fragment="com.android.settings.crom.ScrollAnimationInterfaceSettings"
+        android:title="@string/scrolling_title"
+        android:summary="@string/scrolling_summary" />
+
 </PreferenceScreen>
