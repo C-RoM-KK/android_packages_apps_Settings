@@ -380,6 +380,8 @@
     <string name="wifi_setting_countrycode_disabled">Enable Wi-Fi to change this option.</string>
     <!-- WiFi forget all networks -->
     <string name="wifi_menu_forget_all">Forget all networks</string>
+    <!-- Wi-Fi SSID string limits -->
+    <string name="wifi_ssid_input_limit">SSID exceeds maximum length</string>
 
     <!-- Status bar -->
     <string name="status_bar_title">Status bar</string>
