@@ -1682,4 +1682,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="ram_bar_reset">Reset</string>
     <string name="ram_bar_reset_message">Reset RAM bar style to default?</string>
 
+    <!-- Custom recent settings -->
+    <string name="custom_recent_title">Switch recent styles</string>
+    <string name="custom_recent_summary">Tick to slim recent or untick for stock recent</string>
+
 </resources>
