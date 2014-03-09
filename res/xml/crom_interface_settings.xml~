@@ -20,12 +20,6 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <PreferenceScreen
-        android:key="gesture_anywhere"
-        android:title="@string/gesture_anywhere_title"
-        android:summary="@string/gesture_anywhere_summary"
-        android:fragment="com.android.settings.crom.gestureanywhere.GestureAnywhereSettings" />
-
-    <PreferenceScreen
         android:key="crom_screen_and_animations"
         android:fragment="com.android.settings.crom.ScreenAndAnimations"
         android:title="@string/screen_and_animations_title" />

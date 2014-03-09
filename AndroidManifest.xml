@@ -1734,6 +1734,9 @@
                 android:excludeFromRecents="true"
                 android:theme="@*android:style/Theme.Holo.Dialog.Alert" />
 
+        <activity android:name=".crom.gestureanywhere.GestureAnywhereBuilderActivity" />
+        <activity android:name=".crom.gestureanywhere.GestureAnywhereCreateGestureActivity" />
+
         <activity android:name=".ApnEditor" />
 
          <!-- "Blacklist settings" UI, used only on voice-capable phone devices. -->

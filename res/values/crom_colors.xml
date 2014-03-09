@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2008 The Android Open Source Project
+<!-- Copyright (C) 2014 The C-RoM Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -13,16 +13,9 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
+<resources>
 
-<PreferenceScreen
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:key="profile_appgroups_list"
-    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+    <!-- Gesture anywhere -->
+    <color name="ga_gesture_color">@android:color/white</color>
 
-    <PreferenceScreen
-        android:key="gesture_anywhere"
-        android:title="@string/gesture_anywhere_title"
-        android:summary="@string/gesture_anywhere_summary"
-        android:fragment="com.android.settings.liquid.gestureanywhere.GestureAnywhereSettings" />
-
-</PreferenceScreen>
+</resources>
