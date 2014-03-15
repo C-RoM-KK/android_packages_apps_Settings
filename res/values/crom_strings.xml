@@ -2280,4 +2280,7 @@ device needs to be rebooted for the setting to take effect.</string>
     <string name="hfm_dialog_success">/4 hosts sources successfully applied!</string>
     <string name="hfm_dialog_conn_error">Error: No network connectivity</string>
 
+    <!-- On-the-Go -->
+    <string name="power_menu_onthego_title">On-The-Go Mode</string>
+
 </resources>

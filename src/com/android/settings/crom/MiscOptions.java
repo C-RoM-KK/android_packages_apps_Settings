@@ -41,8 +41,10 @@ import com.android.settings.Utils;
 public class MiscOptions extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
     private static final String DISABLE_FC_NOTIFICATIONS = "disable_fc_notifications";
+    private static final String POWER_MENU_ONTHEGO_ENABLED = "power_menu_onthego_enabled";
 
     private CheckBoxPreference mDisableFC;
+    private CheckBoxPreference mOnTheGoPowerMenu;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -55,6 +57,11 @@ public class MiscOptions extends SettingsPreferenceFragment implements OnPrefere
         mDisableFC = (CheckBoxPreference) findPreference(DISABLE_FC_NOTIFICATIONS);
         mDisableFC.setChecked((Settings.System.getInt(resolver,
                 Settings.System.DISABLE_FC_NOTIFICATIONS, 0) == 1));
+
+        mOnTheGoPowerMenu = (CheckBoxPreference) findPreference(POWER_MENU_ONTHEGO_ENABLED);
+        mOnTheGoPowerMenu.setChecked(Settings.System.getInt(resolver,
+                Settings.System.POWER_MENU_ONTHEGO_ENABLED, 0) == 1);
+        mOnTheGoPowerMenu.setOnPreferenceChangeListener(this);
 
     }
 
@@ -69,6 +76,11 @@ public class MiscOptions extends SettingsPreferenceFragment implements OnPrefere
             boolean checked = ((CheckBoxPreference)preference).isChecked();
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.DISABLE_FC_NOTIFICATIONS, checked ? 1:0);
+            return true;
+        } else if (preference == mOnTheGoPowerMenu) {
+            boolean checked = ((CheckBoxPreference)preference).isChecked();
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.POWER_MENU_ONTHEGO_ENABLED, checked ? 1:0);
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
