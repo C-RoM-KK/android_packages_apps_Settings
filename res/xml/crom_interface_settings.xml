@@ -34,6 +34,12 @@
     </PreferenceScreen>
 
     <PreferenceScreen
+        android:id="@+id/app_sidebar"
+        android:title="@string/app_circle_bar_title"
+        android:summary="@string/app_circle_bar_summary"
+        android:fragment="com.android.settings.crom.AppSidebar" />
+
+    <PreferenceScreen
         android:key="gesture_anywhere"
         android:title="@string/gesture_anywhere_title"
         android:summary="@string/gesture_anywhere_summary"
