@@ -62,8 +62,19 @@
     <!-- Superuser title -->
     <string name="superuser_settings_title">Superuser</string>
 
-    <!-- Theme chooser -->
-    <string name="theme_chooser_title">Theme chooser</string>
+    <!-- Themes Settings -->
+    <!-- Settings main menu entry -->
+    <string name="themes_settings_title">Themes</string>
+  
+    <!-- The following are entries under the themes menu -->
+    <string name="themepacks_settings_title">Theme Packs</string>
+    <string name="styles_settings_title">Styles</string>
+    <string name="icons_settings_title">Icons</string>
+    <string name="fonts_settings_title">Fonts</string>
+    <string name="wallpaper_settings_title">Wallpapers</string>
+    <string name="lockscreen_wallpaper_settings_title">Lockscreen Wallpapers</string>
+    <string name="bootanim_settings_title">Boot Animations</string>
+    <string name="soundpack_settings_title">Sound Packs</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>
@@ -576,7 +587,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
 
     <!-- Navigation settings -->
     <string name="navigation_settings_options_title">Navigation options</string>
-    <string name="power_menu_title">Global menu</string>
+    <string name="power_menu_title">Power menu</string>
 
     <!-- Power menu -->
     <string name="power_menu_style_summary">Change global menu colors</string>

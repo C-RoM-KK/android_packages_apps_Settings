@@ -75,12 +75,13 @@
         android:fragment="com.android.settings.crom.themes.ThemeSettings"
         android:icon="@drawable/ic_settings_theme_settings" />
 
-    <!-- Profiles -->
+    <!-- Theme chooser -->
     <header
-        android:id="@+id/profiles_settings"
-        android:icon="@drawable/ic_settings_profiles"
-        android:fragment="com.android.settings.profiles.ProfilesSettings"
-        android:title="@string/profiles_settings_title" />
+        android:id="@+id/theme_chooser"
+        android:title="@string/themes_settings_title"
+        android:breadCrumbTitle="@string/themes_settings_title"
+        android:fragment="com.android.settings.ThemeSettings"
+        android:icon="@drawable/prd_ic_themepacks" />
 
     <!-- DEVICE -->
     <header android:id="@+id/device_section"
@@ -160,6 +161,13 @@
         android:title="@string/location_settings_title"
         android:id="@+id/location_settings" />
 
+    <!-- Profiles -->
+    <header
+        android:id="@+id/profiles_settings"
+        android:icon="@drawable/ic_settings_profiles"
+        android:fragment="com.android.settings.profiles.ProfilesSettings"
+        android:title="@string/profiles_settings_title" />
+
     <!-- Security -->
     <header
         android:fragment="com.android.settings.SecuritySettings"
@@ -180,17 +188,6 @@
         android:icon="@drawable/ic_settings_backup"
         android:title="@string/privacy_settings"
         android:id="@+id/privacy_settings" />
-
-    <!-- Theme chooser -->
-    <header
-        android:id="@+id/theme_chooser"
-        android:icon="@drawable/ic_settings_themes"
-        android:title="@string/theme_chooser_title">
-        <intent
-            android:action="android.intent.action.MAIN"
-            android:targetPackage="com.tmobile.themechooser"
-            android:targetClass="com.tmobile.themechooser.ThemeChooser" />
-    </header>
 
     <!--  ACCOUNTS section -->
     <header
