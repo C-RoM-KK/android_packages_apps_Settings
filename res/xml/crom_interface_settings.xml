@@ -39,4 +39,10 @@
         android:summary="@string/gesture_anywhere_summary"
         android:fragment="com.android.settings.crom.gestureanywhere.GestureAnywhereSettings" />
 
+    <PreferenceScreen
+        android:key="recent_panel"
+        android:title="@string/recent_panel_title"
+        android:summary="@string/recent_panel_summary"
+        android:fragment="com.android.settings.crom.RecentPanelSettings" />
+
 </PreferenceScreen>
