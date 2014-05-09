@@ -380,7 +380,8 @@ public class Settings extends PreferenceActivity
         BatteryIconStyle.class.getName(),
         DisplayRotation.class.getName(),
         ApnSettings.class.getName(),
-        ShakeEvents.class.getName()
+        ShakeEvents.class.getName(),
+        ThemeSettings.class.getName()
     };
 
     @Override
