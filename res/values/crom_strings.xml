@@ -390,6 +390,10 @@
     <string name="status_bar_style_title">Style</string>
     <string name="status_bar_general_title">General</string>
 
+    <!-- Statusbar Second Clock -->
+    <string name="clock_use_second">Second</string>
+    <string name="clock_use_second_summary">Show seconds in the clock</string>
+
     <!-- Status bar | Clock -->
     <string name="status_bar_clock">Clock and date</string>
     <string name="status_bar_clock_title">Clock and date style</string>
