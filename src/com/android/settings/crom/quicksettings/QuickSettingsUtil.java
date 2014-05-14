@@ -35,6 +35,7 @@ import static com.android.internal.util.slim.QSConstants.TILE_EXPANDEDDESKTOP;
 import static com.android.internal.util.slim.QSConstants.TILE_FCHARGE;
 import static com.android.internal.util.slim.QSConstants.TILE_IMESWITCHER;
 import static com.android.internal.util.slim.QSConstants.TILE_LOCATION;
+import static com.android.internal.util.mahdi.QSConstants.TILE_COMPASS;
 import static com.android.internal.util.slim.QSConstants.TILE_LOCKSCREEN;
 import static com.android.internal.util.slim.QSConstants.TILE_LTE;
 import static com.android.internal.util.slim.QSConstants.TILE_MOBILEDATA;
@@ -107,6 +108,9 @@ public class QuickSettingsUtil {
         registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_LOCATION, R.string.title_tile_location,
                 "com.android.systemui:drawable/ic_qs_location_on"));
+        registerTile(new QuickSettingsUtil.TileInfo(
+                TILE_COMPASS, R.string.title_tile_compass,
+                "com.android.systemui:drawable/ic_qs_compass_on"));
         registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_LOCKSCREEN, R.string.title_tile_lockscreen,
                 "com.android.systemui:drawable/ic_qs_lock_screen_on"));
@@ -237,6 +241,11 @@ public class QuickSettingsUtil {
         // Don't show the Fast charge tile if not supported by kernel
         if (!DeviceUtils.fchargeEnabled(context)) {
             removeTile(TILE_FCHARGE);
+        }
+
+        // Don't show the Compass tile if the device has no orientation sensor
+        if (!QSUtils.deviceSupportsCompass(context)) {
+            removeTile(TILE_COMPASS);
         }
     }
 
