@@ -173,8 +173,8 @@
         <!-- Slim Shortcuts -->
         <activity
             android:name="CreateSlimShortcut"
-            android:label="@string/slim_shortcut_picker"
-            android:icon="@drawable/slim_lock"
+            android:label="@string/crom_shortcut_picker"
+            android:icon="@drawable/crom_lock"
             android:theme="@android:style/Theme.Holo.Dialog.NoActionBar"
             android:excludeFromRecents="true"
             android:configChanges="orientation|keyboardHidden|screenSize" >
@@ -185,9 +185,9 @@
         </activity>
 
         <activity
-            android:name=".slim.SlimActionShortcut"
+            android:name=".crom.SlimActionShortcut"
             android:theme="@android:style/Theme.NoDisplay"
-            android:icon="@drawable/slim_lock"
+            android:icon="@drawable/crom_lock"
             android:excludeFromRecents="true"
             android:launchMode="singleInstance" >
             <intent-filter>
@@ -197,33 +197,33 @@
 
         <!-- QuietHours SmsCall Service -->
 
-        <service android:name=".slim.service.SmsCallService"/>
-        <service android:name=".slim.service.AlarmService"/>
+        <service android:name=".crom.service.SmsCallService"/>
+        <service android:name=".crom.service.AlarmService"/>
 
         <receiver
-            android:name=".slim.service.AlarmReceiver">
+            android:name=".crom.service.AlarmReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.TIMEZONE_CHANGED"></action>
                 <action android:name="android.intent.action.TIME_CHANGED"></action>
                 <action android:name="android.intent.action.DATE_CHANGED"></action>
-                <action android:name="com.android.settings.slim.service.SCHEDULE_SERVICE_COMMAND"/>
+                <action android:name="com.android.settings.crom.service.SCHEDULE_SERVICE_COMMAND"/>
             </intent-filter>
         </receiver>
 
         <receiver
-            android:name=".slim.service.BootReceiver">
+            android:name=".crom.service.BootReceiver">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
             </intent-filter>
         </receiver>
 
         <activity
-            android:name=".slim.service.BypassAlarm"
+            android:name=".crom.service.BypassAlarm"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:excludeFromRecents="true"
             android:launchMode="singleInstance"
             android:screenOrientation="portrait"
-            android:taskAffinity="com.android.settings.slim.service.BypassAlarm"
+            android:taskAffinity="com.android.settings.crom.service.BypassAlarm"
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
 
         <!-- Wireless Controls -->
@@ -1727,7 +1727,7 @@
             android:theme="@style/CryptKeeperBlankTheme"
         />
 
-        <activity android:name=".slim.AutoBrightnessSetup"
+        <activity android:name=".crom.AutoBrightnessSetup"
                 android:excludeFromRecents="true"
                 android:theme="@*android:style/Theme.Holo.Dialog.Alert" />
 
@@ -1745,7 +1745,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.slim.blacklist.BlacklistSettings" />
+                android:value="com.android.settings.crom.blacklist.BlacklistSettings" />
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
                 android:resource="@id/security_settings" />
         </activity>
@@ -1760,7 +1760,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.slim.QuietHours" />
+                android:value="com.android.settings.crom.QuietHours" />
         </activity>
 
         <!-- Pseudo-activity used to provide an intent-filter entry point to quick tiles settings -->
@@ -1773,7 +1773,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.slim.quicksettings.QuickSettingsTiles" />
+                android:value="com.android.settings.crom.quicksettings.QuickSettingsTiles" />
         </activity>
 
         <!-- Pseudo-activity used to provide an intent-filter entry point to battery icon settings -->
@@ -1786,7 +1786,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.slim.BatteryIconStyle" />
+                android:value="com.android.settings.crom.BatteryIconStyle" />
         </activity>
 
         <!-- Pseudo-activity used to provide an intent-filter entry point to rotation settings -->
@@ -1799,7 +1799,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.slim.DisplayRotation" />
+                android:value="com.android.settings.crom.DisplayRotation" />
         </activity>
 
         <!-- Pseudo-activity used to provide an intent-filter entry point to encryption settings -->
@@ -1826,7 +1826,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.slim.ShakeEvents" />
+                android:value="com.android.settings.crom.ShakeEvents" />
         </activity>
 
         <activity android:name="Settings$DataUsageSummaryActivity"

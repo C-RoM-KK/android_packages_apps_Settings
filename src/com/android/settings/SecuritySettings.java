@@ -109,7 +109,7 @@ public class SecuritySettings extends RestrictedSettingsFragment
     private static final String KEY_NOTIFICATION_ACCESS = "manage_notification_access";
     private static final String PACKAGE_MIME_TYPE = "application/vnd.android.package-archive";
 
-    // Slim Additions
+    // C-RoM Additions
     private static final String KEY_APP_SECURITY_CATEGORY = "app_security";
     private static final String KEY_BLACKLIST = "blacklist";
 
@@ -200,7 +200,7 @@ public class SecuritySettings extends RestrictedSettingsFragment
         PackageManager pm = getPackageManager();
 
         // App security settings
-        addPreferencesFromResource(R.xml.security_settings_app_slim);
+        addPreferencesFromResource(R.xml.security_settings_app_crom);
         mBlacklist = (PreferenceScreen) root.findPreference(KEY_BLACKLIST);
 
         // Add options for lock/unlock screen

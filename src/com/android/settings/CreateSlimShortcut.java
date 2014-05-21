@@ -26,7 +26,7 @@ import android.os.Bundle;
 import com.android.internal.util.slim.ButtonsHelper;
 import com.android.internal.util.slim.DeviceUtils;
 import com.android.internal.util.slim.DeviceUtils.FilteredDeviceFeaturesArray;
-import com.android.settings.slim.SlimActionShortcut;
+import com.android.settings.crom.SlimActionShortcut;
 
 import com.android.settings.R;
 
