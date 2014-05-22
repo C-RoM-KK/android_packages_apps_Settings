@@ -58,47 +58,15 @@
         android:fragment="com.android.settings.WirelessSettings"
         android:icon="@drawable/empty_icon" />
 
-    <!-- C-RoM -->
-    <header android:id="@+id/general_section"
-        android:title="@string/general_category_title" />
+    <!-- C-ROM -->
+    <header android:title="@string/header_category_crom" />
 
-    <!-- Interface -->
+    <!-- C-RoM Customizations -->
     <header
-        android:id="@+id/interface_settings"
-        android:title="@string/interface_settings_title"
-        android:fragment="com.android.settings.crom.InterfaceSettings"
-        android:icon="@drawable/ic_settings_interface" />
-
-    <!-- Navigation -->
-    <header
-        android:id="@+id/navigation_settings"
-        android:icon="@drawable/ic_settings_navigation"
-        android:fragment="com.android.settings.crom.NavigationSettings"
-        android:title="@string/navigation_settings_title" />
-
-    <header
-        android:id="@+id/statusbar_settings"
-        android:title="@string/statusbar_settings_title"
-        android:fragment="com.android.settings.crom.StatusBarSettings"
-        android:icon="@drawable/ic_crom_statusbar" />
-
-    <!-- Advanced -->
-    <header android:id="@+id/advanced_section"
-        android:title="@string/advanced_category_title" />
-
-    <!-- Notification drawer -->
-    <header
-        android:id="@+id/notification_drawer"
-	android:title="@string/notification_drawer_title"
-        android:fragment="com.android.settings.crom.NotificationDrawer"
-        android:icon="@drawable/ic_crom_notification_drawer" />
-
-    <!-- Pie control -->
-    <header
-        android:id="@+id/pie_control"
-	android:title="@string/pie_control_title"
-        android:fragment="com.android.settings.crom.PieControl"
-        android:icon="@drawable/ic_crom_pie_control" />
+        android:id="@+id/crom_tools"
+        android:icon="@drawable/ic_settings_crom_tools"
+        android:title="@string/crom_tools_title"
+        android:fragment="com.android.settings.crom.CtoolSettings" />
 
     <!-- Theme settings -->
     <header
@@ -106,14 +74,6 @@
 	android:title="@string/theme_settings_title"
         android:fragment="com.android.settings.crom.themes.ThemeSettings"
         android:icon="@drawable/ic_settings_theme_settings" />
-
-    <!-- CROM OTA -->
-    <header
-        android:id="@+id/crom_ota"
-        android:title="@string/crom_ota_title"
-        android:icon="@drawable/ic_crom_ota"
-        android:targetPackage="com.crom.cromota"
-        android:targetClass="com.crom.cromota.MainActivity" />
 
     <!-- DEVICE -->
     <header android:id="@+id/device_section"

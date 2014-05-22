@@ -28,24 +28,28 @@
     <string name="add">Add</string>
 
     <!-- Category titles -->
+    <string name="header_category_crom">Personalization</string>
     <string name="additional_category_title">Additional</string>
-    <string name="general_category_title">General</string>
 
     <!-- Advanced titles -->
     <string name="advanced_category_title">Advanced</string>
     <string name="advanced_options_title">Advanced options</string>
 
     <!-- C-ROM settings screens -->
+    <string name="ctool_title">C-Tool</string>
     <string name="interface_settings_title">Interface</string>
     <string name="navigation_settings_title">Navigation</string>
     <string name="statusbar_settings_title">Statusbar</string>
+
+    <!-- About C-RoM Strings -->
+    <string name="about_crom_title">About C-RoM</string>
 
     <!-- Advanced settings -->
     <string name="notification_drawer_title">Notification drawer</string>
     <string name="pie_control_title">PIE</string>
 
     <!-- C-ROM OTA -->
-    <string name="crom_ota_title">C-ROM OTA</string>
+    <string name="crom_ota_settings_title">C-RoM OTA</string>
 
     <!-- Advanced, Device specific (DeviceParts) settings  -->
     <string name="device_settings_title">Device</string>
