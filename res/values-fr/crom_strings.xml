@@ -1217,5 +1217,146 @@ deux afin d\'insérer des points de commande supplémentaires. \'Supprimer\' Eff
     <!-- Bluetooth accept all Filestypes -->
     <string name="bluetooth_accept_all_files">Accepter tous les types de fichiers</string>
 
+    <!-- Profiles settings  -->
+    <string name="profiles_settings_title">Profils</string>
+    <string name="profiles_general_title">Général</string>
+    <string name="profiles_add">Ajouter</string>
+    <string name="profile_menu_delete">Supprimer</string>
+    <string name="profile_settings_title">Profil</string>
+    <string name="profile_empty_list_profiles_off">Pour configurer et utiliser des profils du système, Activez profils.</string>
+    <string name="ok">OK</string>
 
+    <!-- Add Profile -->
+    <string name="add_profile_dialog_title">Créer un nouveau profil</string>
+    <string name="profile_name_title">Nom</string>
+    <string name="profile_profile_name_prompt">Entrer un nom pour le nouveau profil</string>
+    <string name="menu_new_profile">Nouveau profil</string>
+    <string name="menu_new_profile_summary">Ajouter et configurer un nouveau profil</string>
+    <string name="new_profile_name">&lt;new profile&gt;</string>
+
+    <!-- Rename Dialog  -->
+    <string name="rename_dialog_title">Renommer</string>
+    <string name="rename_dialog_message">Entrer un nouveau nom</string>
+    <string name="duplicate_profile_name">Dupliquer le nom de profil!</string>
+    <string name="duplicate_appgroup_name">Dupliquer le nom du groupe appli!</string>
+
+    <!-- Lock screen vibrate settings -->
+    <string name="lockscreen_vibrate_enabled_title">Vibration</string>
+    <string name="lockscreen_vibrate_enabled_head">Vibration quand déverrouillage</string>
+
+    <!-- Reset Profiles -->
+    <string name="profile_reset_title">Réinitialiser</string>
+    <string name="profile_reset_message">Supprimer tous les profils et groupes d\'applications créées par l\'utilisateur et les restaurer par défaut?</string>
+
+    <!-- Delete confimation messages -->
+    <string name="profile_delete_confirm">Effacer ce profil?</string>
+    <string name="profile_app_delete_confirm">Effacer cette appli?</string>
+    <string name="profile_cannot_delete">Un profil actif ne peut être effacer</string>
+
+    <!-- Profile network mode -->
+    <string name="profile_networkmode_2g">2G</string>
+    <string name="profile_networkmode_3g">3G</string>
+    <string name="profile_networkmode_2g3g">2G/3G</string>
+
+    <!-- Profile Config screen PreferenceGroup titles -->
+    <string name="profile_connectionoverrides_title">Remplacements de connexion</string>
+    <string name="profile_volumeoverrides_title">Remplacements du volume</string>
+    <string name="profile_vibratoroverrides_title">Remplacements du vibreur</string>
+    <string name="connection_state_disabled">Désactiver</string>
+    <string name="connection_state_enabled">Activer</string>
+    <string name="volume_override_summary">Mettre a</string>
+    <string name="vibrator_state_disabled">Désactiver</string>
+    <string name="vibrator_state_enabled">Activer</string>
+    <string name="vibrator_state_silent">Seulement en silencieux</string>
+
+    <!-- Menu item for managing profiles -->
+    <string name="profile_profiles_manage">Profils</string>
+    <string name="profile_profile_manage">Gérer le profil</string>
+    <string name="profile_applist_manage">Liste application</string>
+    <string name="profile_appgroups_manage">Groupe appli</string>
+    <string name="profile_appgroup_manage">Gérer le groupe appli</string>
+
+    <!-- Profile settings screen, section header for settings related to notification profiles -->
+    <string name="profile_settings">Parametres profil</string>
+    <string name="profile_name">Nom</string>
+    <string name="profile_trigger_connect">A la connexion</string>
+    <string name="profile_trigger_disconnect">A la déconnexion</string>
+    <string name="profile_trigger_notrigger">Pas de déclenchement</string>
+    
+    <!-- Profile Settings sound modes labels -->
+    <string name="sound_mode">Mode Notification</string>
+    <string name="ringer_mode">Mode sonnerie</string>
+    <string name="lights_mode">Mode lumière</string>
+    <string name="vibrate_mode">Mode vibreur</string>
+    <string name="choose_soundtone">Choir la sonnerie de notification</string>
+    <string name="choose_ringtone">Choisir la sonnerie</string>
+    <string name="silent_mode_title">Mode sonnerie</string>
+
+    <!-- Sound settings screen, setting option name to pick ringtone (a list dialog comes up)-->
+    <string name="soundtone_title">Sonnerie notification</string>
+    <string name="soundtone_summary">""</string>
+
+    <!-- Title for application group setting screen -->
+    <string name="profile_appgroups_title">Groupe applications</string>
+    <string name="profile_applist_title">Application</string>
+    <string name="profile_new_appgroup">Nouveau groupe application</string>
+    <string name="profile_delete_appgroup">Effacer ce groupe application?</string>
+    <string name="profile_appgroup_name_prompt">Entrer un nom pour le nouveau groupe appli</string>
+    <string name="profile_appgroup_name_title">Nom</string>
+    <string name="profile_add_app">Ajouter application</string>
+    <string name="profile_delete_app">Supprimer application</string>
+
+    <!-- Add application dialog box title -->
+    <string name="profile_choose_app">Choisir l\'application</string>
+    <string name="profile_settings_header">Paramètre profil</string>
+
+    <!-- Profiles - system settings -->
+    <string name="profile_system_settings_title">Paramètres système</string>
+    <string name="profile_lockmode_title">Mode verrouillage écran</string>
+    <string name="profile_lockmode_default">Défaut</string>
+    <string name="profile_lockmode_insecure">Non sécurisé</string>
+    <string name="profile_lockmode_disabled">Désactivé</string>
+    <string name="profile_lockmode_default_summary">Utiliser le système par défaut</string>
+    <string name="profile_lockmode_insecure_summary">Utiliser verrouillage écran non sécurisé</string>
+    <string name="profile_lockmode_disabled_summary">Verrouillage écran désactivé</string>
+    <string name="profile_airplanemode_title">Mode avion</string>
+    <string name="profile_disable_screen_lock_summary">Désactiver la sécurité du verrouillage d\'écran alors que ce profil est actif</string>
+
+    <string name="vibrator_type_ringer">Appels</string>
+    <string name="vibrator_type_notification">Notifications</string>
+
+    <!-- Connection override toggles (not all are used at this time ) -->
+    <string name="possibleButtons">Boutons possible</string>
+    <string name="toggleWifi">Wi-Fi</string>
+    <string name="toggleWifiAp">Point Wi-Fi portable</string>
+    <string name="toggleBluetooth">Bluetooth</string>
+    <string name="toggleGPS">GPS</string>
+    <string name="toggleData">Données mobiles</string>
+    <string name="toggleSync">Synch données</string>
+    <string name="toggle2g3g">2G/3G</string>
+    <string name="toggleSound">Mode sonnerie</string>
+    <string name="toggleBrightness">Luminosité</string>
+    <string name="toggleAutoRotate">Orientation</string>
+    <string name="toggleScreenTimeout">Mise en veille écran</string>
+    <string name="toggleAirplane">Mode avion</string>
+    <string name="toggleFlashlight">Lampe de poche</string>
+    <string name="toggleLockScreen">Verrouillage d\'écran</string>
+    <string name="toggleWimax">WiMAX</string>
+    <string name="toggleNfc">NFC</string>
+
+    <string name="profile_trigger_configure">Configurer le déclenchement</string>
+    <string name="profile_triggers">Déclencheur</string>
+    <string name="profile_trigger_filter_all">Tous les déclencheurs</string>
+    <string name="profile_trigger_filter_wifi">Déclencheur Wi-Fi</string>
+    <string name="profile_trigger_filter_bluetooth">Déclencheur Bluetooth</string>
+    <string name="profile_write_nfc_tag">Écrire un tag NFC</string>
+    <string name="profile_write_touch_tag">Toucher le tag pour écrire</string>
+    <string name="profile_write_success">Le tag a été écris avec succès</string>
+    <string name="profile_write_failed">Écriture Tag manqué !</string>
+    <string name="profile_selected">Profil sélectionné: %1$s</string>
+    <string name="profile_nfc_text">L\'écriture d\'un profil sur un tag NFC permet de sélectionner ensuite le profil par contact. Toucher une deuxième fois permet de revenir au profil précédent.</string>
+    <string name="profile_unknown_nfc_tag">Profil inconnu</string>
+    <string name="profile_add_nfc_text">Ce tag NFC se réfère à un profil inconnu. Rapprocher ce tag NFC à un profil existant permettra de sélectionner celui ci à l\'avenir.</string>
+    <string name="profile_select">Sélectionner le profil</string>
+    
 </resources>
