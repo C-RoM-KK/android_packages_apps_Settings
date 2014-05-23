@@ -60,6 +60,9 @@
     <!-- Superuser title -->
     <string name="superuser_settings_title">Super utilisateur</string>
 
+    <!-- Theme chooser -->
+    <string name="theme_chooser_title">Sélection thèmes</string>
+
     <!-- Color Picker -->
     <string name="dialog_color_picker">Sélectionneur couleur</string>
     <string name="press_color_to_apply">Appuyez sur la couleur ci-dessous pour appliquer</string>
@@ -665,7 +668,7 @@ deux afin d\'insérer des points de commande supplémentaires. \'Supprimer\' Eff
     <string name="quiet_hours_haptic">Désactiver le retour haptique</string>
     <string name="quiet_hours_haptic_on">Le retour haptique sera désactivé</string>
     <string name="quiet_hours_haptic_off">Le retour haptique fonctionnera normalement</string>
-    <string name="quiet_hours_active_from">Atcif depuis</string>
+    <string name="quiet_hours_active_from">Actif depuis</string>
     <string name="quiet_hours_active_to">jusqu\'a</string>
     <string name="quiet_hours_auto_sms_group">Réponses automatique</string>
     <string name="quiet_hours_auto_sms_title">Les messages texte entrants</string>
@@ -1210,5 +1213,9 @@ deux afin d\'insérer des points de commande supplémentaires. \'Supprimer\' Eff
     <!-- ATTENTION: RTL languages need to replace left with right -->
     <string name="recent_panel_lefty_mode_title">Montrer sur le bord gauche</string>
     <string name="recent_panel_lefty_mode_summary">Afficher panneau applications récentes sur le bord gauche.</string>
+    
+    <!-- Bluetooth accept all Filestypes -->
+    <string name="bluetooth_accept_all_files">Accepter tous les types de fichiers</string>
+
 
 </resources>
