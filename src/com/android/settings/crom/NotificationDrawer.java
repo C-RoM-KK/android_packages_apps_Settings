@@ -29,6 +29,7 @@ import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 import android.preference.RingtonePreference;
+import android.preference.CromSeekBarPreference;
 import android.provider.Settings;
 import android.os.UserHandle;
 
@@ -37,7 +38,6 @@ import com.android.internal.util.slim.DeviceUtils;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.crom.quicksettings.QuickSettingsUtil;
 import com.android.settings.R;
-import com.android.settings.widget.SeekBarPreference;
 
 public class NotificationDrawer extends SettingsPreferenceFragment
             implements OnPreferenceChangeListener  {
@@ -70,7 +70,7 @@ public class NotificationDrawer extends SettingsPreferenceFragment
             "quick_settings_tiles_flip";
 
     ListPreference mHideLabels;
-    SeekBarPreference mNotificationAlpha;
+    CromSeekBarPreference mNotificationAlpha;
     CheckBoxPreference mReminder;
     ListPreference mReminderInterval;
     ListPreference mReminderMode;
@@ -113,7 +113,7 @@ public class NotificationDrawer extends SettingsPreferenceFragment
             Settings.System.putFloat(getContentResolver(),
                     Settings.System.NOTIFICATION_ALPHA, 0.0f);
         }
-        mNotificationAlpha = (SeekBarPreference) findPreference(PREF_NOTIFICATION_ALPHA);
+        mNotificationAlpha = (CromSeekBarPreference) findPreference(PREF_NOTIFICATION_ALPHA);
         mNotificationAlpha.setInitValue((int) (transparency * 100));
         mNotificationAlpha.setOnPreferenceChangeListener(this);
 
