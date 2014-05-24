@@ -26,8 +26,6 @@
     <string name="reset_message">Reset all entries to default?</string>
     <string name="style_title">Style</string>
     <string name="add">Add</string>
-    <string name="general_settings_title">General settings</string>
-    <string name="general_settings_style_title">General options</string>
 
     <!-- Category titles -->
     <string name="header_category_crom">Personalization</string>
@@ -1374,28 +1372,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="profile_unknown_nfc_tag">Unknown profile</string>
     <string name="profile_add_nfc_text">This NFC tag refers to an unknown profile. Attaching this NFC tag to an existing profile will allow for selecting the profile in the future.</string>
     <string name="profile_select">Select profile</string>
-
-    <!-- Display : Animation options -->
-    <string name="screen_and_animations_title">Appearance</string>
-    <string name="display_category_animation_options_title">Appearance</string>
-
-    <!-- Animation Controls -->  
-    <string name="title_animation_controls">Custom System Animations</string>  
-    <string name="activity_open_title">Activity Open Animation</string>  
-    <string name="activity_close_title">Activity Close Animation</string>  
-    <string name="task_open_title">Task Open Animation</string>  
-    <string name="task_close_title">Task Close Animation</string>  
-    <string name="task_move_to_front_title">Move To Front Animation</string>  
-    <string name="task_move_to_back_title">Move To Back Animation</string>  
-    <string name="wallpaper_open_title">Wallpaper Open Animation</string>  
-    <string name="wallpaper_close_title">Wallpaper Close Animation</string>  
-    <string name="wallpaper_intra_open_title">Wallpaper Intra Open Animation</string>  
-    <string name="wallpaper_intra_close_title">Wallpaper Intra Close Animation</string>  
-    <string name="animation_duration_title">Animation Duration</string>  
-    <string name="title_animation_no_override">Prevent App Overrides</string>  
-    <string name="summary_animation_no_override">Prevent apps from overriding transitions.</string>  
-    <string name="animation_duration_default">Default</string>
-    <string name="header_summary_animation">@null</string>
 
     <!-- Gesture anywhere -->
     <string name="gesture_anywhere_title">Gesture anywhere</string>
