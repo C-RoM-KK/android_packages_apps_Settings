@@ -26,10 +26,18 @@
     <string name="reset_message">Réinitialiser toutes les entrées par défaut?</string>
     <string name="style_title">Style</string>
     <string name="add">Ajouter</string>
+    <string name="general_settings_title">Paramètres généraux</string>
+    <string name="general_settings_style_title">Options générales</string>
+
 
     <!-- Category titles -->
     <string name="header_category_crom">Personnalisation</string>
     <string name="additional_category_title">Additionnel</string>
+    <string name="general_category_title">Général</string>
+    <string name="interface_category">Interface</string>
+
+    <string name="crom_tools_title">C-Tool</string>
+
 
     <!-- Advanced titles -->
     <string name="advanced_category_title">Avancé</string>
@@ -45,6 +53,7 @@
     <string name="about_crom_title">A propos de C-RoM</string>
 
     <!-- Advanced settings -->
+    <string name="active_display_title">Affichage actif</string>
     <string name="notification_drawer_title">Panneau de notifications</string>
     <string name="pie_control_title">PIE</string>
 
@@ -60,8 +69,19 @@
     <!-- Superuser title -->
     <string name="superuser_settings_title">Super utilisateur</string>
 
-    <!-- Theme chooser -->
-    <string name="theme_chooser_title">Sélection thèmes</string>
+    <!-- Themes Settings -->
+    <!-- Settings main menu entry -->
+    <string name="themes_settings_title">Thèmes</string>
+
+    <!-- The following are entries under the themes menu -->
+    <string name="themepacks_settings_title">Packs de thèmes </string>
+    <string name="styles_settings_title">Styles</string>
+    <string name="icons_settings_title">Icônes</string>
+    <string name="fonts_settings_title">Polices</string>
+    <string name="wallpaper_settings_title">Fonds d\'écran</string>
+    <string name="lockscreen_wallpaper_settings_title">Fonds d\'écran de l\'écran de verrouillage</string>
+    <string name="bootanim_settings_title">Animations de redémarrage</string>
+    <string name="soundpack_settings_title">Packs de sons</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Sélectionneur couleur</string>
@@ -1359,4 +1379,157 @@ deux afin d\'insérer des points de commande supplémentaires. \'Supprimer\' Eff
     <string name="profile_add_nfc_text">Ce tag NFC se réfère à un profil inconnu. Rapprocher ce tag NFC à un profil existant permettra de sélectionner celui ci à l\'avenir.</string>
     <string name="profile_select">Sélectionner le profil</string>
     
+    	    <!-- Display : Animation options -->
+    <string name="screen_and_animations_title">Apparence</string>
+    <string name="display_category_animation_options_title">Apparence</string>
+
+    <!-- Animation Controls -->  
+    <string name="title_animation_controls">Système animations personnalisées</string>  
+    <string name="activity_open_title">Animation ouverture activité</string>  
+    <string name="activity_close_title">Animation fermeture activité</string>  
+    <string name="task_open_title">Animation ouverture tache</string>  
+    <string name="task_close_title">Animation fermeture tache</string>  
+    <string name="task_move_to_front_title">Déplacez l\'animation au début</string>  
+    <string name="task_move_to_back_title">Déplacez l\'animation a la fin</string>  
+    <string name="wallpaper_open_title">Animation ouverture fond d\'écran</string>  
+    <string name="wallpaper_close_title">Animation fermeture fond d\'écran</string>  
+    <string name="wallpaper_intra_open_title">Animation ouverture fond d\'écran intra</string>  
+    <string name="wallpaper_intra_close_title">Animation fermeture fond d\'écran intra</string>  
+    <string name="animation_duration_title">Durée animation</string>  
+    <string name="title_animation_no_override">Empêcher le remplacement d\'applications</string>  
+    <string name="summary_animation_no_override">Prévenir les applications du remplacement de transitions.</string>  
+    <string name="animation_duration_default">Défaut</string>
+    <string name="header_summary_animation">@null</string>
+
+    <!-- Gesture anywhere -->
+    <string name="gesture_anywhere_title">Commande par signe</string>
+    <string name="gesture_anywhere_summary">Signes personnalisés pour exécuter des actions</string>
+    <string name="gesture_anywhere_enabled_title">Commande par signe</string>
+    <string name="gesture_anywhere_enabled_summary">Activer la commande par signe</string>
+    <string name="gesture_anywhere_position_title">Position</string>
+    <string name="gesture_anywhere_position_left">Angle gauche</string>
+    <string name="gesture_anywhere_position_right">Angle droit</string>
+    <string name="gesture_anywhere_gestures_title">Gestuelle</string>
+    <string name="gesture_anywhere_gestures_summary">Ajouter, supprimer, et éditer la cde par signe</string>
+    <string name="trigger_category">Région de déclenchement</string>
+    <string name="trigger_width_title">Largeur de déclenchement</string>
+    <string name="trigger_width_summary">Ajuster la largeur de la zone de déclenchement</string>
+    <string name="trigger_top_title">Position de déclenchement</string>
+    <string name="trigger_top_summary">Ajuster la postion verticale de la zone de déclenchement</string>
+    <string name="trigger_bottom_title">Hauteur de déclenchement</string>
+    <string name="trigger_bottom_summary">Réglez la hauteur de la zone de déclenchement</string>
+    <!-- Label, button used to add a gesture -->
+    <string name="ga_button_add">Ajouter un signe</string>
+    <!-- Label, button used to reload all gestures -->
+    <string name="ga_button_reload">Recharger</string>
+    <!-- Label, button used to cancel the operation of adding a gesture -->
+    <string name="ga_button_discard">Décharger</string>
+    <!-- Label, button used to save a gesture newly created -->
+    <string name="ga_button_done">Fini</string>
+    <!-- Label, prompt asking the user to enter the name of the gesture -->
+    <string name="ga_prompt_gesture_name">Nom</string>
+    <!-- Error message, informs the user he needs to enter a name before saving a gesture -->
+    <string name="ga_error_missing_name">Vous devez enter un nom</string>
+    <!-- success message, tells the user where the gesture was saved -->
+    <string name="ga_save_success">Signe sauvegardé dans %s</string>
+    <!-- Buttons in Rename gesture dialog box -->
+    <string name="ga_rename_action">OK</string>
+    <!-- Buttons in Rename gesture dialog box -->
+    <string name="ga_cancel_action">Abandon</string>
+    <!-- Message displayed when the user opens the gestures settings screen -->
+    <string name="ga_gestures_loading">Chargement signe...</string>
+    <!-- Message displayed when the user has no gestures -->
+    <string name="ga_gestures_empty">Pas de signes</string>
+    <!-- Title of the screen used to view/manage gestures -->
+    <string name="ga_gestures_activity">Signes</string>
+    <!-- Noun, menu item used to edit a gesture -->
+    <string name="ga_gestures_edit">Editer</string>
+    <!-- Noun, menu item used to remove a gesture -->
+    <string name="ga_gestures_delete">Supprimer</string>
+    <!-- Message displayed when a gesture is successfully deleted -->
+    <string name="ga_gestures_delete_success">Signe supprimé</string>
+    <!-- Title of dialog box -->
+    <string name="ga_gestures_rename_title">Renommer le signe</string>
+    <!-- Label of gesture name field in Rename gesture dialog box -->
+    <string name="ga_gestures_rename_label">Nom du signe</string>
+    <!-- Message, displayed when the sdcard cannot be found, 1st parameter is the name of the file that stores the gestures.  CHAR LIMIT=80 -->
+    <string name="ga_gestures_error_loading">Ne peut être lu %s. Assurez-vous que vous avez un stockage disponible.</string>
+    <string name="profile_applist_title">Appli</string>
+
+    <!-- Active display -->
+    <string name="ad_enable_title">Activer</string>
+    <string name="ad_enable_summary_on">Affichage actif activé</string>
+    <string name="ad_enable_summary_off">Affichage actif désactivé</string>
+    <string name="ad_bypass_title">Éviter affichage actif</string>
+    <string name="ad_bypass_summary">En l\'absence de notifications existent, le mode de poche va lancer le verrouillage d\'écran</string>
+    <string name="ad_text_title">Texte de notification</string>
+    <string name="ad_text_summary">Voir le texte de notification autour de l\'anneau</string>
+    <string name="ad_content_title">Utilisez vue de notification personnalisée</string>
+    <string name="ad_content_summary">Utilisez le style d\'affichage actif pour montrer les détails de notification, plutôt que le système</string>
+    <string name="ad_annoying_title">Diminution fréquence notifications</string>
+    <string name="ad_annoying_summary">Limiter la notification à une fois par période de temps</string>
+    <string name="ad_double_tap_title">Double appui pour veille</string>
+    <string name="ad_double_tap_summary">Éteindre l\'écran par un double appui</string>
+    <string name="ad_shake_event_settings_title">Paramètres secouement</string>
+    <string name="ad_shake_event_title">Secouez pour ré-afficher</string>
+    <string name="ad_shake_event_summary">Secouer téléphone pour ré-afficher les notifications</string>
+    <string name="ad_shake_force_title">Cas de défaut</string>
+    <string name="ad_shake_force_summary">Après avoir reçu une notification l\'affichage actif ne fonctionnera pas jusqu\'à ce que l\'utilisateur fasse une secousse</string>
+    <string name="ad_shake_threshold_title">Intensité</string>
+    <string name="ad_shake_threshold_summary">Intensité de la secousse nécessaire pour afficher des notifications</string>
+    <string name="ad_shake_timeout_title">Temps d\'attente</string>
+    <string name="ad_shake_timeout_summary">Temps en secondes ou le secouage est actif après avoir reçu la notification, 0 veut dire toujours actif</string>
+    <string name="ad_shake_quiet_hours_title">Outre passer les heures tranquilles</string>
+    <string name="ad_shake_quiet_hours_summary">Permettre le secouage durant les heures tranquilles</string>
+    <string name="ad_shake_long_threshold_title">Intervale</string>
+    <string name="ad_shake_long_threshold_summary">Temps minimum entre des secousses consécutives</string>
+    <string name="ad_all_notifications_title">notifications en cours</string>
+    <string name="ad_all_notifications_summary">Montrer les notifications en cours et non-effaçables</string>
+    <string name="ad_hide_low_priority_title">Cachez les priorités faibles</string>
+    <string name="ad_hide_low_priority_summary">Cachez les notifications a priorités faibles comme Google Now.</string>
+    <string name="ad_pocket_mode_title">Mode poche</string>
+    <string name="ad_pocket_mode_summary">Afficher les notifications d\'affichage actif lorsque vous sortez l\'appareil de votre poche.</string>
+    <string name="ad_redisplay_title">Ré-afficher les notifications</string>
+    <string name="ad_timeout_title">Délai d\'affichage</string>
+    <string name="ad_threshold_title">Seuil de proximité</string>
+    <string name="ad_threshold_summary">Durée de masquage du capteur de proximité avant que l\'affichage actif ne soit lancé</string>
+    <string name="ad_brightness_title">Luminosité des notifications</string>
+    <string name="ad_customizations_title">Paramètres avancés</string>
+    <string name="ad_excluded_apps_title">Applications exclues</string>
+    <string name="ad_excluded_apps_summary">Les notifications ne seront pas affichées pour ces applications</string>
+    <string name="ad_privacy_apps_title">Mode privé</string>
+    <string name="ad_privacy_apps_summary">Les détails ne seront pas affichés pour les notifications appartenant à ces applications</string>
+    <string name="ad_show_date_title">Afficher la date</string>
+    <string name="ad_show_ampm_title">Afficher AM/PM</string>
+    <string name="ad_sunlight_mode_title">Mode plein soleil</string>
+    <string name="ad_brightness_summary">Luminositée Affichage actif (Utilisé seulement quand la luminosité automatique n\'est pas selectionnée)</string>
+    <string name="ad_show_date_summary">afficher la date a coté de l\'horloge</string>
+    <string name="ad_show_ampm_summary">Afficher l\'indicateur AM/PM à côté de l\'heure lorsque vous utilisez le format 12 heures</string>
+    <string name="ad_sunlight_mode_summary">Inverser les couleurs dans les endroits avec une lumière vive, comme la lumière solaire directe.</string>
+    <string name="ad_turnoff_mode_title">Extinction automatique écran</string>
+    <string name="ad_turnoff_mode_summary">Le téléphone se remet en veille automatiquement s\'il a été sortie par le mode poche</string>
+    <string name="ad_redisplay_never">Jamais</string>
+    <string name="ad_redisplay_1m">1 minute</string>
+    <string name="ad_redisplay_5m">5 minutes</string>
+    <string name="ad_redisplay_15m">15 minutes</string>
+    <string name="ad_redisplay_30m">30 minutes</string>
+    <string name="ad_redisplay_1h">1 heure</string>
+    <string name="ad_redisplay_2h">2 heures</string>
+    <string name="ad_redisplay_5h">5 heures</string>
+    <string name="ad_timeout_3s">3 secondes</string>
+    <string name="ad_timeout_5s">5 secondes</string>
+    <string name="ad_timeout_8s">8 secondes</string>
+    <string name="ad_timeout_10s">10 secondes</string>
+    <string name="ad_timeout_15s">15 secondes</string>
+    <string name="ad_timeout_25s">25 secondes</string>
+    <string name="ad_threshold_0s">immédiat</string>
+    <string name="ad_threshold_1s">1 seconde</string>
+    <string name="ad_threshold_2s">2 secondes</string>
+    <string name="ad_threshold_3s">3 secondes</string>
+    <string name="ad_threshold_4s">4 secondes</string>
+    <string name="ad_threshold_5s">5 secondes</string>
+    <string name="ad_pocket_mode_off">Arret</string>
+    <string name="ad_pocket_mode_notifications">Notifications seulement</string>
+    <string name="ad_pocket_mode_always">Toujours</string>
+
 </resources>
