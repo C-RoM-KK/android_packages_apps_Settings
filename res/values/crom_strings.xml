@@ -42,7 +42,7 @@
 
     <!-- C-ROM settings screens -->
     <string name="ctool_title">C-Tool</string>
-    <string name="interface_settings_title">Interface</string>
+    <string name="interface_category">Interface</string>
     <string name="navigation_settings_title">Navigation</string>
     <string name="statusbar_settings_title">Statusbar</string>
 
