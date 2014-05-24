@@ -79,6 +79,4 @@
         android:title="@string/navigation_settings_title" />
     </PreferenceScreen>
 
-    </PreferenceCategory>
-
 </PreferenceScreen>
