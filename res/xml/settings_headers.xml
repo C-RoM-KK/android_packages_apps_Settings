@@ -73,7 +73,7 @@
         android:id="@+id/theme_settings"
 	android:title="@string/theme_settings_title"
         android:fragment="com.android.settings.crom.themes.ThemeSettings"
-        android:icon="@drawable/ic_settings_theme_settings" />
+        android:icon="@drawable/ic_settings_theme" />
 
     <!-- Theme chooser -->
     <header

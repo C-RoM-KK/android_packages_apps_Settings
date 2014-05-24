@@ -27,14 +27,13 @@
             android:action="android.intent.action.MAIN"
             android:targetPackage="com.crom.about"
             android:targetClass="com.crom.about.activities.AboutActivity" />
+    </PreferenceScreen>
 
     <!-- C-ROM OTA -->
     <PreferenceScreen
         android:key="crom_ota_start"
         android:title="@string/crom_ota_settings_title"
         android:icon="@drawable/ic_crom_ota" />
-
-    </PreferenceScreen>
 
     <PreferenceCategory
         android:title="@string/interface_category">
