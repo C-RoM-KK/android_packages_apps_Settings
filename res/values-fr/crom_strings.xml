@@ -26,10 +26,7 @@
     <string name="reset_message">Réinitialiser toutes les entrées par défaut?</string>
     <string name="style_title">Style</string>
     <string name="add">Ajouter</string>
-    <string name="general_settings_title">Paramètres généraux</string>
-    <string name="general_settings_style_title">Options générales</string>
-
-
+ 
     <!-- Category titles -->
     <string name="header_category_crom">Personnalisation</string>
     <string name="additional_category_title">Additionnel</string>
@@ -37,7 +34,6 @@
     <string name="interface_category">Interface</string>
 
     <string name="crom_tools_title">C-Tool</string>
-
 
     <!-- Advanced titles -->
     <string name="advanced_category_title">Avancé</string>
@@ -431,6 +427,7 @@ deux afin d\'insérer des points de commande supplémentaires. \'Supprimer\' Eff
     <string name="shortcut_action_search">Chercher dans l\'appli</string>
     <string name="shortcut_action_voice_search">Recherche vocale</string>
     <string name="shortcut_action_screenshot">Copie d\'écran</string>
+    <string name="shortcut_action_screen_record">Enregistrement écran</string>
     <string name="shortcut_action_menu">Menu</string>
     <string name="shortcut_action_ime">Ouvrir le commutateur IME</string>
     <string name="shortcut_action_kill">Fermer l\'application</string>
@@ -595,9 +592,8 @@ deux afin d\'insérer des points de commande supplémentaires. \'Supprimer\' Eff
     <!-- Navigation settings -->
     <string name="navigation_settings_options_title">Options navigation</string>
     <string name="power_menu_title">Menu global</string>
-
-    <!-- Power menu -->
-    <string name="power_menu_style_summary">Changer les couleurs du menu</string>
+    <string name="power_menu_summary">Changer ou ré-ordonner le global du menu power</string>      
+   <string name="power_menu_style_summary">Personnaliser la couleur des icônes ou du texte du menu power</string>
 
     <!-- Navigation bar -->
     <string name="navigation_bar_size_42_dp_default">42 dp (défaut)</string>
@@ -1216,7 +1212,6 @@ deux afin d\'insérer des points de commande supplémentaires. \'Supprimer\' Eff
     <string name="noti_reminder_interval_3dot5s">3.5 secondes</string>
     <string name="noti_reminder_interval_4s">4 secondes</string>
 
-
     <!-- Recent panel -->
     <string name="recent_panel_category">Panneau applications récentes</string>
     <string name="recent_panel_scale_title">Taille</string>
@@ -1379,28 +1374,6 @@ deux afin d\'insérer des points de commande supplémentaires. \'Supprimer\' Eff
     <string name="profile_add_nfc_text">Ce tag NFC se réfère à un profil inconnu. Rapprocher ce tag NFC à un profil existant permettra de sélectionner celui ci à l\'avenir.</string>
     <string name="profile_select">Sélectionner le profil</string>
     
-    	    <!-- Display : Animation options -->
-    <string name="screen_and_animations_title">Apparence</string>
-    <string name="display_category_animation_options_title">Apparence</string>
-
-    <!-- Animation Controls -->  
-    <string name="title_animation_controls">Système animations personnalisées</string>  
-    <string name="activity_open_title">Animation ouverture activité</string>  
-    <string name="activity_close_title">Animation fermeture activité</string>  
-    <string name="task_open_title">Animation ouverture tache</string>  
-    <string name="task_close_title">Animation fermeture tache</string>  
-    <string name="task_move_to_front_title">Déplacez l\'animation au début</string>  
-    <string name="task_move_to_back_title">Déplacez l\'animation a la fin</string>  
-    <string name="wallpaper_open_title">Animation ouverture fond d\'écran</string>  
-    <string name="wallpaper_close_title">Animation fermeture fond d\'écran</string>  
-    <string name="wallpaper_intra_open_title">Animation ouverture fond d\'écran intra</string>  
-    <string name="wallpaper_intra_close_title">Animation fermeture fond d\'écran intra</string>  
-    <string name="animation_duration_title">Durée animation</string>  
-    <string name="title_animation_no_override">Empêcher le remplacement d\'applications</string>  
-    <string name="summary_animation_no_override">Prévenir les applications du remplacement de transitions.</string>  
-    <string name="animation_duration_default">Défaut</string>
-    <string name="header_summary_animation">@null</string>
-
     <!-- Gesture anywhere -->
     <string name="gesture_anywhere_title">Commande par signe</string>
     <string name="gesture_anywhere_summary">Signes personnalisés pour exécuter des actions</string>
@@ -1488,11 +1461,9 @@ deux afin d\'insérer des points de commande supplémentaires. \'Supprimer\' Eff
     <string name="ad_hide_low_priority_title">Cachez les priorités faibles</string>
     <string name="ad_hide_low_priority_summary">Cachez les notifications a priorités faibles comme Google Now.</string>
     <string name="ad_pocket_mode_title">Mode poche</string>
-    <string name="ad_pocket_mode_summary">Afficher les notifications d\'affichage actif lorsque vous sortez l\'appareil de votre poche.</string>
     <string name="ad_redisplay_title">Ré-afficher les notifications</string>
     <string name="ad_timeout_title">Délai d\'affichage</string>
     <string name="ad_threshold_title">Seuil de proximité</string>
-    <string name="ad_threshold_summary">Durée de masquage du capteur de proximité avant que l\'affichage actif ne soit lancé</string>
     <string name="ad_brightness_title">Luminosité des notifications</string>
     <string name="ad_customizations_title">Paramètres avancés</string>
     <string name="ad_excluded_apps_title">Applications exclues</string>
@@ -1531,5 +1502,54 @@ deux afin d\'insérer des points de commande supplémentaires. \'Supprimer\' Eff
     <string name="ad_pocket_mode_off">Arret</string>
     <string name="ad_pocket_mode_notifications">Notifications seulement</string>
     <string name="ad_pocket_mode_always">Toujours</string>
+    
+    <!-- Sms security limit -->
+    <string name="sms_security_check_limit_title">Limite maximum de SMS</string>
+    <string name="sms_security_check_limit_summary">Les applications peuvent envoyer %d messages en 30 minutes avant de demander une confirmation</string>
+    <string name="sms_security_check_limit_default">30 (Défaut)</string>
+
+    <!-- Screen recorder -->
+    <string name="screen_recorder_title">Enregistreur d\'écran</string>
+    <string name="screen_recorder_summary">Réglez les paramètres de l\'enregistreur d\'écran</string>
+    <string name="screen_recorder_video_dimensions_title">Taille Vidéo</string>
+    <string name="screen_recorder_video_bitrate_title">Débit</string>
+
+    <!-- video sizes -->
+    <string name="screen_recorder_size_240x400">240x400</string>
+    <string name="screen_recorder_size_360x640">360x640</string>
+    <string name="screen_recorder_size_480x800">480x800</string>
+    <string name="screen_recorder_size_480x854">480x854</string>
+    <string name="screen_recorder_size_540x960">540x960</string>
+    <string name="screen_recorder_size_600x1024">600x1024</string>
+    <string name="screen_recorder_size_720x1280">720x1280</string>
+
+    <!-- frame rates -->
+    <string name="screen_recorder_bitrate_title_100000">100 kB/s</string>
+    <string name="screen_recorder_bitrate_title_250000">250 kB/s</string>
+    <string name="screen_recorder_bitrate_title_500000">500 kB/s</string>
+    <string name="screen_recorder_bitrate_title_1000000">1 MB/s</string>
+    <string name="screen_recorder_bitrate_title_2000000">2 MB/s</string>
+    <string name="screen_recorder_bitrate_title_3000000">3 MB/s</string>
+    <string name="screen_recorder_bitrate_title_4000000">4 MB/s</string>
+    <string name="screen_recorder_bitrate_title_5000000">5 MB/s</string>
+    <string name="screen_recorder_bitrate_title_10000000">10 MB/s</string>
+    <string name="screen_recorder_bitrate_title_20000000">20 MB/s</string>
+    <string name="screen_recorder_bitrate_title_50000000">50 MB/s</string>
+    <string name="screen_recorder_bitrate_title_100000000">100 MB/s</string>
+    <string name="screen_recorder_bitrate_100000">100000</string>
+    <string name="screen_recorder_bitrate_250000">250000</string>
+    <string name="screen_recorder_bitrate_500000">500000</string>
+    <string name="screen_recorder_bitrate_1000000">1000000</string>
+    <string name="screen_recorder_bitrate_2000000">2000000</string>
+    <string name="screen_recorder_bitrate_3000000">3000000</string>
+    <string name="screen_recorder_bitrate_4000000">4000000</string>
+    <string name="screen_recorder_bitrate_5000000">5000000</string>
+    <string name="screen_recorder_bitrate_10000000">10000000</string>
+    <string name="screen_recorder_bitrate_20000000">20000000</string>
+    <string name="screen_recorder_bitrate_50000000">50000000</string>
+    <string name="screen_recorder_bitrate_100000000">100000000</string>
+
+    <!-- Allow Multiuser -->
+    <string name="multiuser_preference_title">Support multi-utilisateur</string>
 
 </resources>
