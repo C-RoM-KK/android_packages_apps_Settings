@@ -33,6 +33,7 @@
     <string name="header_category_crom">Personalization</string>
     <string name="additional_category_title">Additional</string>
     <string name="general_category_title">General</string>
+    <string name="interface_category">Interface</string>
 
     <string name="crom_tools_title">C-Tool</string>
 
@@ -42,7 +43,7 @@
 
     <!-- C-ROM settings screens -->
     <string name="ctool_title">C-Tool</string>
-    <string name="interface_category">Interface</string>
+    <string name="interface_settings_title">Interface</string>
     <string name="navigation_settings_title">Navigation</string>
     <string name="statusbar_settings_title">Statusbar</string>
 
