@@ -20,6 +20,20 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <PreferenceScreen
+        android:key="navbar_targets_settings"
+        android:fragment="com.android.settings.crom.dslv.ButtonsListViewSettings"
+        android:title="@string/power_menu_title"
+        android:summary="@string/power_menu_summary">
+            <extra android:name="buttonMode" android:value="6" />
+            <extra android:name="maxAllowedButtons" android:value="8" />
+            <extra android:name="disableLongpress" android:value="true" />
+            <extra android:name="disableDeleteLastEntry" android:value="true" />
+            <extra android:name="actionValues" android:value="shortcut_action_power_menu_values" />
+            <extra android:name="actionEntries" android:value="shortcut_action_power_menu_entries" />
+            <extra android:name="fragment" android:value="com.android.settings.crom.fragments.PowerMenuFragment" />
+    </PreferenceScreen>
+
+    <PreferenceScreen
         android:key="gesture_anywhere"
         android:title="@string/gesture_anywhere_title"
         android:summary="@string/gesture_anywhere_summary"
