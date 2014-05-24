@@ -645,6 +645,7 @@
         <item>@string/shortcut_action_recent</item>
         <item>@string/shortcut_action_power</item>
         <item>@string/shortcut_action_screenshot</item>
+        <item>@string/shortcut_action_screen_record</item>
         <item>@string/shortcut_action_search</item>
         <item>@string/shortcut_action_theme_switch</item>
         <item>@string/shortcut_action_torch</item>
@@ -669,6 +670,7 @@
         <item>**recents**</item>
         <item>**power**</item>
         <item>**screenshot**</item>
+        <item>**screen_record**</item>
         <item>**search**</item>
         <item>**theme_switch**</item>
         <item>**torch**</item>
@@ -812,6 +814,7 @@
         <item>@string/shortcut_action_power_off</item>
         <item>@string/shortcut_action_reboot</item>
         <item>@string/shortcut_action_screenshot</item>
+        <item>@string/shortcut_action_screen_record</item>
         <item>@string/shortcut_action_sound</item>
     </string-array>
 
@@ -824,6 +827,7 @@
         <item>**poweroff**</item>
         <item>**reboot**</item>
         <item>**screenshot**</item>
+        <item>**screen_record**</item>
         <item>**sound**</item>
     </string-array>
 
