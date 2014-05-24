@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.slim;
+package com.android.settings.crom;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -41,7 +41,7 @@ import com.android.internal.util.slim.DeviceUtils.FilteredDeviceFeaturesArray;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.settings.slim.util.ShortcutPickerHelper;
+import com.android.settings.crom.util.ShortcutPickerHelper;
 
 public class ShakeEvents extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener,

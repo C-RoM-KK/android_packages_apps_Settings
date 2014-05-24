@@ -380,10 +380,10 @@ public class LockscreenStyle extends SettingsPreferenceFragment
 
     private void resizeCromLock() {
         Bitmap CromLock = BitmapFactory.decodeResource(getResources(), R.drawable.crom_lock);
-        if (cromLock != null) {
+        if (CromLock != null) {
             String path = null;
             int px = requestImageSize();
-            cromLock = Bitmap.createScaledBitmap(cromLock, px, px, true);
+            CromLock = Bitmap.createScaledBitmap(CromLock, px, px, true);
             try {
                 mLockImage.createNewFile();
                 mLockImage.setWritable(true, false);
@@ -392,7 +392,7 @@ public class LockscreenStyle extends SettingsPreferenceFragment
                 path = image.getAbsolutePath();
                 mLockImage.renameTo(image);
                 FileOutputStream outPut = new FileOutputStream(image);
-                cromLock.compress(Bitmap.CompressFormat.PNG, 100, outPut);
+                CromLock.compress(Bitmap.CompressFormat.PNG, 100, outPut);
                 image.setReadable(true, false);
                 outPut.flush();
                 outPut.close();

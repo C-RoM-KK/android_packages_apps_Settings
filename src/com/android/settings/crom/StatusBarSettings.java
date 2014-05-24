@@ -50,7 +50,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.crom_statusbar_settings);
+        addPreferencesFromResource(R.xml.crom_status_bar_settings);
 
         PreferenceScreen prefSet = getPreferenceScreen();
 
