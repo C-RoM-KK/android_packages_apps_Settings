@@ -318,7 +318,7 @@ public class SecuritySettings extends RestrictedSettingsFragment
                 DevicePolicyManager.PASSWORD_QUALITY_SOMETHING) {
             if (mSecurityCategory != null && mVisiblePattern != null) {
                 mSecurityCategory.removePreference(root.findPreference(KEY_VISIBLE_PATTERN));
-                securityCategory.removePreference(root.findPreference(KEY_VISIBLE_GESTURE));
+                mSecurityCategory.removePreference(root.findPreference(KEY_VISIBLE_GESTURE));
             }
         }
 
