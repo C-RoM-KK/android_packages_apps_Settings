@@ -238,9 +238,9 @@ public class SecuritySettings extends RestrictedSettingsFragment
                 case DevicePolicyManager.PASSWORD_QUALITY_ALPHANUMERIC:
                 case DevicePolicyManager.PASSWORD_QUALITY_COMPLEX:
                     resid = R.xml.security_settings_password;
+                    break;
                 case DevicePolicyManager.PASSWORD_QUALITY_GESTURE_WEAK:
                     resid = R.xml.security_settings_gesture;
-                    break;
                     break;
             }
         }
