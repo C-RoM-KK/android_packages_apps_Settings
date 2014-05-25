@@ -41,7 +41,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
-import com.android.settings.liquid.crom.Helpers;
+import com.android.settings.crom.util.Helpers;
 
 import java.util.Date;
 
