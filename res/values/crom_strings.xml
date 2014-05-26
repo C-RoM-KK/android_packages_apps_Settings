@@ -219,6 +219,7 @@
 
     <!-- Shake Events -->
     <string name="shake_events_title">Shake events</string>
+    <string name="shake_events_summary">Use different shake events to activities</string>
     <string name="shake_events_enabled_title">Enable shake listener</string>
     <string name="shake_events_normal_title">Active shake events</string>
     <string name="shake_events_disabled_title">Disabled apps</string>
