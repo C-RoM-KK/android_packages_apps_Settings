@@ -45,6 +45,11 @@
             android:title="@string/lock_numpad_random_title"
             android:dialogTitle="@string/lock_numpad_random_dialog_title" />
 
+        <PreferenceScreen
+            android:fragment="com.android.settings.crom.KeyguardShakeEvents"
+            android:key="shake_events"
+            android:title="@string/shake_events_title" />
+
         <ListPreference
             android:key="shake_to_secure_mode"
             android:entries="@array/shake_secure_entries"
@@ -58,11 +63,6 @@
             android:entries="@array/shake_secure_timeout_entries"
             android:entryValues="@array/shake_secure_timeout_values"
             android:persistent="false"/>
-
-        <PreferenceScreen
-            android:fragment="com.android.settings.crom.KeyguardShakeEvents"
-            android:key="shake_events"
-            android:title="@string/shake_events_title" />
 
         <PreferenceScreen
             android:fragment="com.android.settings.OwnerInfoSettings"
