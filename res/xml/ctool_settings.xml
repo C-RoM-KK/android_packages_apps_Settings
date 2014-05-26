@@ -52,6 +52,13 @@
         android:fragment="com.android.settings.crom.StatusBarSettings"
         android:icon="@drawable/ic_crom_statusbar" />
 
+    <!-- Lock screen -->
+    <PreferenceScreen
+        android:id="@+id/lockscreen_settings"
+        android:title="@string/lockscreen_settings_title"
+        android:fragment="com.android.settings.crom.LockscreenSettings"
+        android:icon="@drawable/ic_crom_lockscreen" />
+
     <!-- Notification drawer -->
     <PreferenceScreen
         android:id="@+id/notification_drawer"
