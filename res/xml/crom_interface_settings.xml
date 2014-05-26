@@ -57,4 +57,10 @@
         android:summary="@string/header_summary_animation"
         android:fragment="com.android.settings.crom.fragments.AnimationControls" />
 
+    <PreferenceScreen
+        android:key="shake_events"
+        android:title="@string/shake_events_title"
+        android:summary="@string/shake_events_summary"
+        android:fragment="com.android.settings.crom.ShakeEvents" />
+
 </PreferenceScreen>
