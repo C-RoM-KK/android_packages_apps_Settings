@@ -36,6 +36,7 @@ import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceGroup;
 import android.preference.PreferenceScreen;
+import android.preference.SeekBarPreference;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import android.util.Log;
@@ -45,12 +46,11 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-import com.android.internal.util.slim.DeviceUtils;
-import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
 import com.android.settings.Utils;
-
+import com.android.internal.util.slim.DeviceUtils;
 import com.android.internal.widget.LockPatternUtils;
+import com.android.settings.SettingsPreferenceFragment;
 
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
@@ -76,7 +76,6 @@ public class LockscreenStyle extends SettingsPreferenceFragment
             "lockscreen_targets_color";
     private static final String KEY_LOCKSCREEN_MISC_COLOR =
             "lockscreen_misc_color";
-
 
     private String mDefault;
 
@@ -183,9 +182,7 @@ public class LockscreenStyle extends SettingsPreferenceFragment
         // No lock-slider is available
         boolean dotsDisabled = new LockPatternUtils(getActivity()).isSecure()
             && Settings.Secure.getInt(getContentResolver(),
-            Settings.Secure.LOCK_BEFORE_UNLOCK, 0) == 0
-            && Settings.Secure.getInt(getContentResolver(),
-                    Settings.Secure.LOCK_SHAKE_TEMP_SECURE, 0) == 0;
+            Settings.Secure.LOCK_BEFORE_UNLOCK, 0) == 0;
         boolean imageExists = Settings.Secure.getString(getContentResolver(),
                 Settings.Secure.LOCKSCREEN_LOCK_ICON) != null;
         mDotsColor.setEnabled(!dotsDisabled);
@@ -305,6 +302,11 @@ public class LockscreenStyle extends SettingsPreferenceFragment
             return true;
         }
         return false;
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
     private void setPreferenceSummary(
@@ -471,4 +473,3 @@ public class LockscreenStyle extends SettingsPreferenceFragment
         }
     }
 }
-
