@@ -29,7 +29,7 @@ import android.view.ViewGroup;
 import com.android.internal.util.slim.DeviceUtils;
 
 import com.android.settings.crom.CRomSettings;
-import com.android.settings.crom.InterfaceSettings
+import com.android.settings.crom.InterfaceSettings;
 import com.android.settings.crom.LockscreenSettings;
 import com.android.settings.crom.NavigationSettings;
 import com.android.settings.crom.NotificationDrawer;
