@@ -79,13 +79,6 @@
     <PreferenceCategory
         android:title="@string/advanced_category_title">
 
-    <!-- Active display -->
-    <PreferenceScreen
-        android:id="@+id/active_display"
-        android:title="@string/active_display_title"
-        android:fragment="com.android.settings.crom.ActiveDisplaySettings"
-        android:icon="@drawable/ic_crom_active_display" />
-
     <!-- Notification drawer -->
     <PreferenceScreen
         android:id="@+id/navigation_settings"

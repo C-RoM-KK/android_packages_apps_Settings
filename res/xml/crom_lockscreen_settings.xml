@@ -35,6 +35,11 @@
             android:summary="@string/lock_screen_notifications_summary"
             android:fragment="com.android.settings.crom.LockscreenNotifications" />
 
+    <PreferenceScreen
+        android:id="@+id/active_display"
+        android:title="@string/active_display_title"
+        android:fragment="com.android.settings.crom.ActiveDisplaySettings" />
+
         <PreferenceScreen
             android:key="lock_screen_style"
             android:title="@string/lock_screen_style_title"
