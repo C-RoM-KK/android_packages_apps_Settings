@@ -1,81 +1,185 @@
-/*
- * Copyright (C) 2014 The C-RoM Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
 package com.android.settings.crom;
 
-import android.content.ContentResolver;
+import android.app.ActionBar;
+import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
+import android.net.Uri;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.os.Bundle;
+import android.provider.Settings;
+import android.preference.CheckBoxPreference;
 import android.preference.Preference;
+import android.preference.PreferenceCategory;
+import android.preference.PreferenceManager;
+import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceScreen;
+import android.support.v13.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import com.android.internal.util.slim.DeviceUtils;
+
+import com.android.settings.crom.CRomSettings;
+import com.android.settings.crom.InterfaceSettings
+import com.android.settings.crom.LockscreenSettings;
+import com.android.settings.crom.NavigationSettings;
+import com.android.settings.crom.NotificationDrawer;
+import com.android.settings.crom.PieControl;
+import com.android.settings.crom.StatusBarSettings;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-public class CtoolSettings extends SettingsPreferenceFragment
-        implements OnSharedPreferenceChangeListener {
+import java.util.ArrayList;
+import java.util.List;
 
-    private static final String TAG = "CtoolSettings";
+public class CtoolSettings extends SettingsPreferenceFragment implements ActionBar.TabListener {
 
-    private static final String CROMOTA_START = "crom_ota_start";
+    ViewPager mViewPager;
+    String titleString[];
+    ViewGroup mContainer;
 
-    // Package name of the C-RoM Ota app
-    public static final String CROMOTA_PACKAGE_NAME = "com.crom.cromota";
-    // Intent for launching the C-RoM ota main actvity
-    public static Intent INTENT_CROMOTA = new Intent(Intent.ACTION_MAIN)
-            .setClassName(CROMOTA_PACKAGE_NAME, CROMOTA_PACKAGE_NAME + ".MainActivity");
+    static Bundle mSavedState;
 
-    private Preference mCromOta;
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        mContainer = container;
+        final ActionBar actionBar = getActivity().getActionBar();
+        actionBar.setIcon(R.drawable.ic_settings_system);
+   
+        View view = inflater.inflate(R.layout.ctool_settings, container, false);
+        mViewPager = (ViewPager) view.findViewById(R.id.viewPager);
+        StatusBarAdapter StatusBarAdapter = new StatusBarAdapter(getFragmentManager());
+        mViewPager.setAdapter(StatusBarAdapter);
+        mViewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
+            @Override
+            public void onPageSelected(int position) {
+                actionBar.setSelectedNavigationItem(position);
+            }
+        });
+
+        ActionBar.Tab cromTab = actionBar.newTab();
+        cromTab.setText("C-Rom");
+        cromTab.setTabListener(this);
+
+        ActionBar.Tab interfaceTab = actionBar.newTab();
+        interfaceTab.setText("Interface");
+        interfaceTab.setTabListener(this);
+
+        ActionBar.Tab statusbarTab = actionBar.newTab();
+        statusbarTab.setText("System");
+        statusbarTab.setTabListener(this);
+
+        ActionBar.Tab lockscreenTab = actionBar.newTab();
+        lockscreenTab.setText("LockScreen");
+        lockscreenTab.setTabListener(this);
+
+        ActionBar.Tab notifdrawerTab = actionBar.newTab();
+        notifdrawerTab.setText("Notification Drawer");
+        notifdrawer.setTabListener(this);
+
+        ActionBar.Tab piecontrolTab = actionBar.newTab();
+        piecontrolTab.setText("PIE");
+        piecontrolTab.setTabListener(this);
+
+        ActionBar.Tab navigationTab = actionBar.newTab();
+        navigationTab.setText("Navigation");
+        navigationTab.setTabListener(this);
+
+        actionBar.addTab(cromTab);
+        actionBar.addTab(interfaceTab);
+        actionBar.addTab(statusbarTab);
+        actionBar.addTab(lockscreenTab);
+        actionBar.addTab(notifdrawerTab);
+        actionBar.addTab(piecontrolTab);
+        actionBar.addTab(navigationTab);
+
+        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+
+        return view;
+    }
 
     @Override
-    public void onCreate(Bundle icicle) {
-        super.onCreate(icicle);
+    public void onTabSelected(ActionBar.Tab tab, FragmentTransaction ft) {
+        mViewPager.setCurrentItem(tab.getPosition());
+    }
 
-        addPreferencesFromResource(R.xml.ctool_settings);
+    @Override
+    public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction ft) {
+    }
 
-        PreferenceScreen prefSet = getPreferenceScreen();
-        ContentResolver resolver = getActivity().getContentResolver();
+    @Override
+    public void onTabReselected(ActionBar.Tab tab, FragmentTransaction ft) {
+    }
 
-       mCromOta = (Preference)
-                prefSet.findPreference(CROMOTA_START);
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        // After confirming PreferenceScreen is available, we call super.
+        super.onActivityCreated(savedInstanceState);
+    }
 
+    @Override
+    public void onSaveInstanceState(Bundle saveState) {
+        super.onSaveInstanceState(saveState);
     }
 
     @Override
     public void onResume() {
         super.onResume();
-    }
 
-    @Override
-    public void onPause() {
-        super.onPause();
-    }
-
-    @Override
-    public void onSharedPreferenceChanged(SharedPreferences preferences, String key) {
-    }
-
-    @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (preference == mCromOta) {
-            startActivity(INTENT_CROMOTA);
-            return true;
+        if (!DeviceUtils.isTablet(getActivity())) {
+            mContainer.setPadding(0, 0, 0, 0);
         }
-        return super.onPreferenceTreeClick(preferenceScreen, preference);
+    }
+
+    class StatusBarAdapter extends FragmentPagerAdapter {
+        String titles[] = getTitles();
+        private Fragment frags[] = new Fragment[titles.length];
+
+        public StatusBarAdapter(FragmentManager fm) {
+            super(fm);
+            frags[0] = new CRomSettings();
+            frags[1] = new InterfaceSettings();
+            frags[2] = new StatusBarSettings();
+            frags[3] = new LockscreenSettings();
+            frags[4] = new NotificationDrawer();
+            frags[5] = new PieControl();
+            frags[6] = new NavigationSettings();
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return titles[position];
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            return frags[position];
+        }
+
+        @Override
+        public int getCount() {
+            return frags.length;
+        }
+    }
+
+    private String[] getTitles() {
+        String titleString[];
+        titleString = new String[]{
+                    getString(R.string.crom_settings_title),
+                    getString(R.string.interface_settings_title),
+                    getString(R.string.statusbar_settings_title),
+                    getString(R.string.lockscreen_settings_title)
+                    getString(R.string.notification_drawer_title),
+                    getString(R.string.pie_control_title),
+                    getString(R.string.navigation_settings_title)};
+        return titleString;
     }
 }
-
