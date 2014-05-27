@@ -174,10 +174,6 @@
     <string name="lockscreen_shorcuts_longpress_title">Shortcuts longpress</string>
     <string name="lockscreen_shorcuts_longpress_summary">Open custom lock screen shortcuts on longpress</string>
 
-    <!-- Lock screen wallpaper -->
-    <string name="lockscreen_wallpaper">Custom wallpaper</string>
-    <string name="select_wallpaper">Select wallpaper</string>
-
     <!-- Lock screen notifications -->
     <string name="lockscreen_notifications_title">Notifications</string>
     <string name="lockscreen_notifications">Enable notifications</string>
