@@ -61,22 +61,22 @@
     </Preference>
 
     <!-- Wallpaper -->
-    <!-- <Preference
+    <Preference
         android:id="@+id/wallpaper_settings"
         android:title="@string/wallpaper_settings_title"
         android:icon="@drawable/prd_ic_wallpapers">
         <intent android:targetPackage="com.cyanogenmod.trebuchet"
                 android:targetClass="com.android.launcher3.WallpaperPickerActivity" />
-    </Preference> -->
+    </Preference>
 
     <!-- Lockscreen Wallpaper -->
-    <!-- <Preference
-        android:id="@+id/lockscreen_wallpaper_settings"
+    <Preference
+        android:id="@+idt/lockscreen_wallpaper_settings"
         android:title="@string/lockscreen_wallpaper_settings_title"
         android:icon="@drawable/prd_ic_lockscreen_wallpapers">
         <intent android:targetPackage="com.cyanogenmod.trebuchet"
                 android:targetClass="com.android.launcher3.LockWallpaperPickerActivity" />
-    </Preference> -->
+    </Preference>
 
     <!-- Boot Animations -->
     <Preference
