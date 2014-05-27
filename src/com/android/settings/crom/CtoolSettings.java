@@ -176,7 +176,7 @@ public class CtoolSettings extends SettingsPreferenceFragment implements ActionB
                     getString(R.string.crom_settings_title),
                     getString(R.string.interface_settings_title),
                     getString(R.string.statusbar_settings_title),
-                    getString(R.string.lockscreen_settings_title)
+                    getString(R.string.lockscreen_settings_title),
                     getString(R.string.notification_drawer_title),
                     getString(R.string.pie_control_title),
                     getString(R.string.navigation_settings_title)};
