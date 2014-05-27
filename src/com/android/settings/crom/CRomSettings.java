@@ -26,10 +26,10 @@ import android.preference.PreferenceScreen;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-public class CtoolSettings extends SettingsPreferenceFragment
+public class CRomSettings extends SettingsPreferenceFragment
         implements OnSharedPreferenceChangeListener {
 
-    private static final String TAG = "CtoolSettings";
+    private static final String TAG = "CRomSettings";
 
     private static final String CROMOTA_START = "crom_ota_start";
 
