@@ -87,7 +87,6 @@ import com.android.settings.nfc.PaymentSettings;
 import com.android.settings.print.PrintJobSettingsFragment;
 import com.android.settings.print.PrintServiceSettingsFragment;
 import com.android.settings.print.PrintSettingsFragment;
-import com.android.settings.crom.BatteryIconStyle;
 import com.android.settings.crom.blacklist.BlacklistSettings;
 import com.android.settings.crom.DisplayRotation;
 import com.android.settings.crom.quicksettings.QuickSettingsTiles;
@@ -377,7 +376,6 @@ public class Settings extends PreferenceActivity
         BlacklistSettings.class.getName(),
         QuietHours.class.getName(),
         QuickSettingsTiles.class.getName(),
-        BatteryIconStyle.class.getName(),
         DisplayRotation.class.getName(),
         ApnSettings.class.getName(),
         ShakeEvents.class.getName(),
@@ -1204,7 +1202,6 @@ public class Settings extends PreferenceActivity
     public static class BlacklistSettingsActivity extends Settings { /* empty */ }
     public static class QuietHoursSettingsActivity extends Settings { /* empty */ }
     public static class QuickSettingsTilesSettingsActivity extends Settings { /* empty */ }
-    public static class BatteryIconStyleSettingsActivity extends Settings { /* empty */ }
     public static class DisplayRotationSettingsActivity extends Settings { /* empty */ }
     public static class ShakeEventsSettingsActivity extends Settings { /* empty */ }
     public static class ProfilesSettingsActivity extends Settings { /* empty */ }
