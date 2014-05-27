@@ -52,7 +52,7 @@ public class CtoolSettings extends SettingsPreferenceFragment implements ActionB
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         mContainer = container;
         final ActionBar actionBar = getActivity().getActionBar();
-        actionBar.setIcon(R.drawable.ic_settings_system);
+        actionBar.setIcon(R.drawable.ic_settings_crom_tools);
    
         View view = inflater.inflate(R.layout.ctool_settings, container, false);
         mViewPager = (ViewPager) view.findViewById(R.id.viewPager);
@@ -83,7 +83,7 @@ public class CtoolSettings extends SettingsPreferenceFragment implements ActionB
 
         ActionBar.Tab notifdrawerTab = actionBar.newTab();
         notifdrawerTab.setText("Notification Drawer");
-        notifdrawer.setTabListener(this);
+        notifdrawerTab.setTabListener(this);
 
         ActionBar.Tab piecontrolTab = actionBar.newTab();
         piecontrolTab.setText("PIE");
