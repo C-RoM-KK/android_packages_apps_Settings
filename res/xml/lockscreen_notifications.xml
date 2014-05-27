@@ -20,7 +20,8 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <PreferenceCategory
-        android:title="@string/general" >
+        android:key="general_category"
+        android:title="@string/general_category_title">
 
         <CheckBoxPreference
             android:key="lockscreen_notifications"
@@ -36,7 +37,7 @@
         <CheckBoxPreference
             android:key="show_always"
             android:title="@string/show_always"
-            android:dependency="pocket_mode"
+            android:dependency="lockscreen_notifications"
             android:summary="@string/show_always_summary" />
 
         <CheckBoxPreference
@@ -73,7 +74,8 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="@string/layout" >
+        android:key="advanced_category"
+        android:title="@string/advanced_category_title">
 
         <SeekBarPreference
             android:key="offset_top"
@@ -97,13 +99,7 @@
 
         <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:key="notification_color"
-            android:title="@string/notification_color"
-            android:dependency="lockscreen_notifications" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="@string/privacy" >
+            android:title="@string/notification_color" />
 
         <CheckBoxPreference
             android:key="privacy_mode"
@@ -122,6 +118,7 @@
             android:title="@string/force_expanded_view"
             android:dependency="lockscreen_notifications"
             android:summary="@string/force_expanded_view_summary" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>

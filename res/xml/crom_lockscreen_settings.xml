@@ -24,32 +24,38 @@
         android:title="@string/general_category_title">
 
         <PreferenceScreen
-            android:key="lock_screen_interface"
-            android:title="@string/lock_screen_interface_title"
-            android:summary="@string/lock_screen_interface_summary"
+            android:key="lockscreen_buttons"
+            android:title="@string/lockscreen_buttons_title"
+            android:summary="@string/lockscreen_buttons_summary"
+            android:fragment="com.android.settings.crom.LockscreenButtons" />
+
+        <PreferenceScreen
+            android:key="lockscreen_interface"
+            android:title="@string/lockscreen_interface_title"
+            android:summary="@string/lockscreen_interface_summary"
             android:fragment="com.android.settings.crom.LockscreenInterface" />
 
         <PreferenceScreen
-            android:key="lock_screen_notifications"
-            android:title="@string/lock_screen_notifications_title"
-            android:summary="@string/lock_screen_notifications_summary"
+            android:key="lockscreen_notifications"
+            android:title="@string/lockscreen_notifications_title"
+            android:summary="@string/lockscreen_notifications_summary"
             android:fragment="com.android.settings.crom.LockscreenNotifications" />
 
-    <PreferenceScreen
-        android:id="@+id/active_display"
-        android:title="@string/active_display_title"
-        android:fragment="com.android.settings.crom.ActiveDisplaySettings" />
+        <PreferenceScreen
+            android:id="@+id/active_display"
+            android:title="@string/active_display_title"
+            android:fragment="com.android.settings.crom.ActiveDisplaySettings" />
 
         <PreferenceScreen
-            android:key="lock_screen_style"
-            android:title="@string/lock_screen_style_title"
-            android:summary="@string/lock_screen_style_summary"
+            android:key="lockscreen_style"
+            android:title="@string/lockscreen_style_title"
+            android:summary="@string/lockscreen_style_summary"
             android:fragment="com.android.settings.crom.LockscreenStyle" />
 
         <PreferenceScreen
-            android:key="lock_screen_widgets"
-            android:title="@string/lock_screen_widgets_title"
-            android:summary="@string/lock_screen_widgets_summary"
+            android:key="lockscreen_widgets"
+            android:title="@string/lockscreen_widgets_title"
+            android:summary="@string/lockscreen_widgets_summary"
             android:fragment="com.android.settings.crom.LockscreenWidgets" />
 
     </PreferenceCategory>
@@ -68,16 +74,16 @@
             android:title="@string/lockscreen_battery_status_title"
             android:summary="@string/lockscreen_battery_status_summary" />
 
+        <CheckBoxPreference
+            android:key="lock_before_unlock"
+            android:title="@string/lock_before_unlock_title"
+            android:summary="@string/lock_before_unlock_summary" />
+
         <ListPreference
             android:key="lockscreen_rotation"
             android:title="@string/lockscreen_rotation_title"
             android:entries="@array/lockscreen_rotation_entries"
             android:entryValues="@array/lockscreen_rotation_values" />
-
-        <CheckBoxPreference
-            android:key="lock_before_unlock"
-            android:title="@string/lock_before_unlock_title"
-            android:summary="@string/lock_before_unlock_summary" />
 
         <CheckBoxPreference
             android:key="menu_unlock"
@@ -88,6 +94,19 @@
             android:key="quick_unlock_control"
             android:title="@string/unlock_quick_unlock_control_title"
             android:summary="@string/unlock_quick_unlock_control_summary" />
+
+        <CheckBoxPreference
+            android:key="shake_to_secure"
+            android:title="@string/shake_to_secure_title"
+            android:summary="@string/shake_to_secure_summary" />
+
+        <ListPreference
+            android:key="shake_auto_timeout"
+            android:title="@string/shake_secure_timeout_title"
+            android:dependency="shake_to_secure"
+            android:entries="@array/shake_secure_timeout_entries"
+            android:entryValues="@array/shake_secure_timeout_values"
+            android:persistent="false"/>
 
     </PreferenceCategory>
 
