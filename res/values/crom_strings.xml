@@ -2403,5 +2403,11 @@ device needs to be rebooted for the setting to take effect.</string>
     <string name="force_dualpanel_summary">Force showing the settings in dual panel style</string>
 
     <string name="additional_settings">Additional</string>
+
+    <!-- Protected Apps -->
+    <string name="menu_hidden_apps_delete">Reset</string>
+    <string name="menu_hidden_apps_reset_lock">Reset pattern lock</string>
+    <string name="protected_apps">Protected apps</string>
+    <string name="saving_protected_components">Saving component state</string>
 	
 </resources>
