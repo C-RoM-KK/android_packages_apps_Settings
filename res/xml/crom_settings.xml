@@ -35,4 +35,50 @@
         android:title="@string/crom_ota_settings_title"
         android:icon="@drawable/ic_crom_ota" />
 
+    <PreferenceCategory
+        android:title="@string/interface_category">
+
+    <!-- INTERFACE -->
+    <PreferenceScreen
+        android:id="@+id/interface_settings"
+        android:title="@string/interface_settings_title"
+        android:fragment="com.android.settings.crom.InterfaceTab"
+        android:icon="@drawable/ic_settings_interface" />
+
+    <!-- STATUSBAR -->
+    <PreferenceScreen
+        android:id="@+id/statusbar_settings"
+        android:title="@string/statusbar_settings_title"
+        android:fragment="com.android.settings.crom.SbSettings"
+        android:icon="@drawable/ic_crom_statusbar" />
+
+    <!-- Lock screen -->
+    <PreferenceScreen
+        android:id="@+id/lockscreen_settings"
+        android:title="@string/lockscreen_settings_title"
+        android:fragment="com.android.settings.crom.LockscreenTab"
+        android:icon="@drawable/ic_crom_lockscreen" />
+
+    <!-- PIE -->
+    <PreferenceScreen
+        android:id="@+id/pie_control"
+	android:title="@string/pie_control_title"
+        android:fragment="com.android.settings.crom.PieTab"
+        android:icon="@drawable/ic_crom_pie_control" />
+
+    </PreferenceCategory>
+
+    <!-- Advanced -->
+    <PreferenceCategory
+        android:title="@string/advanced_category_title">
+
+    <!-- Notification drawer -->
+    <PreferenceScreen
+        android:id="@+id/navigation_settings"
+        android:icon="@drawable/ic_settings_navigation"
+        android:title="@string/navigation_settings_title"
+        android:fragment="com.android.settings.crom.NavbarTab" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>

@@ -66,7 +66,7 @@
         android:id="@+id/crom_tools"
         android:icon="@drawable/ic_settings_crom_tools"
         android:title="@string/crom_tools_title"
-        android:fragment="com.android.settings.crom.CtoolSettings" />
+        android:fragment="com.android.settings.crom.CRomSettings" />
 
     <!-- Theme settings -->
     <header

@@ -23,24 +23,6 @@
         android:key="general_category"
         android:title="@string/general_category_title">
 
-        <PreferenceScreen
-            android:key="lockscreen_buttons"
-            android:title="@string/lockscreen_buttons_title"
-            android:summary="@string/lockscreen_buttons_summary"
-            android:fragment="com.android.settings.crom.LockscreenButtons" />
-
-        <PreferenceScreen
-            android:key="lockscreen_interface"
-            android:title="@string/lockscreen_interface_title"
-            android:summary="@string/lockscreen_interface_summary"
-            android:fragment="com.android.settings.crom.LockscreenInterface" />
-
-        <PreferenceScreen
-            android:key="lockscreen_notifications"
-            android:title="@string/lockscreen_notifications_title"
-            android:summary="@string/lockscreen_notifications_summary"
-            android:fragment="com.android.settings.crom.LockscreenNotifications" />
-
         <CheckBoxPreference
             android:key="notification_peek"
             android:title="@string/notification_peek_title"
@@ -55,21 +37,10 @@
             android:dependency="notification_peek" />
 
         <PreferenceScreen
-            android:id="@+id/active_display"
-            android:title="@string/active_display_title"
-            android:fragment="com.android.settings.crom.ActiveDisplaySettings" />
-
-        <PreferenceScreen
             android:key="lockscreen_style"
             android:title="@string/lockscreen_style_title"
             android:summary="@string/lockscreen_style_summary"
             android:fragment="com.android.settings.crom.LockscreenStyle" />
-
-        <PreferenceScreen
-            android:key="lockscreen_widgets"
-            android:title="@string/lockscreen_widgets_title"
-            android:summary="@string/lockscreen_widgets_summary"
-            android:fragment="com.android.settings.crom.LockscreenWidgets" />
 
     </PreferenceCategory>
 

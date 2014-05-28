@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2013 Slimroms
+<!-- Copyright (C) 2014 C-RoM
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -40,21 +40,9 @@
         android:fragment="com.android.settings.crom.gestureanywhere.GestureAnywhereSettings" />
 
     <PreferenceScreen
-        android:key="recent_panel"
-        android:title="@string/recent_panel_title"
-        android:summary="@string/recent_panel_summary"
-        android:fragment="com.android.settings.crom.RecentPanelSettings" />
-
-    <PreferenceScreen
         android:id="@+id/animations"
         android:title="@string/title_animation_controls"
         android:summary="@string/header_summary_animation"
         android:fragment="com.android.settings.crom.fragments.AnimationControls" />
-
-    <PreferenceScreen
-        android:key="shake_events"
-        android:title="@string/shake_events_title"
-        android:summary="@string/shake_events_summary"
-        android:fragment="com.android.settings.crom.ShakeEvents" />
 
 </PreferenceScreen>
