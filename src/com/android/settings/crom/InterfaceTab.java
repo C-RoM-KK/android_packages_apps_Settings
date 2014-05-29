@@ -35,8 +35,6 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
-import com.android.internal.util.slim.DeviceUtils;
-
 import com.android.settings.crom.InterfaceSettings;
 import com.android.settings.crom.RecentPanelSettings;
 import com.android.settings.crom.ShakeEvents;
