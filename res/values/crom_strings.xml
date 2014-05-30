@@ -1941,6 +1941,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="toast_Translucent_animation">Translucent Animation</string>
 
     <!-- Scrolling Animation Controls -->
+    <string name="animation_settings_reset_message">Reset all animation settings to default?</string>
     <string name="scrolling_title">Scrolling modifiers</string>
     <string name="scrolling_summary">View or change scrolling animations</string>
     <string name="animation_fling_velocity_title">Fling velocity</string>
