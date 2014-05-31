@@ -35,7 +35,7 @@ import static com.android.internal.util.slim.QSConstants.TILE_EXPANDEDDESKTOP;
 import static com.android.internal.util.slim.QSConstants.TILE_FCHARGE;
 import static com.android.internal.util.slim.QSConstants.TILE_IMESWITCHER;
 import static com.android.internal.util.slim.QSConstants.TILE_LOCATION;
-import static com.android.internal.util.mahdi.QSConstants.TILE_COMPASS;
+import static com.android.internal.util.slim.QSConstants.TILE_COMPASS;
 import static com.android.internal.util.slim.QSConstants.TILE_LOCKSCREEN;
 import static com.android.internal.util.slim.QSConstants.TILE_LTE;
 import static com.android.internal.util.slim.QSConstants.TILE_MOBILEDATA;
