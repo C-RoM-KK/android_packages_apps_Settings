@@ -36,6 +36,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
 import com.android.settings.crom.NavigationSettings;
+import com.android.settings.crom.HardwareKeysSettings;
 
 import java.lang.Exception;
 import java.util.ArrayList;
@@ -90,6 +91,7 @@ public class NavbarTab extends SettingsPreferenceFragment {
         public NavigationAdapter(FragmentManager fm) {
             super(fm);
             frags[0] = new NavigationSettings();
+            frags[1] = new HardwareKeysSettings();
         }
 
         @Override
@@ -111,7 +113,8 @@ public class NavbarTab extends SettingsPreferenceFragment {
     private String[] getTitles() {
         String titleString[];
         titleString = new String[]{
-                    getString(R.string.navigation_settings_title)};
+                    getString(R.string.navigation_settings_title),
+                    getString(R.string.button_keys_title)};
         return titleString;
     }
 }
