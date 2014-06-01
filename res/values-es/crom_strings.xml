@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2012-2013 SlimRoms Project
+<!-- Copyright (C) 2014 C-RoM Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -30,15 +30,14 @@
     <!-- Settings main menu category heading. Rom (Launcher, Themes, System). [CHAR LIMIT=40] -->
     <string name="header_category_rom_settings">Opciones avanzadas</string>
 
-    <!-- Slim settings screens -->
+    <!-- C-RoM settings screens -->
     <string name="interface_settings_title">Interfaz</string>
     <string name="navigation_settings_title">Navegación</string>
-    <string name="slim_center_title">SlimCenter</string>
     <!-- Advanced, Device specific (DeviceParts) settings  -->
     <string name="device_settings_title">Dispositivo</string>
 
-    <!-- Slim Shortcuts -->
-    <string name="slim_shortcut_picker">Acciones Slim</string>
+    <!-- C-RoM Shortcuts -->
+    <string name="crom_shortcut_picker">Acciones C-RoM</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Selector de color</string>
@@ -49,9 +48,9 @@
     <string name="hex_hint">#ff000000</string>
     <string name="set">Establecer</string>
 
-    <!-- About phone screen, slim version -->
-    <string name="slim_version_title">Versión Slim</string>
-    <string name="slim_version_default">Desconocido</string>
+    <!-- About phone screen, C-RoM version -->
+    <string name="mod_version_title">Versión C-RoM</string>
+    <string name="mod_version_default">Desconocido</string>
 
     <!-- Display settings screen, notification light settings -->
     <string name="display_category_light_options_title">Opciones del Led</string>
@@ -752,7 +751,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="lockscreen_style_reset_message">¿Restablecer todos los colores de la pantalla de bloqueo?</string>
     <string name="lockscreen_icon_title">Icono de desbloqueo</string>
     <string name="lockscreen_lock_icon_custom">Icono personalizado</string>
-    <string name="lockscreen_lock_icon_slim">Icono Slim</string>
+    <string name="lockscreen_lock_icon_crom">Icono C-RoM</string>
     <string name="lockscreen_lock_icon_default">Icono predeterminado</string>
     <string name="lockscreen_colorize_handle_title">Color personalizado</string>
     <string name="lockscreen_colorize_handle_summary">El color se aplicará al anillo de desbloqueo</string>
@@ -980,7 +979,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="stylus_icon_enabled_summary">Muestra un icono mientras se está usando el stylus</string>
 
     <!-- Themes -->
-    <string name="theme_settings_title">The real dark slim</string>
+    <string name="theme_settings_title">Dark C-RoM</string>
     <string name="theme_auto_mode_title">Cambiar tema</string>
     <string name="theme_auto_mode_off">Manual</string>
     <string name="theme_auto_mode_lightsensor">Al cambuir las condiciones de luz</string>
@@ -1115,7 +1114,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="usb_mass_storage_summary">Habilitar almacenamiento USB</string>
 
     <!-- Pie Control -->
-    <string name="pie_control_title">SlimPIE</string>
+    <string name="pie_control_title">PIE</string>
     <string name="pie_control_summary">Habilitar controles PIE</string>
     <string name="pie_control_size">Tamaño de controles</string>
     <string name="pie_control_trigger_positions">Opciones del lanzador</string>
