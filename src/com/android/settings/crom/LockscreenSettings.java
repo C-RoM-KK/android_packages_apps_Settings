@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 The C-RoM Project
+ * Copyright (C) 2013 The C-RoM Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,8 +55,6 @@ public class LockscreenSettings extends SettingsPreferenceFragment
     private static final String KEY_LOCK_BEFORE_UNLOCK = "lock_before_unlock";
     private static final String KEY_QUICK_UNLOCK_CONTROL = "quick_unlock_control";
     private static final String KEY_MENU_UNLOCK_PREF = "menu_unlock";
-    private static final String KEY_SHAKE_TO_SECURE = "shake_to_secure";
-    private static final String KEY_SHAKE_AUTO_TIMEOUT = "shake_auto_timeout";
     private static final String KEY_NOTIFICATION_PEEK = "notification_peek";
     private static final String KEY_PEEK_PICKUP_TIMEOUT = "peek_pickup_timeout";
 
@@ -70,8 +68,6 @@ public class LockscreenSettings extends SettingsPreferenceFragment
     private CheckBoxPreference mLockBeforeUnlock;
     private CheckBoxPreference mLockQuickUnlock;
     private CheckBoxPreference mMenuUnlock;
-    private CheckBoxPreference mShakeToSecure;
-    private ListPreference mShakeTimer;
     private CheckBoxPreference mNotificationPeek;
     private ListPreference mPeekPickupTimeout;
 
@@ -101,25 +97,6 @@ public class LockscreenSettings extends SettingsPreferenceFragment
             mLockBeforeUnlock.setChecked(Settings.Secure.getInt(getContentResolver(),
                     Settings.Secure.LOCK_BEFORE_UNLOCK, 0) == 1);
             mLockBeforeUnlock.setOnPreferenceChangeListener(this);
-        }
-
-        mShakeToSecure = (CheckBoxPreference) prefs
-                .findPreference(KEY_SHAKE_TO_SECURE);
-        if (mShakeToSecure != null) {
-            mShakeToSecure.setChecked(Settings.Secure.getInt(getContentResolver(),
-                    Settings.Secure.LOCK_SHAKE_TEMP_SECURE, 0) == 1);
-            mShakeToSecure.setOnPreferenceChangeListener(this);
-        }
-
-        mShakeTimer = (ListPreference) prefs
-                .findPreference(KEY_SHAKE_AUTO_TIMEOUT);
-        if (mShakeTimer != null) {
-            long shakeTimer = Settings.Secure.getLongForUser(getContentResolver(),
-                    Settings.Secure.LOCK_SHAKE_SECURE_TIMER, 0,
-                    UserHandle.USER_CURRENT);
-            mShakeTimer.setValue(String.valueOf(shakeTimer));
-            updateShakeTimerPreferenceSummary();
-            mShakeTimer.setOnPreferenceChangeListener(this);
         }
 
         mLockQuickUnlock = (CheckBoxPreference) prefs
@@ -235,23 +212,6 @@ public class LockscreenSettings extends SettingsPreferenceFragment
         mPeekPickupTimeout.setOnPreferenceChangeListener(this);
     }
 
-    private void updateShakeTimerPreferenceSummary() {
-        // Update summary message with current value
-        long shakeTimer = Settings.Secure.getLongForUser(getContentResolver(),
-                Settings.Secure.LOCK_SHAKE_SECURE_TIMER, 0,
-                UserHandle.USER_CURRENT);
-        final CharSequence[] entries = mShakeTimer.getEntries();
-        final CharSequence[] values = mShakeTimer.getEntryValues();
-        int best = 0;
-        for (int i = 0; i < values.length; i++) {
-            long timeout = Long.valueOf(values[i].toString());
-            if (shakeTimer >= timeout) {
-                best = i;
-            }
-        }
-        mShakeTimer.setSummary(entries[best]);
-    }
-
     private void updatePeekCheckbox() {
         boolean enabled = Settings.System.getInt(getContentResolver(),
                 Settings.System.PEEK_STATE, 0) == 1;
@@ -272,18 +232,6 @@ public class LockscreenSettings extends SettingsPreferenceFragment
             Settings.Secure.putInt(getContentResolver(),
                     Settings.Secure.LOCK_BEFORE_UNLOCK,
                     ((Boolean) value) ? 1 : 0);
-        } else if (preference == mShakeToSecure) {
-            Settings.Secure.putInt(getContentResolver(),
-                    Settings.Secure.LOCK_SHAKE_TEMP_SECURE, 0);
-        } else if (preference == mShakeTimer) {
-            int shakeTime = Integer.parseInt((String) value);
-            try {
-                Settings.Secure.putInt(getContentResolver(),
-                        Settings.Secure.LOCK_SHAKE_SECURE_TIMER, shakeTime);
-            } catch (NumberFormatException e) {
-                Log.e("LockscreenSettings", "could not persist lockAfter timeout setting", e);
-            }
-            updateShakeTimerPreferenceSummary();
         } else if (preference == mBatteryStatus) {
             Settings.System.putInt(getContentResolver(),
                     Settings.System.LOCKSCREEN_ALWAYS_SHOW_BATTERY,
