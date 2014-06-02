@@ -1781,8 +1781,12 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="custom_recent_title">Switch recent styles</string>
     <string name="custom_recent_summary">Tick to slim recent or untick for stock recent</string>
 
+    <!-- Animation Tabs -->
+    <string name="animations_tab_title">Animation Options</string>
+    <string name="animation_tab_summary">Animations Tab</string>
+
     <!-- Animation Controls -->
-    <string name="title_animation_controls">AOKP Custom System Animations</string>
+    <string name="title_animation_controls">System Animations</string>
     <string name="activity_open_title">Activity Open Animation</string>
     <string name="activity_close_title">Activity Close Animation</string>
     <string name="task_open_title">Task Open Animation</string>
@@ -2135,5 +2139,11 @@ device needs to be rebooted for the setting to take effect.</string>
     <string name="progressbar_reset">Reset</string>
     <string name="progressbar_button_reset">Reset colors</string>
     <string name="progressbar_reset_message">Reset progress bar style to default?</string>
+    <string name="progressbar_interpolator">Interpolator</string>
+    <string name="progressbar_none">None</string>
+    <string name="progressbar_acclerate">Accelerate</string>
+    <string name="progressbar_linear">Linear</string>
+    <string name="progressbar_acceleratedecelerate">AccelerateDecelerate</string>
+    <string name="progressbar_decelerate">Decelerate</string>
 
 </resources>
