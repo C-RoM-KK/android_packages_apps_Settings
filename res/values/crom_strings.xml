@@ -2103,8 +2103,8 @@ device needs to be rebooted for the setting to take effect.</string>
     <string name="battery_saver_network_cdma_title">CDMA Networks</string>
     <string name="battery_saver_system_title">System options</string>
 
-    <!-- Battery options -->
-    <string name="battery_tab">Battery saver</string>
+    <!-- wakelock options -->
+    <string name="wakelock_tab">Wakelock blocker</string>
 
     <!-- Wakelock blocker -->
     <string name="wakelock_blocker">Wakelock blocker</string>

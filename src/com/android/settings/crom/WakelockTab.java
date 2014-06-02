@@ -35,13 +35,12 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
-import com.android.settings.crom.BatterySaverSettings;
 import com.android.settings.crom.WakeLockBlocker;
 
 import java.lang.Exception;
 import java.util.ArrayList;
 
-public class BatteryTab extends SettingsPreferenceFragment {
+public class WakelockTab extends SettingsPreferenceFragment {
 
     private static final String TAG = "Battery_Category";
 
@@ -90,8 +89,7 @@ public class BatteryTab extends SettingsPreferenceFragment {
 
         public NavigationAdapter(FragmentManager fm) {
             super(fm);
-            frags[0] = new BatterySaverSettings();
-            frags[1] = new WakeLockBlocker();
+            frags[0] = new WakeLockBlocker();
         }
 
         @Override
@@ -113,7 +111,6 @@ public class BatteryTab extends SettingsPreferenceFragment {
     private String[] getTitles() {
         String titleString[];
         titleString = new String[]{
-                    getString(R.string.battery_saver_title),
                     getString(R.string.wakelock_blocker)};
         return titleString;
     }
