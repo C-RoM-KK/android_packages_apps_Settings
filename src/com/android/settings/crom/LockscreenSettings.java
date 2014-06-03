@@ -40,7 +40,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.util.slim.DeviceUtils;
 
 public class LockscreenSettings extends SettingsPreferenceFragment
-    implements OnPreferenceChangeListener {
+        implements OnPreferenceChangeListener {
 
     private static final String TAG = "LockscreenSettings";
 
@@ -188,14 +188,6 @@ public class LockscreenSettings extends SettingsPreferenceFragment
                 mMenuUnlock.setChecked(settingsEnabled);
                 mMenuUnlock.setOnPreferenceChangeListener(this);
             }
-        }
-
-        PreferenceScreen lockButtons = (PreferenceScreen) prefs
-                .findPreference(KEY_LOCKSCREEN_BUTTONS);
-        boolean hasButtons = (getResources().getInteger(
-                com.android.internal.R.integer.config_deviceHardwareKeys) > 0);
-        if (!hasButtons) {
-            generalCategory.removePreference(lockButtons);
         }
 
         mNotificationPeek = (CheckBoxPreference) prefs
