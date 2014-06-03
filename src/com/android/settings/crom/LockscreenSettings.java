@@ -40,7 +40,7 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.internal.util.slim.DeviceUtils;
 
 public class LockscreenSettings extends SettingsPreferenceFragment
-        implements OnPreferenceChangeListener {
+    implements OnPreferenceChangeListener {
 
     private static final String TAG = "LockscreenSettings";
 
