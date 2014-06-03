@@ -55,7 +55,7 @@ public class LockscreenSettings extends SettingsPreferenceFragment
     private static final String KEY_LOCK_BEFORE_UNLOCK = "lock_before_unlock";
     private static final String KEY_QUICK_UNLOCK_CONTROL = "quick_unlock_control";
     private static final String KEY_MENU_UNLOCK_PREF = "menu_unlock";
-    private static final String KEY_NOTIFICATION_PEEK = "notification_peek";
+    private static final String KEY_PEEK = "notification_peek";
     private static final String KEY_PEEK_PICKUP_TIMEOUT = "peek_pickup_timeout";
 
     private PackageManager mPM;
@@ -190,8 +190,7 @@ public class LockscreenSettings extends SettingsPreferenceFragment
             }
         }
 
-        mNotificationPeek = (CheckBoxPreference) prefs
-                .findPreference(KEY_NOTIFICATION_PEEK);
+        mNotificationPeek = (CheckBoxPreference) findPreference(KEY_PEEK);
         mNotificationPeek.setPersistent(false);
 
         updatePeekCheckbox();
