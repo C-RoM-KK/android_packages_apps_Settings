@@ -212,11 +212,7 @@ public final class BluetoothDevicePreference extends Preference implements
                 if (which == OK_BUTTON) {
                     mCachedDevice.disconnect();
                 }
-                try {
-                    mContext.unregisterReceiver(mBluetoothReceiver);
-                } catch(IllegalArgumentException e) {
-                    Log.e(TAG, "mBluetoothReceiver already unregistered");
-                }
+                mContext.unregisterReceiver(mBluetoothReceiver);
             }
         };
 
