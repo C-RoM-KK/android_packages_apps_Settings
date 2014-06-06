@@ -52,7 +52,7 @@
 
     <!-- Advanced settings -->
     <string name="active_display_title">Affichage actif</string>
-    <string name="notification_drawer_title">Panneau de notifications</string>
+	<string name="notification_drawer_title">Panneau de notifications</string>
     <string name="pie_control_title">PIE</string>
 
     <!-- C-ROM OTA -->
@@ -288,7 +288,13 @@
     <!-- Shake to secure -->
     <string name="shake_to_secure_title">Secouer pour sécuriser</string>
     <string name="shake_to_secure_summary">La sécurité sera désactivée après chaque déverrouillage</string>
+    <string name="shake_to_secure_dlg_title">Attention:</string>
+    <string name="shake_to_secure_dlg_message">Votre appareil sera non sécurisé jusqu\'à ce que vous le secouiez volontairement pour verrouiller temporairement . Une fois sécurisé: si votre appareil est débloqué, il deviendra non sécurisé jusqu\'à ce que vous le secouiez de nouveau.</string>
     <string name="shake_secure_timeout_title">Re-sécuriser automatiquement</string>
+    <string name="shake_all">Secouer dans toutes les directions</string>
+    <string name="shake_horizontal">Secouer horizontalement</string>
+    <string name="shake_vertical">Secouer verticalement</string>
+    <string name="shake_back_forth">Secouer par un va et vient</string>
     <string name="shake_secure_timeout_disabled">ne jamais sécuriser automatiquement</string>
     <string name="shake_secure_timeout_1min">1 minute après que l\écran soit éteint</string>
     <string name="shake_secure_timeout_5min">5 minutes après que l\écran soit éteint</string>
@@ -374,7 +380,11 @@
     <string name="wifi_setting_countrycode_disabled">Activer le WI-FI pour changer cette option.</string>
     <!-- WiFi forget all networks -->
     <string name="wifi_menu_forget_all">Oublier tous les réseaux</string>
-
+    <!-- Wi-Fi SSID string limits -->
+    <string name="wifi_ssid_input_limit">Le SSID est supérieur à la longueur maximale</string>
+    <!-- Wi-Fi P2P string limits -->
+    <string name="p2p_device_name_input_limit">Le nom P2P est supérieur à la longueur maximale</string>
+	
     <!-- Status bar -->
     <string name="status_bar_title">Barre d\'état</string>
     <string name="status_bar_style_title">Style</string>
@@ -1160,6 +1170,7 @@ deux afin d\'insérer des points de commande supplémentaires. \'Supprimer\' Eff
 
     <!-- Hardware keys -->
     <string name="button_keys_title">Boutons physiques</string>
+    <string name="button_keys_summary">Activer pour les appareils avec touches physiques</string>
     <string name="keys_bindings_title">Fonctions des touches</string>
     <string name="keys_enable_custom_title">Activer des fonctions personnalisées</string>
     <string name="keys_enable_custom_summary">Activer des fonctions personnalisées pour les boutons physiques</string>
@@ -1708,7 +1719,7 @@ deux afin d\'insérer des points de commande supplémentaires. \'Supprimer\' Eff
     <string name="show_network_traffic_1000">1000 ms</string>
     <string name="show_network_traffic_1500">1500 ms</string>
     <string name="show_network_traffic_2000">2000 ms</string>
-
+    
     <!-- Lock Gesture settings -->
     <string name="lockgesture_change_lock_pattern_label">Changer le signe de déverrouillage</string>
     <string name="lockgesture_change_lock_pin_label">Modifier le code PIN de déverrouillage</string>
@@ -1935,7 +1946,7 @@ deux afin d\'insérer des points de commande supplémentaires. \'Supprimer\' Eff
 
     <!-- Font size sample text -->
     <string name="font_size_sample">Exemple</string>
-
+    
     <!-- Toast Animations -->
     <string name="toast_animation_title">Animation Toast</string>
     <string name="toast_none_animation">Sans</string>
@@ -2024,7 +2035,7 @@ deux afin d\'insérer des points de commande supplémentaires. \'Supprimer\' Eff
     <string name="app_moving_reboot_title">Redémarrer maintenant?</string>
     <string name="app_moving_reboot_enabled_desc">Le déplacement d\'applications a été active avec succès.\n\nL\'appareil 
 doit être redémarré pour une prise en compte du changement.</string>
-    <string name="app_moving_reboot_disabled_desc">Le déplacement d\'applications a été désactivé avec succès.\n\nL\'appareil 
+    <string name="app_moving_reboot_disabled_desc">Le déplacement d\'applications a été désactivé avec succès.\n\nL\'appareil
 doit être redémarré pour une prise en compte du changement.</string>
     <string name="app_moving_reboot_now_button">Redémarrer maintenant</string>
     <string name="app_moving_reboot_later_button">Redémarrer après</string>
@@ -2103,8 +2114,8 @@ doit être redémarré pour une prise en compte du changement.</string>
     <string name="battery_saver_network_cdma_title">Réseau CDMA</string>
     <string name="battery_saver_system_title">Options systèmes</string>
 
-    <!-- Battery options -->
-    <string name="battery_tab">Économie batterie</string>
+    <!-- wakelock options -->
+    <string name="wakelock_tab">Bloqueur de programme résident</string>
 
     <!-- Wakelock blocker -->
     <string name="wakelock_blocker">Bloqueur de programme résident</string>
