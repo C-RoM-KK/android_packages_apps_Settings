@@ -1017,7 +1017,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="title_tile_custom">Custom</string>
     <string name="title_tile_sleep">Go to sleep</string>
     <string name="title_tile_location">Location</string>
-    <string name="title_tile_compass">Compass</string>
     <string name="title_tile_torch">Torch</string>
     <string name="title_tile_lockscreen">Lock screen</string>
     <string name="title_tile_lte">LTE</string>
