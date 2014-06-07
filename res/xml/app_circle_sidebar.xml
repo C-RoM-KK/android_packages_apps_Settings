@@ -31,6 +31,4 @@
         android:summary="@string/app_circle_bar_included_apps_summary"
         android:dependency="enable_app_circle_bar" />
 
-    </PreferenceCategory>
-
 </PreferenceScreen>
