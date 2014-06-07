@@ -71,8 +71,6 @@ import com.android.internal.telephony.Phone;
 import com.android.internal.util.slim.DeviceUtils;
 import com.android.settings.R;
 
-import com.android.internal.util.cm.QSUtils;
-
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
