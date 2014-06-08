@@ -94,6 +94,9 @@
     <string name="mod_version_title">C-RoM version</string>
     <string name="mod_version_default">Unknown</string>
 
+    <!-- Performance settings -->
+    <string name="performance_settings_title">Performance</string>
+
     <!-- Lockscreen Options -->
 
     <!-- Lock screen settings -->
