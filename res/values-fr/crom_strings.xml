@@ -2228,7 +2228,7 @@ doit être redémarré pour une prise en compte du changement.</string>
     <string name="pt_backup_app_mem">App mem sauvegarde</string>
     <string name="pt_home_app_mem">App mem Acceuil</string>
     <string name="pt_hidden_app_mem">App mem cachées</string>
-    <string name="pt_empty_app_mem">App mem videstring>
+    <string name="pt_empty_app_mem">App mem vide</string>
     <string name="pt_read_ahead_kb">Lire la valeur de tête</string>
     <string name="pt_minfree_values">Valeurs Minfree</string>
     <string name="pt_battery">Activer réglages de la batterie</string>
