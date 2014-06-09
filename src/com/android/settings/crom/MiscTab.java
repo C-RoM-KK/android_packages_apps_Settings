@@ -37,8 +37,8 @@ import com.android.settings.Utils;
 
 import com.android.settings.crom.BatterySaverSettings;
 import com.android.settings.crom.MiscOptions;
-import com.android.settings.crom.WakeLockBlocker;
 import com.android.settings.crom.InitD;
+import com.android.settings.crom.WakeLockBlocker;
 
 import java.lang.Exception;
 import java.util.ArrayList;
@@ -94,8 +94,8 @@ public class MiscTab extends SettingsPreferenceFragment {
             super(fm);
             frags[0] = new BatterySaverSettings();
             frags[1] = new MiscOptions();
-            frags[2] = new WakeLockBlocker();
-            frags[3] = new InitD();
+            frags[2] = new InitD();
+            frags[3] = new WakeLockBlocker();
         }
 
         @Override
@@ -119,8 +119,8 @@ public class MiscTab extends SettingsPreferenceFragment {
         titleString = new String[]{
                     getString(R.string.battery_saver_title),
                     getString(R.string.misc_options_title),
-                    getString(R.string.wakelock_blocker),
-                    getString(R.string.init_d_title)};
+                    getString(R.string.init_d_title),
+                    getString(R.string.wakelock_blocker)};
         return titleString;
     }
 }
