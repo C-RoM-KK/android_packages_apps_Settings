@@ -80,6 +80,13 @@
         android:icon="@drawable/ic_crom_sidebar"
         android:fragment="com.android.settings.crom.SidebarsTab" />
 
+   <!-- Mix Options -->
+   <PreferenceScreen
+        android:id="@+id/mix_options"
+        android:title="@string/mix_tab"
+        android:fragment="com.android.settings.crom.MiscTab"
+        android:icon="@drawable/ic_crom_mix" />
+
     </PreferenceCategory>
 
     <!-- Advanced -->
@@ -103,13 +110,6 @@
             android:targetPackage="org.omnirom.omniswitch"
             android:targetClass="org.omnirom.omniswitch.SettingsActivity" />
     </PreferenceScreen>
-
-    <!-- Mix Options -->
-   <PreferenceScreen
-        android:id="@+id/mix_options"
-        android:title="@string/mix_tab"
-        android:fragment="com.android.settings.crom.MiscTab"
-        android:icon="@drawable/ic_crom_mix" />
 
     </PreferenceCategory>
 

@@ -93,8 +93,9 @@ public class MiscTab extends SettingsPreferenceFragment {
         public NavigationAdapter(FragmentManager fm) {
             super(fm);
             frags[0] = new BatterySaverSettings();
-            frags[1] = new WakeLockBlocker();
-            frags[2] = new InitD();
+            frags[1] = new MiscOptions();
+            frags[2] = new WakeLockBlocker();
+            frags[3] = new InitD();
         }
 
         @Override
