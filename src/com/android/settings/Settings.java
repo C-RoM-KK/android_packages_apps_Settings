@@ -89,6 +89,7 @@ import com.android.settings.nfc.PaymentSettings;
 import com.android.settings.print.PrintJobSettingsFragment;
 import com.android.settings.print.PrintServiceSettingsFragment;
 import com.android.settings.print.PrintSettingsFragment;
+import com.android.settings.cyanogenmod.MoreDeviceSettings;
 import com.android.settings.crom.BatteryIconStyle;
 import com.android.settings.crom.blacklist.BlacklistSettings;
 import com.android.settings.crom.DisplayRotation;
@@ -375,6 +376,7 @@ public class Settings extends PreferenceActivity
         PrintJobSettingsFragment.class.getName(),
         TrustedCredentialsSettings.class.getName(),
         PaymentSettings.class.getName(),
+        MoreDeviceSettings.class.getName(),
         KeyboardLayoutPickerFragment.class.getName(),
         BlacklistSettings.class.getName(),
         QuietHours.class.getName(),
