@@ -26,6 +26,7 @@
     <string name="reset_message">Reset all entries to default?</string>
     <string name="style_title">Style</string>
     <string name="add">Add</string>
+    <string name="note">NOTE</string>
 
     <!-- Category titles -->
     <string name="header_category_crom">Personalization</string>
@@ -211,6 +212,14 @@
     <string name="dynamic_width">Dynamic width</string>
     <string name="dynamic_width_summary">Sets the width of notifications</string>
     <string name="notification_color">Notification background color</string>
+
+    <string name="notifications_on_lockscreen">Notifications on lockscreen</string>
+    <string name="notifications_on_lockscreen_summary">Choose between manners to show pending notifications on lockscreen</string>
+    <string name="notifications_on_lockscreen_warning_summary">Each one of notifications on lockscreen services under (PEEK or/and LOCKSCREEN NOTIFICATIONS) will auto disable the other. Make sure to check when disable one of them if you want to use one of those features again. </string>
+
+    <!--Notification peek-->
+    <string name="notification_peek_title">Notification peek</string>
+    <string name="notification_peek_summary">Show latest notification after picking up your device</string>
 
     <!-- See through -->
     <string name="see_through_title">See through</string>

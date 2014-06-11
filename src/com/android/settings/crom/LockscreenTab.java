@@ -124,7 +124,7 @@ public class LockscreenTab extends SettingsPreferenceFragment {
                     getString(R.string.lockscreen_settings_title),
                     getString(R.string.lockscreen_interface_title),
                     getString(R.string.lockscreen_buttons_title),
-                    getString(R.string.lockscreen_notifications_title),
+                    getString(R.string.notifications_on_lockscreen),
                     getString(R.string.active_display_title),
                     getString(R.string.lockscreen_widgets_title)};
         return titleString;
