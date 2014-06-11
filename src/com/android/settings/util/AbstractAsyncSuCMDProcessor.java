@@ -1,5 +1,5 @@
 
-package com.android.settings.crom.util;
+package com.android.settings.util;
 
 import android.os.AsyncTask;
 
@@ -72,7 +72,7 @@ public abstract class AbstractAsyncSuCMDProcessor extends AsyncTask<String, Void
             for (int i = 0; params.length > i; i++) {
                 // always watch for null and empty strings, lazy devs :/
                 if (params[i] != null && !params[i].trim().equals("")) {
-                    stdout = CMDProcessor.runSuCommand(params[i]).getStdout();
+                    stdout = CMDProcessor2.runSuCommand(params[i]).getStdout();
                 } else {
                     // bail because of careless devs
                     return FAILURE;

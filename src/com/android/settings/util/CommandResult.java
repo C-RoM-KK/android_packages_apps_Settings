@@ -1,4 +1,4 @@
-package com.android.settings.crom.util;
+package com.android.settings.util;
 
 import android.os.Environment;
 import android.os.Parcel;
