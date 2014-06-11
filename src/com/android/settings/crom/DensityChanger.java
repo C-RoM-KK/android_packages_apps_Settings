@@ -41,7 +41,7 @@ import android.widget.EditText;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.settings.crom.util.CMDProcessor;
+import com.android.settings.util.CMDProcessor2;
 import com.android.settings.crom.util.CommandResult;
 import com.android.settings.crom.util.Helpers;
 import com.android.settings.crom.util.AbstractAsyncSuCMDProcessor;
@@ -248,7 +248,7 @@ public class DensityChanger extends SettingsPreferenceFragment implements
 
     private boolean setLcdDensity(int newDensity) {
         Helpers.getMount("rw");
-        if (!CMDProcessor.runSuCommand(
+        if (!CMDProcessor2.runSuCommand(
         "busybox sed -i 's|ro.sf.lcd_density=.*|" + "ro.sf.lcd_density" + "=" + newDensity + "|' " + "/system/build.prop")
         .success()) 
         {
@@ -282,9 +282,9 @@ public class DensityChanger extends SettingsPreferenceFragment implements
             String gms = "/data/data/com.google.android.gms/";
             String gsf = "/data/data/com.google.android.gsf/";
 
-            CommandResult cr = new CMDProcessor().runSuCommand("ls " + vending);
-            CommandResult cr_gms = new CMDProcessor().runSuCommand("ls " + gms);
-            CommandResult cr_gsf = new CMDProcessor().runSuCommand("ls " + gsf);
+            CommandResult cr = new CMDProcessor2().runSuCommand("ls " + vending);
+            CommandResult cr_gms = new CMDProcessor2().runSuCommand("ls " + gms);
+            CommandResult cr_gsf = new CMDProcessor2().runSuCommand("ls " + gsf);
 
             if (cr.stdout == null || cr_gms.stdout == null || cr_gsf.stdout == null)
                 return false;
@@ -293,7 +293,7 @@ public class DensityChanger extends SettingsPreferenceFragment implements
                 if (!dir.equals("lib")) {
                     String c = "rm -r " + vending + dir;
                     // Log.i(TAG, c);
-                    if (!new CMDProcessor().su.runWaitFor(c).success())
+                    if (!new CMDProcessor2().su.runWaitFor(c).success())
                         return false;
                 }
             }
@@ -302,7 +302,7 @@ public class DensityChanger extends SettingsPreferenceFragment implements
                 if (!dir_gms.equals("lib")) {
                     String c_gms = "rm -r " + gms + dir_gms;
                     // Log.i(TAG, c);
-                    if (!new CMDProcessor().su.runWaitFor(c_gms).success())
+                    if (!new CMDProcessor2().su.runWaitFor(c_gms).success())
                         return false;
                 }
             }
@@ -311,7 +311,7 @@ public class DensityChanger extends SettingsPreferenceFragment implements
                 if (!dir_gsf.equals("lib")) {
                     String c_gsf = "rm -r " + gsf + dir_gsf;
                     // Log.i(TAG, c);
-                    if (!new CMDProcessor().su.runWaitFor(c_gsf).success())
+                    if (!new CMDProcessor2().su.runWaitFor(c_gsf).success())
                         return false;
                 }
             }
