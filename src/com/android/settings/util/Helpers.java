@@ -47,7 +47,7 @@ public class Helpers {
             return false; // tell caller to bail...
         }
         try {
-            if (CMDProcessor.runSuCommand("ls /data/app-private").success()) {
+            if (CMDProcessor2.runSuCommand("ls /data/app-private").success()) {
                 Log.i(TAG, " SU exists and we have permission");
                 return true;
             } else {
@@ -94,7 +94,7 @@ public class Helpers {
             return false;
         }
         try {
-            if (!CMDProcessor.runSuCommand("busybox mount").success()) {
+            if (!CMDProcessor2.runSuCommand("busybox mount").success()) {
                 Log.e(TAG, "Busybox is there but it is borked! ");
                 return false;
             }
@@ -138,12 +138,12 @@ public class Helpers {
             String path = mounts[1];
             String point = mounts[2];
             String preferredMountCmd = new String("mount -o " + mount + ",remount -t " + point + ' ' + device + ' ' + path);
-            if (CMDProcessor.runSuCommand(preferredMountCmd).success()) {
+            if (CMDProcessor2.runSuCommand(preferredMountCmd).success()) {
                 return true;
             }
         }
         String fallbackMountCmd = new String("busybox mount -o remount," + mount + " /system");
-        return CMDProcessor.runSuCommand(fallbackMountCmd).success();
+        return CMDProcessor2.runSuCommand(fallbackMountCmd).success();
     }
 
     public static String readOneLine(String fname) {
@@ -172,8 +172,8 @@ public class Helpers {
 
     public static String readFileViaShell(String filePath, boolean useSu) {
         String command = new String("cat " + filePath);
-        return useSu ? CMDProcessor.runSuCommand(command).getStdout()
-                : CMDProcessor.runShellCommand(command).getStdout();
+        return useSu ? CMDProcessor2.runSuCommand(command).getStdout()
+                : CMDProcessor2.runShellCommand(command).getStdout();
     }
 
     public static boolean writeOneLine(String filename, String value) {
@@ -300,11 +300,11 @@ public class Helpers {
     }
 
     public static void restartSystemUI() {
-        CMDProcessor.startSuCommand("pkill -TERM -f com.android.systemui");
+        CMDProcessor2.startSuCommand("pkill -TERM -f com.android.systemui");
     }
 
     public static void setSystemProp(String prop, String val) {
-        CMDProcessor.startSuCommand("setprop " + prop + " " + val);
+        CMDProcessor2.startSuCommand("setprop " + prop + " " + val);
     }
 
     public static String getSystemProp(String prop, String def) {
