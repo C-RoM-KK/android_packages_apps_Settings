@@ -41,10 +41,10 @@ import android.widget.EditText;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.settings.util.CMDProcessor;
-import com.android.settings.util.CommandResult;
-import com.android.settings.util.Helpers;
-import com.android.settings.util.AbstractAsyncSuCMDProcessor;
+import com.android.settings.crom.util.CMDProcessor;
+import com.android.settings.crom.util.CommandResult;
+import com.android.settings.crom.util.Helpers;
+import com.android.settings.crom.util.AbstractAsyncSuCMDProcessor;
 
 public class DensityChanger extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
