@@ -211,6 +211,13 @@
     <string name="dynamic_width">Largeur dynamique</string>
     <string name="dynamic_width_summary">Définit la largeur des notifications dynamiques, de sorte qu\'elles n\'utilisent que l\'espace nécessaire</string>
     <string name="notification_color">Couleur d\'arrière-plan des notifications</string>
+    <string name="notifications_on_lockscreen_summary">Choisir la méthode d\'affichage des notifications sur l\'écran de verrouillage</string>
+    <string name="notifications_on_lockscreen_warning_summary">Le choix d\'un mode de notifications de l\'écran de verrouillage (Peek (Furtif)ou notifications standards )désactive automatiquement l\'autre. Pour conserver un de ces modes, après désactivation, n\'oubliez pas de le sélectionner.</string>
+
+    <!--Notification peek-->
+    <string name="notification_peek_title">Notification furtive PEEK</string>
+    <string name="notification_peek_summary">Montre les notifications si votre téléphone bouge au bout d\'un certain délai</string>
+    <string name="peek_wake_timeout_title">Délai de scrutation mouvement</string>
 
     <!-- See through -->
     <string name="see_through_title">Transparence</string>
@@ -287,6 +294,14 @@
     <string name="peek_pickup_45seconds">45 secondes</string>
     <string name="peek_pickup_60seconds">1 minute</string>
     <string name="peek_pickup_120seconds">2 minutes</string>
+    <string name="peek_wake_5seconds">5 secondes (défaut)</string>
+    <string name="peek_wake_10seconds">10 secondes</string>
+    <string name="peek_wake_20seconds">20 secondes</string>
+    <string name="peek_wake_30seconds">30 secondes</string>
+    
+    <!-- Quick unlock -->
+    <string name="unlock_quick_unlock_control_title">Déverrouillage rapide</string>
+    <string name="unlock_quick_unlock_control_summary">Déverrouiller en utilisant le code PIN ou un mot de passe</string>
 
     <!-- Quick unlock -->
     <string name="unlock_quick_unlock_control_title">Déverrouillage rapide</string>
@@ -2317,5 +2332,46 @@ doit être redémarré pour une prise en compte du changement.</string>
     <string name="more_device_settings_title">Autres options de l\'appareil</string>
     <string name="sensors_motors_title">Capteurs &amp; vibreur</string>
     <string name="display_calibration_title">Calibrage de l\'écran</string>
+    
+    <!-- Density changer -->
+    <string name="dpi">DPI</string>
+    <string name="su_dialog_error_title">Attention</string>
+    <string name="su_dialog_error_message">Il est arrivé un erreur.\n\nMerci de vérifier l\'accès root. Pour l\'activer aller dans les paramètres Superuser et établir l\'accès root.</string>
+    <string name="lcd_density_title">Densité LCD</string>
+    <string name="lcd_density_summary">Inconnu</string>
+    <string name="current_lcd_density">"Densité LCD en cours: "</string>
+    <string name="lcd_density_wizard">Assistant densité LCD</string>
+    <string name="follow_through_title">Informations : appuyer pour télécharger</string>
+    <string name="follow_through_summary">Il est recommandé d\'utiliser un Market Multi DPI pour éviter les problèmes après avoir modifié la densité.</string>
+    <string name="stock_density_title">Changer la densité LCD au valeurs standard</string>
+    <string name="stock_density_summary">Les tablettes et anciens téléphones utilisent 160. La plupart des téléphones utilisent 240. Le Galaxy Nexus utilise 320 par défaut.</string>
+    <string name="stock_density_changed_summary">"Densité a mettre a: "</string>
+    <string name="reboot_title">Redémarrer !</string>
+    <string name="reboot_summary">Et que du plaisir !!</string>
+    <string name="clear_market_data_title">3. Effacer toutes les données pertinentes du Market.</string>
+    <string name="clear_market_data_summary">Cette étape efface les données du Market, Google Play services et des frameworks Google services.</string>
+    <string name="clear_market_data_cleared">Les données ont été effacées avec succès</string>
+    <string name="reboot_cleardata_title">4. Redémarrer!</string>
+    <string name="reboot_cleardata_summary">Revenez ici après le redémarrage et compléter le reste des étapes!</string>
+    <string name="open_market_title">5. Ouvrir le Market et accepter</string>
+    <string name="open_market_summary">Appuyez sur Retour lorsque vous avez terminé pour revenir ici.</string>
+    <string name="open_market_summary_could_not_open">"Impossible d\'ouvrir le Market! Si vous êtes sûr qu\'il est installé, ouvrez le vous même à partir du lanceur."</string>
+    <string name="custom_density_title">Changer la densité comme vous le souhaitez</string>
+    <string name="custom_density_summary">Si jamais vous avez des problèmes de compatibilité avec le market, assurez-vous de bien vérifier que c\'est un multi-DPI qui est installé.</string>
+    <string name="custom_density_summary_invalid">"DENSITE INVALIDE!"</string>
+    <string name="custom_density">Personnalisé</string>
+    <string name="set_custom_density_title">Appliquer une densité personnalisée</string>
+    <string name="set_custom_density_set">Appliquer</string>
+    <string name="custom_density_dialog_title">"ATTENTION!"</string>
+    <string name="custom_density_dialog_summary">"Changer votre densité LCD peut provoquer un comportement inattendu de l\'application. Si vous rencontrez une incompatibilité avec Play store, merci de bien vérifier  c\'est un market multi-DPIqui est installé."</string>
+    <string name="custom_density_dialog_button_got">Pris !</string>
+    <string name="custom_density_dialog_button_reboot">Redémarrer maintenant</string>
+
+    <!--Blacklist-->
+    <string name="blacklist_button_title">Liste noire</string>
+    <string name="peek_blacklist_label">Liste noire du mode Peek</string>
+    <string name="floating_blacklist_label">Liste noire du mode flottant</string>
+    <string name="hover_blacklist_label">Liste noire de hover</string>
+
 
 </resources>
