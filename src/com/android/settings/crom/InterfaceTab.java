@@ -38,6 +38,7 @@ import com.android.settings.Utils;
 import com.android.settings.crom.InterfaceSettings;
 import com.android.settings.crom.RecentPanelSettings;
 import com.android.settings.crom.ShakeEvents;
+import com.android.settings.crom.DensityChanger;
 
 import java.lang.Exception;
 import java.util.ArrayList;
@@ -94,6 +95,7 @@ public class InterfaceTab extends SettingsPreferenceFragment {
             frags[0] = new InterfaceSettings();
             frags[1] = new RecentPanelSettings();
             frags[2] = new ShakeEvents();
+            frags[3] = new DensityChanger();
         }
 
         @Override
@@ -117,7 +119,8 @@ public class InterfaceTab extends SettingsPreferenceFragment {
         titleString = new String[] {
                     getString(R.string.interface_settings_title),
                     getString(R.string.recent_panel_title),
-                    getString(R.string.shake_events_title),};
+                    getString(R.string.shake_events_title),
+                    getString(R.string.lcd_density_title),};
         return titleString;
     }
 }
