@@ -43,7 +43,7 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.util.CMDProcessor2;
 import com.android.settings.util.CommandResult;
-import com.android.settings.crom.util.Helpers;
+import com.android.settings.util.Helpers;
 import com.android.settings.util.AbstractAsyncSuCMDProcessor;
 
 public class DensityChanger extends SettingsPreferenceFragment implements
