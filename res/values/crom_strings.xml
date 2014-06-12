@@ -2373,4 +2373,10 @@ device needs to be rebooted for the setting to take effect.</string>
     <string name="floating_blacklist_label">Blacklist from Floating Mode</string>
     <string name="hover_blacklist_label">Blacklist from Hover</string>
 
+    <!-- Expanded desktop -->
+    <string name="expanded_desktop_style">Expanded desktop style</string>
+    <string name="expanded_desktop_disabled">Disabled</string>
+    <string name="expanded_desktop_status_bar">Status bar visible</string>
+    <string name="expanded_desktop_no_status_bar">Status bar hidden</string>
+
 </resources>
