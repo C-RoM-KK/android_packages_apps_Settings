@@ -81,7 +81,6 @@ import com.android.settings.inputmethod.InputMethodAndLanguageSettings;
 import com.android.settings.inputmethod.KeyboardLayoutPickerFragment;
 import com.android.settings.inputmethod.SpellCheckersSettings;
 import com.android.settings.inputmethod.UserDictionaryList;
-import com.android.settings.location.LocationEnabler;
 import com.android.settings.location.LocationSettings;
 import com.android.settings.net.MobileDataEnabler;
 import com.android.settings.nfc.AndroidBeam;
@@ -841,7 +840,6 @@ public class Settings extends PreferenceActivity
         private final MobileDataEnabler mMobileDataEnabler;
         private final ProfileEnabler mProfileEnabler;
         public static ThemeEnabler mThemeEnabler;
-        private final LocationEnabler mLocationEnabler;
         private AuthenticatorHelper mAuthHelper;
         private DevicePolicyManager mDevicePolicyManager;
 
@@ -864,8 +862,7 @@ public class Settings extends PreferenceActivity
                     || header.id == R.id.bluetooth_settings
                     || header.id == R.id.mobile_network_settings
                     || header.id == R.id.profiles_settings
-                    || header.id == R.id.theme_settings
-                    || header.id == R.id.location_settings) {
+                    || header.id == R.id.theme_settings) {
                 return HEADER_TYPE_SWITCH;
             } else if (header.id == R.id.security_settings) {
                 return HEADER_TYPE_BUTTON;
@@ -992,8 +989,6 @@ public class Settings extends PreferenceActivity
                         mProfileEnabler.setSwitch(holder.switch_);
                     } else if (header.id == R.id.theme_settings) {
                         mThemeEnabler.setSwitch(holder.switch_);
-                    } else if (header.id == R.id.location_settings) {
-                        mLocationEnabler.setSwitch(holder.switch_);
                     }
                     updateCommonHeaderView(header, holder);
                     break;
@@ -1070,7 +1065,6 @@ public class Settings extends PreferenceActivity
             mMobileDataEnabler.resume();
             mProfileEnabler.resume();
             mThemeEnabler.resume();
-            mLocationEnabler.resume();
         }
 
         public void pause() {
@@ -1078,8 +1072,7 @@ public class Settings extends PreferenceActivity
             mBluetoothEnabler.pause();
             mMobileDataEnabler.pause();
             mProfileEnabler.pause();
-            mThemeEnabler.resume();
-            mLocationEnabler.pause();
+            mThemeEnabler.pause();
         }
     }
 
