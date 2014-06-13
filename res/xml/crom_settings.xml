@@ -95,7 +95,7 @@
 
    <PreferenceScreen
         android:id="@+id/system_app_remover"
-        android:fragment="com.android.settings.crom.SystemappRemoverTab"
+        android:fragment="com.android.settings.crom.SystemappRemover"
         android:title="@string/system_app_remover_title"
         android:icon="@drawable/ic_settings_slim_sizer"
         android:summary="@string/system_app_remover_summary" />
