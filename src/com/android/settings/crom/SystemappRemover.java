@@ -281,7 +281,7 @@ public class SystemappRemover extends Fragment {
                         // of the selected item
                         short state = sdAvailable();
                         File path = new File(Environment
-                                .getExternalStorageDirectory() + "/ose");
+                                .getExternalStorageDirectory() + "/crom");
                         File savefile = new File(path + "/systemappremover.stf");
                         if (which == 0) {
                             // load profile action
