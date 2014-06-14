@@ -16,7 +16,8 @@
 
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:title="@string/notifications_on_lockscreen">
+    android:title="@string/notifications_on_lockscreen"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <Preference
             style="?android:preferenceInformationStyle"
@@ -64,7 +65,7 @@
         <CheckBoxPreference
             android:key="show_always"
             android:title="@string/show_always"
-            android:dependency="lockscreen_notifications"
+            android:dependency="pocket_mode"
             android:summary="@string/show_always_summary" />
 
         <CheckBoxPreference
