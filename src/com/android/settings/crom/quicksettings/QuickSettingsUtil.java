@@ -54,6 +54,7 @@ import static com.android.internal.util.slim.QSConstants.TILE_SLEEP;
 import static com.android.internal.util.slim.QSConstants.TILE_SYNC;
 import static com.android.internal.util.slim.QSConstants.TILE_THEME;
 import static com.android.internal.util.slim.QSConstants.TILE_TORCH;
+import static com.android.internal.util.slim.QSConstants.TILE_SCREENSHOT;
 import static com.android.internal.util.slim.QSConstants.TILE_USBTETHER;
 import static com.android.internal.util.slim.QSConstants.TILE_USER;
 import static com.android.internal.util.slim.QSConstants.TILE_VOLUME;
@@ -175,6 +176,9 @@ public class QuickSettingsUtil {
         registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_THEME, R.string.title_tile_theme,
                 "com.android.systemui:drawable/ic_qs_theme_manual"));
+        registerTile(new QuickSettingsUtil.TileInfo(
+                TILE_SCREENSHOT, R.string.title_tile_screenshot,
+                "com.android.systemui:drawable/ic_qs_screenshot"));
         registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_QUICKRECORD, R.string.title_tile_quick_record,
                 "com.android.systemui:drawable/ic_qs_quickrecord"));
