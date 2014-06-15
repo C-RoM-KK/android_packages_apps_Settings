@@ -61,7 +61,6 @@ import static com.android.internal.util.slim.QSConstants.TILE_WIFI;
 import static com.android.internal.util.slim.QSConstants.TILE_WIFIAP;
 import static com.android.internal.util.slim.QSConstants.TILE_REBOOT;
 import static com.android.internal.util.slim.QSConstants.TILE_ONTHEGO;
-import static com.android.internal.util.slim.QSConstants.TILE_PROFILE;
 
 import android.content.ContentResolver;
 import android.content.Context;
@@ -189,9 +188,6 @@ public class QuickSettingsUtil {
         registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_ONTHEGO, R.string.title_tile_onthego,
                 "com.android.systemui:drawable/ic_qs_onthego"));
-        registerTile(new QuickSettingsUtil.TileInfo(
-                TILE_PROFILE, R.string.title_tile_profile,
-                "com.android.systemui:drawable/ic_qs_profiles"));
         registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_FCHARGE, R.string.title_tile_fcharge,
                 "com.android.systemui:drawable/ic_qs_fcharge_off"));
