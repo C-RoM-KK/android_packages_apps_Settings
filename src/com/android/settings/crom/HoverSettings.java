@@ -40,7 +40,7 @@ import com.android.internal.util.slim.DeviceUtils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
-import com.android.settings.util.Helpers;
+import com.android.settings.crom.util.Helpers;
 
 public class HoverSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
@@ -52,8 +52,6 @@ public class HoverSettings extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.hover_settings);
 
         PreferenceScreen prefSet = getPreferenceScreen();
-
-        //
 
         UpdateSettings();
     }

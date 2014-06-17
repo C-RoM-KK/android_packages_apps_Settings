@@ -47,7 +47,9 @@
             android:persistent="false" />
 
      <PreferenceScreen
-        android:title="@string/hover_enabled_title"
+     	android:key="hover_settings"
+        android:title="@string/hover_title"
+        android:summary="@string/hover_summary"
         android:fragment="com.android.settings.crom.HoverSettings" />
 
         <CheckBoxPreference
