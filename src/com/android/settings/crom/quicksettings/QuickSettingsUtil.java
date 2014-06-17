@@ -61,6 +61,7 @@ import static com.android.internal.util.slim.QSConstants.TILE_WIFI;
 import static com.android.internal.util.slim.QSConstants.TILE_WIFIAP;
 import static com.android.internal.util.slim.QSConstants.TILE_REBOOT;
 import static com.android.internal.util.slim.QSConstants.TILE_ONTHEGO;
+import static com.android.internal.util.slim.QSConstants.TILE_HOVER;
 
 import android.content.ContentResolver;
 import android.content.Context;
@@ -194,6 +195,9 @@ public class QuickSettingsUtil {
         registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_BATTERYSAVER, R.string.title_tile_batterysaver,
                 "com.android.systemui:drawable/ic_qs_battery_saver_on"));
+        registerTile(new QuickSettingsUtil.TileInfo(
+                TILE_HOVER, R.string.title_tile_hover,
+                "com.android.systemui:drawable/ic_qs_hover_on"));
     }
 
     private static void registerTile(QuickSettingsUtil.TileInfo info) {
