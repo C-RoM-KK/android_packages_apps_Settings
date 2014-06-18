@@ -19,10 +19,16 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/shake_events_title">
 
-    <com.android.settings.crom.SystemSettingCheckBoxPreference
+    <com.android.settings.crom.SystemCheckBoxPreference
         android:key="force_dualpanel"
         android:title="@string/force_dualpanel_title"
         android:summary="@string/force_dualpanel_summary"
+        android:defaultValue="false" />
+
+    <com.android.settings.crom.SystemCheckBoxPreference
+        android:key="power_menu_user_enabled"
+        android:title="@string/power_menu_user_title"
+        android:summary="@string/power_menu_user_summary"
         android:defaultValue="false" />
 
 </PreferenceScreen>
