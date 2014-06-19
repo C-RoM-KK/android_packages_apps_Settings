@@ -2402,7 +2402,7 @@ device needs to be rebooted for the setting to take effect.</string>
     <string name="force_dualpanel_title">Force dual panel settings</string>
     <string name="force_dualpanel_summary">Force showing the settings in dual panel style</string>
 
-    <string name="additional_settings">Additional</string>
+    <string name="extra_settings">Extras</string>
 
     <!-- Protected Apps -->
     <string name="menu_hidden_apps_delete">Reset</string>
