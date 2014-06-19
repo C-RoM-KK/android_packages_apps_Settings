@@ -186,13 +186,6 @@
         android:title="@string/location_settings_title"
         android:id="@+id/location_settings" />
 
-    <!-- Profiles -->
-    <header
-        android:id="@+id/profiles_settings"
-        android:icon="@drawable/ic_settings_profiles"
-        android:fragment="com.android.settings.profiles.ProfilesSettings"
-        android:title="@string/profiles_settings_title" />
-
     <!-- Security -->
     <header
         android:fragment="com.android.settings.SecuritySettings"

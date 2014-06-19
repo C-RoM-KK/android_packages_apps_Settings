@@ -96,7 +96,6 @@ import com.android.settings.crom.quicksettings.QuickSettingsTiles;
 import com.android.settings.crom.ShakeEvents;
 import com.android.settings.crom.QuietHours;
 import com.android.settings.crom.themes.ThemeEnabler;
-import com.android.settings.profiles.ProfileEnabler;
 import com.android.settings.tts.TextToSpeechSettings;
 import com.android.settings.users.UserSettings;
 import com.android.settings.vpn2.VpnSettings;
@@ -838,7 +837,6 @@ public class Settings extends PreferenceActivity
         private final WifiEnabler mWifiEnabler;
         private final BluetoothEnabler mBluetoothEnabler;
         private final MobileDataEnabler mMobileDataEnabler;
-        private final ProfileEnabler mProfileEnabler;
         public static ThemeEnabler mThemeEnabler;
         private AuthenticatorHelper mAuthHelper;
         private DevicePolicyManager mDevicePolicyManager;
@@ -861,7 +859,6 @@ public class Settings extends PreferenceActivity
             } else if (header.id == R.id.wifi_settings
                     || header.id == R.id.bluetooth_settings
                     || header.id == R.id.mobile_network_settings
-                    || header.id == R.id.profiles_settings
                     || header.id == R.id.theme_settings) {
                 return HEADER_TYPE_SWITCH;
             } else if (header.id == R.id.security_settings) {
@@ -909,7 +906,6 @@ public class Settings extends PreferenceActivity
             mWifiEnabler = new WifiEnabler(context, new Switch(context));
             mBluetoothEnabler = new BluetoothEnabler(context, new Switch(context));
             mMobileDataEnabler = new MobileDataEnabler(context, new Switch(context));
-            mProfileEnabler = new ProfileEnabler(context, new Switch(context));
             mThemeEnabler = new ThemeEnabler(context, new Switch(context));
             mDevicePolicyManager = dpm;
         }
@@ -984,8 +980,6 @@ public class Settings extends PreferenceActivity
                         mBluetoothEnabler.setSwitch(holder.switch_);
                     } else if (header.id == R.id.mobile_network_settings) {
                         mMobileDataEnabler.setSwitch(holder.switch_);
-                    } else if (header.id == R.id.profiles_settings) {
-                        mProfileEnabler.setSwitch(holder.switch_);
                     } else if (header.id == R.id.theme_settings) {
                         mThemeEnabler.setSwitch(holder.switch_);
                     }
@@ -1062,7 +1056,6 @@ public class Settings extends PreferenceActivity
             mWifiEnabler.resume();
             mBluetoothEnabler.resume();
             mMobileDataEnabler.resume();
-            mProfileEnabler.resume();
             mThemeEnabler.resume();
         }
 
@@ -1070,7 +1063,6 @@ public class Settings extends PreferenceActivity
             mWifiEnabler.pause();
             mBluetoothEnabler.pause();
             mMobileDataEnabler.pause();
-            mProfileEnabler.pause();
             mThemeEnabler.pause();
         }
     }
@@ -1226,7 +1218,6 @@ public class Settings extends PreferenceActivity
     public static class BatteryIconStyleSettingsActivity extends Settings { /* empty */ }
     public static class DisplayRotationSettingsActivity extends Settings { /* empty */ }
     public static class ShakeEventsSettingsActivity extends Settings { /* empty */ }
-    public static class ProfilesSettingsActivity extends Settings { /* empty */ }
     public static class RamBarActivity extends Settings { /* empty */ }
     public static class ThemeSettingsActivity extends Settings { /* empty */ }
     public static class PerformanceSettingsActivity extends Settings { /* empty */ }
