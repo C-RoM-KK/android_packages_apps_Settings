@@ -18,6 +18,12 @@
     android:title="@string/notification_drawer_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+    <com.android.settings.crom.SystemSettingSwitchPreference
+        android:key="heads_up_enabled"
+        android:fragment="com.android.settings.headsup.HeadsUpSettings"
+        android:title="@string/category_heads_up"
+        android:summary="@string/heads_up_summary" />
+
     <PreferenceCategory
             android:key="shortcuts"
             android:title="@string/notification_bar_shortcuts">
