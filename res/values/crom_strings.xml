@@ -2146,6 +2146,7 @@ device needs to be rebooted for the setting to take effect.</string>
     <string name="misc_options_system">System</string>
     <string name="misc_options">Miscellaneous</string>
     <string name="misc_options_title">Miscellaneous</string>
+    <string name="notification_helpers_title">Notification helpers</string>
     <string name="misc_tweaks_hfm">Hosts File Manager</string>
     <string name="hfm_disable_ads_title">Disable Ads</string>
     <string name="hfm_disable_ads_summary">Change hosts file to disable ads</string>
@@ -2408,5 +2409,11 @@ device needs to be rebooted for the setting to take effect.</string>
     <!-- Custom notification panel header -->
     <string name="custom_statusbar_header_title">Contextual notification panel header</string>
     <string name="custom_statusbar_header_summary">Sets the background of the notification panel header to an image based on the current date and time</string>
+
+    <!-- Heads Up -->
+    <string name="category_heads_up">Heads up</string>
+    <string name="title_heads_up_enabled">Enable heads up</string>
+    <string name="add_heads_up_dnd_package">Add app to \'Do not disturb\'</string>
+    <string name="heads_up_dnd_title">Do not disturb</string>
 
 </resources>
