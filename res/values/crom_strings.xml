@@ -2426,4 +2426,6 @@ device needs to be rebooted for the setting to take effect.</string>
     <!-- Notification Options -->
     <string name="notifications_settings">Notification Options</string>
 
+    <string name="clients">CLIENTS</string>
+
 </resources>
