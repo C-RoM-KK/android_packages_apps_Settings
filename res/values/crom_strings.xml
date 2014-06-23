@@ -2431,8 +2431,9 @@ device needs to be rebooted for the setting to take effect.</string>
     <string name="add_heads_up_dnd_summary">Choose which applications you don\'t want to be interrupted in</string>
     <string name="add_heads_up_blacklist_summary">Choose which applications you don\'t want heads up notifications from</string>
 
-    <!-- Heads Up Timeout -->
+    <!-- Heads Up -->
     <string name="heads_up_timeout">Heads up timeout</string>
     <string name="heads_up_fullscreen_timeout">Heads up timeout on fullscreen</string>
+    <string name="heads_up_floating_window">Launch in floating window</string>
 
 </resources>

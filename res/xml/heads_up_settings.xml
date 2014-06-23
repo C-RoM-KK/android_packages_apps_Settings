@@ -21,7 +21,13 @@
             android:title="@string/heads_up_dnd_title"
             android:key="dnd_applications_list">
 
-        <SlimSeekBarPreference
+        <com.android.settings.crom.SystemCheckBoxPreference
+                android:key="heads_up_floating_window"
+                android:title="@string/heads_up_floating_window"
+                android:defaultValue="true"
+                android:dependency="heads_up_enabled" />
+
+        <CromSeekBarPreference
                 android:key="heads_up_timeout"
                 android:title="@string/heads_up_timeout"
                 android:defaultValue="3700"
@@ -32,7 +38,7 @@
                 settings:unitsRight="ms"
                 android:dependency="heads_up_enabled" />
 
-        <SlimSeekBarPreference
+        <CromSeekBarPreference
                 android:key="heads_up_fullscreen_timeout"
                 android:title="@string/heads_up_fullscreen_timeout"
                 android:defaultValue="700"
