@@ -332,14 +332,14 @@ public class LockscreenNotifications extends SettingsPreferenceFragment
     public boolean onPreferenceChange(Preference pref, Object value) {
         if (pref == mNotificationsHeight) {
             Settings.System.putInt(getContentResolver(),
-                    Settings.System.LOCKSCREEN_NOTIFICATIONS_HEIGHT, Integer.valueOf((String) value));
+                    Settings.System.LOCKSCREEN_NOTIFICATIONS_HEIGHT, (Integer)value);
         } else if (pref == mOffsetTop) {
             Settings.System.putFloat(getContentResolver(), Settings.System.LOCKSCREEN_NOTIFICATIONS_OFFSET_TOP,
-                    Integer.valueOf((String) value) / 100f);
-            mOffsetTop.setTitle(getResources().getText(R.string.offset_top) + " " + value + "%");
+                    (Integer)value / 100f);
+            mOffsetTop.setTitle(getResources().getText(R.string.offset_top) + " " + (Integer)value + "%");
             Point displaySize = new Point();
             ((WindowManager) getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getSize(displaySize);
-            int max = Math.round((float)displaySize.y * (1f - (Integer.valueOf((String) value) / 100f)) /
+            int max = Math.round((float)displaySize.y * (1f - (mOffsetTop.getProgress() / 100f)) /
                     (float) getResources().getDimensionPixelSize(R.dimen.notification_row_min_height));
             mNotificationsHeight.setMaxValue(max);
         } else if (pref == mNotificationColor) {
