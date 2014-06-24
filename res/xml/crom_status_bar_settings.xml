@@ -46,12 +46,6 @@
             android:entryValues="@array/expanded_desktop_values"
             android:persistent="false" />
 
-     <PreferenceScreen
-     	android:key="hover_settings"
-        android:title="@string/hover_title"
-        android:summary="@string/hover_summary"
-        android:fragment="com.android.settings.crom.HoverSettings" />
-
         <CheckBoxPreference
             android:key="status_bar_brightness_control"
             android:title="@string/status_bar_toggle_brightness"

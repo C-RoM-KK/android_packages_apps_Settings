@@ -2424,4 +2424,7 @@ device needs to be rebooted for the setting to take effect.</string>
     <!-- Wi-Fi settings screen, setting summary for setting the Wi-Fi priority-->
     <string name="wifi_setting_priority_summary">Specify the priority of the Wi-Fi networks</string>
 
+    <!-- Notification Options -->
+    <string name="notifications_settings">Notification Options</string>
+
 </resources>

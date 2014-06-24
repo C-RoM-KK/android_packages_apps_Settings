@@ -38,8 +38,6 @@ import com.android.settings.Utils;
 import com.android.settings.crom.LockscreenSettings;
 import com.android.settings.crom.LockscreenInterface;
 import com.android.settings.crom.LockscreenButtons;
-import com.android.settings.crom.LockscreenNotifications;
-import com.android.settings.crom.ActiveDisplaySettings;
 import com.android.settings.crom.LockscreenWidgets;
 
 import java.lang.Exception;
@@ -97,9 +95,7 @@ public class LockscreenTab extends SettingsPreferenceFragment {
             frags[0] = new LockscreenSettings();
             frags[1] = new LockscreenInterface();
             frags[2] = new LockscreenButtons();
-            frags[3] = new LockscreenNotifications();
-            frags[4] = new ActiveDisplaySettings();
-            frags[5] = new LockscreenWidgets();
+            frags[3] = new LockscreenWidgets();
         }
 
         @Override
@@ -124,8 +120,6 @@ public class LockscreenTab extends SettingsPreferenceFragment {
                     getString(R.string.lockscreen_settings_title),
                     getString(R.string.lockscreen_interface_title),
                     getString(R.string.lockscreen_buttons_title),
-                    getString(R.string.notifications_on_lockscreen),
-                    getString(R.string.active_display_title),
                     getString(R.string.lockscreen_widgets_title)};
         return titleString;
     }
