@@ -27,6 +27,8 @@ import static com.android.internal.util.slim.QSConstants.TILE_BATTERYSAVER;
 import static com.android.internal.util.slim.QSConstants.TILE_BLUETOOTH;
 import static com.android.internal.util.slim.QSConstants.TILE_BRIGHTNESS;
 import static com.android.internal.util.slim.QSConstants.TILE_BUGREPORT;
+import static com.android.internal.util.slim.QSConstants.TILE_CAMERA;
+import static com.android.internal.util.slim.QSConstants.TILE_COMPASS;
 import static com.android.internal.util.slim.QSConstants.TILE_CONTACT;
 import static com.android.internal.util.slim.QSConstants.TILE_CUSTOM;
 import static com.android.internal.util.slim.QSConstants.TILE_CUSTOM_KEY;
@@ -36,7 +38,6 @@ import static com.android.internal.util.slim.QSConstants.TILE_EXPANDEDDESKTOP;
 import static com.android.internal.util.slim.QSConstants.TILE_FCHARGE;
 import static com.android.internal.util.slim.QSConstants.TILE_IMESWITCHER;
 import static com.android.internal.util.slim.QSConstants.TILE_LOCATION;
-import static com.android.internal.util.slim.QSConstants.TILE_COMPASS;
 import static com.android.internal.util.slim.QSConstants.TILE_LOCKSCREEN;
 import static com.android.internal.util.slim.QSConstants.TILE_LTE;
 import static com.android.internal.util.slim.QSConstants.TILE_MOBILEDATA;
@@ -53,6 +54,7 @@ import static com.android.internal.util.slim.QSConstants.TILE_SLEEP;
 import static com.android.internal.util.slim.QSConstants.TILE_SYNC;
 import static com.android.internal.util.slim.QSConstants.TILE_THEME;
 import static com.android.internal.util.slim.QSConstants.TILE_TORCH;
+import static com.android.internal.util.slim.QSConstants.TILE_SCREENSHOT;
 import static com.android.internal.util.slim.QSConstants.TILE_USBTETHER;
 import static com.android.internal.util.slim.QSConstants.TILE_USER;
 import static com.android.internal.util.slim.QSConstants.TILE_VOLUME;
@@ -60,6 +62,8 @@ import static com.android.internal.util.slim.QSConstants.TILE_WIFI;
 import static com.android.internal.util.slim.QSConstants.TILE_WIFIAP;
 import static com.android.internal.util.slim.QSConstants.TILE_REBOOT;
 import static com.android.internal.util.slim.QSConstants.TILE_ONTHEGO;
+import static com.android.internal.util.slim.QSConstants.TILE_HOVER;
+import static com.android.internal.util.slim.QSConstants.TILE_PROFILE;
 
 import android.content.ContentResolver;
 import android.content.Context;
@@ -70,8 +74,6 @@ import android.util.Log;
 import com.android.internal.telephony.Phone;
 import com.android.internal.util.slim.DeviceUtils;
 import com.android.settings.R;
-
-import com.android.internal.util.cm.QSUtils;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -103,6 +105,12 @@ public class QuickSettingsUtil {
                 TILE_BRIGHTNESS, R.string.title_tile_brightness,
                 "com.android.systemui:drawable/ic_qs_brightness_auto_off"));
         registerTile(new QuickSettingsUtil.TileInfo(
+        	    TILE_CAMERA, R.string.title_tile_camera,
+        	    "com.android.systemui:drawable/ic_qs_camera"));
+        registerTile(new QuickSettingsUtil.TileInfo(
+                TILE_COMPASS, R.string.title_tile_compass,
+                "com.android.systemui:drawable/ic_qs_compass_on"));
+        registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_EXPANDEDDESKTOP, R.string.title_tile_expanded_desktop,
                 "com.android.systemui:drawable/ic_qs_expanded_desktop_on"));
         registerTile(new QuickSettingsUtil.TileInfo(
@@ -111,9 +119,6 @@ public class QuickSettingsUtil {
         registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_LOCATION, R.string.title_tile_location,
                 "com.android.systemui:drawable/ic_qs_location_on"));
-        registerTile(new QuickSettingsUtil.TileInfo(
-                TILE_COMPASS, R.string.title_tile_compass,
-                "com.android.systemui:drawable/ic_qs_compass_on"));
         registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_LOCKSCREEN, R.string.title_tile_lockscreen,
                 "com.android.systemui:drawable/ic_qs_lock_screen_on"));
@@ -172,6 +177,9 @@ public class QuickSettingsUtil {
                 TILE_THEME, R.string.title_tile_theme,
                 "com.android.systemui:drawable/ic_qs_theme_manual"));
         registerTile(new QuickSettingsUtil.TileInfo(
+                TILE_SCREENSHOT, R.string.title_tile_screenshot,
+                "com.android.systemui:drawable/ic_qs_screenshot"));
+        registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_QUICKRECORD, R.string.title_tile_quick_record,
                 "com.android.systemui:drawable/ic_qs_quickrecord"));
         registerTile(new QuickSettingsUtil.TileInfo(
@@ -192,6 +200,12 @@ public class QuickSettingsUtil {
         registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_BATTERYSAVER, R.string.title_tile_batterysaver,
                 "com.android.systemui:drawable/ic_qs_battery_saver_on"));
+        registerTile(new QuickSettingsUtil.TileInfo(
+                TILE_HOVER, R.string.title_tile_hover,
+                "com.android.systemui:drawable/ic_qs_hover_on"));
+        registerTile(new QuickSettingsUtil.TileInfo(
+                TILE_PROFILE, R.string.title_tile_profile,
+                "com.android.systemui:drawable/ic_qs_profiles"));
     }
 
     private static void registerTile(QuickSettingsUtil.TileInfo info) {
@@ -248,10 +262,9 @@ public class QuickSettingsUtil {
         if (!DeviceUtils.fchargeEnabled(context)) {
             removeTile(TILE_FCHARGE);
         }
-
-        // Don't show the Compass tile if the device has no orientation sensor
-        if (!QSUtils.deviceSupportsCompass(context)) {
-            removeTile(TILE_COMPASS);
+        // Don't show the Camera tile if the device has no cameras
+        if (!DeviceUtils.deviceSupportsCamera()) {
+        	removeTile(TILE_CAMERA);
         }
     }
 

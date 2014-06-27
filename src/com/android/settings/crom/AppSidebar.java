@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2010 The Android Open Source Project
+ * Copyright (C) 2012 CyanogenMod
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,131 +16,144 @@
 
 package com.android.settings.crom;
 
-import android.app.ActivityManagerNative;
-import android.app.Dialog;
-import android.app.admin.DevicePolicyManager;
-import android.content.ContentResolver;
-import android.content.Context;
-import android.content.pm.PackageManager;
-import android.content.res.Configuration;
-import android.content.res.Resources;
-import android.hardware.Camera;
-import android.media.Ringtone;
-import android.media.RingtoneManager;
-import android.net.Uri;
+import android.content.ComponentName;
+import android.content.Intent;
 import android.os.Bundle;
-import android.os.RemoteException;
-import android.os.UserHandle;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
-import android.preference.Preference.OnPreferenceClickListener;
-import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
-import android.preference.RingtonePreference;
-import android.preference.SeekBarPreference;
+import android.preference.SwitchPreference;
 import android.provider.Settings;
-import android.provider.Settings.SettingNotFoundException;
-import android.text.TextUtils;
-import android.util.Log;
-import android.view.WindowManagerGlobal;
-import android.widget.Toast;
-
-import java.util.ArrayList;
-
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.settings.Utils;
-import com.android.settings.crom.util.Helpers;
-import com.android.settings.crom.AppMultiSelectListPreference;
-
-import java.util.HashSet;
-import java.util.Set;
-import java.lang.Thread;
-import java.util.ArrayList;
-import java.util.Arrays;
 
 public class AppSidebar extends SettingsPreferenceFragment implements
-        Preference.OnPreferenceChangeListener, OnPreferenceClickListener {
-    private static final String TAG = "AppSidebar";
+        OnPreferenceChangeListener, Preference.OnPreferenceClickListener {
+    private static final String TAG = "PowerMenu";
 
-    private static final String PREF_ENABLE_APP_CIRCLE_BAR = "enable_app_circle_bar";
-    private static final String PREF_INCLUDE_APP_CIRCLE_BAR_KEY = "app_circle_bar_included_apps";
+    private static final String KEY_ENABLED = "sidebar_enable";
+    private static final String KEY_TRANSPARENCY = "sidebar_transparency";
+    private static final String KEY_SETUP_ITEMS = "sidebar_setup_items";
+    private static final String KEY_POSITION = "sidebar_position";
+    private static final String KEY_TRIGGER_WIDTH = "trigger_width";
+    private static final String KEY_TRIGGER_TOP = "trigger_top";
+    private static final String KEY_TRIGGER_BOTTOM = "trigger_bottom";
 
-    private AppMultiSelectListPreference mIncludedAppCircleBar;
-    private CheckBoxPreference mEnableAppCircleBar;
+    private SwitchPreference mEnabledPref;
+    private SeekBarPreference mTransparencyPref;
+    private ListPreference mPositionPref;
+    private SeekBarPreference mTriggerWidthPref;
+    private SeekBarPreference mTriggerTopPref;
+    private SeekBarPreference mTriggerBottomPref;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ContentResolver resolver = getActivity().getContentResolver();
 
-        addPreferencesFromResource(R.xml.app_sidebar);
+        addPreferencesFromResource(R.xml.app_sidebar_settings);
+
+        mEnabledPref = (SwitchPreference) findPreference(KEY_ENABLED);
+        mEnabledPref.setChecked((Settings.System.getInt(getContentResolver(),
+                Settings.System.APP_SIDEBAR_ENABLED, 0) == 1));
+        mEnabledPref.setOnPreferenceChangeListener(this);
 
         PreferenceScreen prefSet = getPreferenceScreen();
+        mPositionPref = (ListPreference) prefSet.findPreference(KEY_POSITION);
+        mPositionPref.setOnPreferenceChangeListener(this);
+        int position = Settings.System.getInt(getContentResolver(), Settings.System.APP_SIDEBAR_POSITION, 0);
+        mPositionPref.setValue(String.valueOf(position));
+        updatePositionSummary(position);
 
-        // App circle bar
-        mEnableAppCircleBar = (CheckBoxPreference) prefSet.findPreference(PREF_ENABLE_APP_CIRCLE_BAR);
-        mEnableAppCircleBar.setChecked((Settings.System.getInt(resolver,
-                Settings.System.ENABLE_APP_CIRCLE_BAR, 0) == 1));
+        mTransparencyPref = (SeekBarPreference) findPreference(KEY_TRANSPARENCY);
+        mTransparencyPref.setValue(Settings.System.getInt(getContentResolver(),
+                Settings.System.APP_SIDEBAR_TRANSPARENCY, 0));
+        mTransparencyPref.setOnPreferenceChangeListener(this);
 
-        mIncludedAppCircleBar = (AppMultiSelectListPreference) prefSet.findPreference(PREF_INCLUDE_APP_CIRCLE_BAR_KEY);
-        Set<String> includedApps = getIncludedApps();
-        if (includedApps != null) mIncludedAppCircleBar.setValues(includedApps);
-        mIncludedAppCircleBar.setOnPreferenceChangeListener(this);
+        mTriggerWidthPref = (SeekBarPreference) findPreference(KEY_TRIGGER_WIDTH);
+        mTriggerWidthPref.setValue(Settings.System.getInt(getContentResolver(),
+                Settings.System.APP_SIDEBAR_TRIGGER_WIDTH, 10));
+        mTriggerWidthPref.setOnPreferenceChangeListener(this);
 
+        mTriggerTopPref = (SeekBarPreference) findPreference(KEY_TRIGGER_TOP);
+        mTriggerTopPref.setValue(Settings.System.getInt(getContentResolver(),
+                Settings.System.APP_SIDEBAR_TRIGGER_TOP, 0));
+        mTriggerTopPref.setOnPreferenceChangeListener(this);
+
+        mTriggerBottomPref = (SeekBarPreference) findPreference(KEY_TRIGGER_BOTTOM);
+        mTriggerBottomPref.setValue(Settings.System.getInt(getContentResolver(),
+                Settings.System.APP_SIDEBAR_TRIGGER_HEIGHT, 100));
+        mTriggerBottomPref.setOnPreferenceChangeListener(this);
+
+        findPreference(KEY_SETUP_ITEMS).setOnPreferenceClickListener(this);
     }
-       
-    @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        ContentResolver resolver = getActivity().getContentResolver();
-        boolean value;
-        if  (preference == mEnableAppCircleBar) {
-            boolean checked = ((CheckBoxPreference)preference).isChecked();
-            Settings.System.putInt(resolver,
-                    Settings.System.ENABLE_APP_CIRCLE_BAR, checked ? 1:0);
-        } else {
-            return super.onPreferenceTreeClick(preferenceScreen, preference);
+
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        if (preference == mTransparencyPref) {
+            int transparency = ((Integer)newValue).intValue();
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.APP_SIDEBAR_TRANSPARENCY, transparency);
+            return true;
+        } else if (preference == mTriggerWidthPref) {
+            int width = ((Integer)newValue).intValue();
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.APP_SIDEBAR_TRIGGER_WIDTH, width);
+            return true;
+        } else if (preference == mTriggerTopPref) {
+            int top = ((Integer)newValue).intValue();
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.APP_SIDEBAR_TRIGGER_TOP, top);
+            return true;
+        } else if (preference == mTriggerBottomPref) {
+            int bottom = ((Integer)newValue).intValue();
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.APP_SIDEBAR_TRIGGER_HEIGHT, bottom);
+            return true;
+        } else if (preference == mPositionPref) {
+            int position = Integer.valueOf((String) newValue);
+            updatePositionSummary(position);
+            return true;
+        } else if (preference == mEnabledPref) {
+            boolean value = ((Boolean)newValue).booleanValue();
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.APP_SIDEBAR_ENABLED,
+                    value ? 1 : 0);
+            return true;
         }
-
-        return true;
-    }
-
-    @Override
-    public boolean onPreferenceChange(Preference preference, Object objValue) {
-        ContentResolver resolver = getActivity().getContentResolver();
-        final String key = preference.getKey();
-        if (preference == mIncludedAppCircleBar) {
-            storeIncludedApps((Set<String>) objValue);
-        }
-
-        return true;
+        return false;
     }
 
     @Override
     public boolean onPreferenceClick(Preference preference) {
+        if(preference.getKey().equals(KEY_SETUP_ITEMS)) {
+            Intent intent = new Intent(Intent.ACTION_MAIN);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.setComponent(new ComponentName("com.android.systemui",
+                    "com.android.systemui.statusbar.sidebar.SidebarConfigurationActivity"));
+            getActivity().startActivity(intent);
+            return true;
+        }
         return false;
     }
 
-    private Set<String> getIncludedApps() {
-        String included = Settings.System.getString(getActivity().getContentResolver(),
-                Settings.System.WHITELIST_APP_CIRCLE_BAR);
-        if (TextUtils.isEmpty(included)) {
-            return null;
-        }
-        return new HashSet<String>(Arrays.asList(included.split("\\|")));
+    private void updatePositionSummary(int value) {
+        mPositionPref.setSummary(mPositionPref.getEntries()[mPositionPref.findIndexOfValue("" + value)]);
+        Settings.System.putInt(getContentResolver(),
+                Settings.System.APP_SIDEBAR_POSITION, value);
     }
 
-    private void storeIncludedApps(Set<String> values) {
-        StringBuilder builder = new StringBuilder();
-        String delimiter = "";
-        for (String value : values) {
-            builder.append(delimiter);
-            builder.append(value);
-            delimiter = "|";
-        }
-        Settings.System.putString(getActivity().getContentResolver(),
-                Settings.System.WHITELIST_APP_CIRCLE_BAR, builder.toString());
+    @Override
+    public void onPause() {
+        super.onPause();
+        Settings.System.putInt(getContentResolver(),
+                Settings.System.APP_SIDEBAR_SHOW_TRIGGER, 0);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();    //To change body of overridden methods use File | Settings | File Templates.
+        Settings.System.putInt(getContentResolver(),
+                Settings.System.APP_SIDEBAR_SHOW_TRIGGER, 1);
     }
 }

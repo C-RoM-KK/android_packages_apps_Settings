@@ -79,6 +79,10 @@
         android:name="android.permission.REPORT_SUPERUSER"
         android:protectionLevel="signature" />
 
+    <permission
+        android:name="cyanogenmod.permission.PROTECTED_APP"
+        android:protectionLevel="signatureOrSystem" />
+
     <permission-group
         android:name="android.permission-group.SUPERUSER"
         android:description="@string/superuser_description_more"
@@ -103,6 +107,16 @@
             android:hardwareAccelerated="true"
             android:requiredForAllUsers="true"
             android:supportsRtl="true">
+
+        <uses-library android:name="org.cyanogenmod.hardware" required="false" />
+
+        <receiver
+            android:name=".cyanogenmod.ProtectedAppsReceiver"
+            android:permission="cyanogenmod.permission.PROTECTED_APP">
+            <intent-filter>
+                <action android:name="cyanogenmod.intent.action.PACKAGE_PROTECTED" />
+            </intent-filter>
+        </receiver>
 
         <!-- Only system/su can open this activity -->
         <!-- This activity will then call the MultitaskSuRequestActivity to create a new task stack -->
@@ -1803,6 +1817,19 @@
                 android:value="com.android.settings.crom.QuietHours" />
         </activity>
 
+        <!-- Pseudo-activity used to provide an intent-filter entry point to hover settings -->
+        <activity android:name="Settings$HoverSettingsActivity"
+                android:label="@string/hover_enabled_title"
+                android:taskAffinity=""
+                android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.crom.HoverSettings" />
+        </activity>
+
         <!-- Pseudo-activity used to provide an intent-filter entry point to quick tiles settings -->
         <activity android:name="Settings$QuickSettingsTilesSettingsActivity"
                 android:label="@string/tile_picker_title"
@@ -1815,6 +1842,8 @@
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.android.settings.crom.quicksettings.QuickSettingsTiles" />
         </activity>
+
+        <activity android:name=".headsup.HeadsUpSettings" />
 
         <!-- Pseudo-activity used to provide an intent-filter entry point to battery icon settings -->
         <activity android:name="Settings$BatteryIconStyleSettingsActivity"
@@ -1829,7 +1858,16 @@
                 android:value="com.android.settings.crom.BatteryIconStyle" />
         </activity>
 
+        <activity android:name=".crom.MiscOptions" />
         <activity android:name=".crom.WakeLockBlocker" />
+
+        <receiver android:name=".crom.hfm.IntentReceiver" >
+            <intent-filter>
+                 <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name=".crom.hfm.CheckHosts" />
 
         <!-- Pseudo-activity used to provide an intent-filter entry point to rotation settings -->
         <activity android:name="Settings$DisplayRotationSettingsActivity"
@@ -1853,6 +1891,61 @@
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.android.settings.cro.RamBar" />
+        </activity>
+
+        <!-- Profiles -->
+        <activity android:name=".profiles.ProfilesSettings" />
+        <activity android:name="Settings$ProfilesSettingsActivity"
+                android:label="@string/profile_settings"
+                android:taskAffinity=""
+                android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.settings.PROFILES_SETTINGS" />
+                <action android:name="com.android.settings.PROFILES_SETTINGS" />
+                <category android:name="android.intent.category.VOICE_LAUNCH" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.SHORTCUT" />
+                </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.profiles.ProfilesSettings" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                android:resource="@id/profiles_settings" />
+            </activity>
+
+        <!-- Keep compatibility with old shortcuts. -->
+        <activity-alias android:name="ProfileSettings"
+                android:label="@string/profile_settings"
+                android:exported="true"
+                android:targetActivity="Settings$ProfilesSettingsActivity">
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.profiles.ProfilesSettings" />
+            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
+                android:resource="@id/profiles_settings" />
+        </activity-alias>
+
+        <activity android:name=".profiles.ProfileConfig" />
+
+        <activity android:name=".profiles.AppGroupList" />
+
+        <activity android:name=".profiles.AppGroupConfig" />
+
+        <activity android:name=".profiles.ProfileGroupConfig" />
+
+        <activity android:name=".profiles.WifiTriggers" />
+
+        <activity android:name=".profiles.NFCProfileWriter"
+                android:parentActivityName="Settings$ProfilesSettingsActivity" />
+
+        <activity android:name=".profiles.NFCProfileSelect" />
+
+        <activity android:name=".profiles.NFCProfile"
+                android:theme="@android:style/Theme.NoDisplay">
+            <intent-filter>
+                <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:mimeType="cm/profile" />
+            </intent-filter>
         </activity>
 
         <!-- Pseudo-activity used to provide an intent-filter entry point to encryption settings -->
@@ -1991,66 +2084,67 @@
             </intent-filter>
         </activity>
 
-        <!-- Profiles -->
-        <activity android:name=".profiles.ProfilesSettings" />
-        <activity android:name="Settings$ProfilesSettingsActivity"
-                android:label="@string/profile_settings"
-                android:taskAffinity=""
-                android:excludeFromRecents="true">
+        <!-- PerformanceControl activities -->
+        <activity android:name="com.brewcrewfoo.performance.activities.MainActivity"/>
+        <activity android:name="com.brewcrewfoo.performance.activities.MemUsageActivity"/>
+        <activity android:name="com.brewcrewfoo.performance.activities.PCSettings"/>
+        <activity android:name="com.brewcrewfoo.performance.activities.PackActivity"/>
+        <activity android:name="com.brewcrewfoo.performance.activities.FlasherActivity"/>
+        <activity android:name="com.brewcrewfoo.performance.activities.FileChooser"
+                  android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:name="com.brewcrewfoo.performance.activities.HideTabs"/>
+        <activity android:name="com.brewcrewfoo.performance.activities.TouchScreenSettings"/>
+        <activity android:name="com.brewcrewfoo.performance.activities.KSMActivity"
+                  android:windowSoftInputMode="stateHidden"/>
+        <activity android:name="com.brewcrewfoo.performance.activities.ZramActivity"
+            android:windowSoftInputMode="stateHidden"/>
+        <activity android:name="com.brewcrewfoo.performance.activities.PFKActivity"
+            android:windowSoftInputMode="stateHidden"/>
+        <activity android:name="com.brewcrewfoo.performance.activities.FreezerActivity"
+                  android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:name="com.brewcrewfoo.performance.activities.ParamActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:name="com.brewcrewfoo.performance.activities.GovSetActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:name="com.brewcrewfoo.performance.activities.IOSetActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:name="com.brewcrewfoo.performance.activities.VMSettings"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:name="com.brewcrewfoo.performance.activities.BuildPropEditor"
+                  android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:name="com.brewcrewfoo.performance.activities.ResidualsActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:name="com.brewcrewfoo.performance.activities.iResidualsActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <activity android:name="com.brewcrewfoo.performance.activities.SysctlEditor"
+            android:configChanges="keyboardHidden|orientation|screenSize"/>
+        <receiver android:name="com.brewcrewfoo.performance.service.BootReceiver">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <action android:name="android.settings.PROFILES_SETTINGS" />
-                <action android:name="com.android.settings.PROFILES_SETTINGS" />
-                <category android:name="android.intent.category.VOICE_LAUNCH" />
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>
+        <service android:name="com.brewcrewfoo.performance.service.BootService"/>
+
+        <!-- PerformanceControl activities End -->
+
+        <activity android:name=".applications.ProtectedAppsActivity"
+                  android:label="@string/protected_apps"
+                  android:excludeFromRecents="true"
+                  android:configChanges="orientation">
+            <intent-filter>
+                <action android:name=".applications.ProtectedAppsActivity" />
                 <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.SHORTCUT" />
-                </intent-filter>
-            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.profiles.ProfilesSettings" />
-            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
-                android:resource="@id/profiles_settings" />
-            </activity>
-
-        <!-- Keep compatibility with old shortcuts. -->
-        <activity-alias android:name="ProfileSettings"
-                android:label="@string/profile_settings"
-                android:exported="true"
-                android:targetActivity="Settings$ProfilesSettingsActivity">
-            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.profiles.ProfilesSettings" />
-            <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
-                android:resource="@id/profiles_settings" />
-        </activity-alias>
-
-        <!-- CyanogenMod activities Start -->
-        <activity android:name=".profiles.ProfilesSettings" />
-
-        <activity android:name=".profiles.ProfileConfig" />
-
-        <activity android:name=".profiles.AppGroupList" />
-
-        <activity android:name=".profiles.AppGroupConfig" />
-
-        <activity android:name=".profiles.ProfileGroupConfig" />
-
-        <activity android:name=".profiles.WifiTriggers" />
-
-        <activity android:name=".profiles.NFCProfileWriter" />
-
-        <activity android:name=".profiles.NFCProfileSelect" />
-
-        <activity android:name=".profiles.NFCProfile"
-                android:theme="@android:style/Theme.NoDisplay">
-            <intent-filter>
-                <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <data android:mimeType="cm/profile" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".profiles.ProfilesAppPicker" android:label="@string/select_application"
-                android:theme="@*android:style/Theme.Holo.Dialog" />
-        <!-- Profiles - end -->
+        <activity android:name=".applications.LockPatternActivity"
+                  android:label="@string/protected_apps"
+                  android:excludeFromRecents="true">
+            <intent-filter>
+                <action android:name=".applications.LockPatternActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
         <receiver android:name=".widget.SettingsAppWidgetProvider"
                 android:label="@string/gadget_title"
@@ -2081,7 +2175,7 @@
                 <action android:name="android.provider.Contacts.PROFILE_CHANGED" />
             </intent-filter>
         </receiver>
-		
+
         <receiver
             android:name="com.android.settings.crom.batterysaver.BootReceiver">
             <intent-filter>

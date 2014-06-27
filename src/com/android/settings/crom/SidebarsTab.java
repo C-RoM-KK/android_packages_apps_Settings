@@ -35,12 +35,13 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
-import com.android.settings.crom.WakeLockBlocker;
+import com.android.settings.crom.AppCircleSidebar;
+import com.android.settings.crom.AppSidebar;
 
 import java.lang.Exception;
 import java.util.ArrayList;
 
-public class WakelockTab extends SettingsPreferenceFragment {
+public class SidebarsTab extends SettingsPreferenceFragment {
 
     private static final String TAG = "Battery_Category";
 
@@ -89,7 +90,8 @@ public class WakelockTab extends SettingsPreferenceFragment {
 
         public NavigationAdapter(FragmentManager fm) {
             super(fm);
-            frags[0] = new WakeLockBlocker();
+            frags[0] = new AppCircleSidebar();
+            frags[1] = new AppSidebar();
         }
 
         @Override
@@ -111,7 +113,8 @@ public class WakelockTab extends SettingsPreferenceFragment {
     private String[] getTitles() {
         String titleString[];
         titleString = new String[]{
-                    getString(R.string.wakelock_blocker)};
+                    getString(R.string.app_circle_bar_title),
+                    getString(R.string.app_sidebar_title)};
         return titleString;
     }
 }

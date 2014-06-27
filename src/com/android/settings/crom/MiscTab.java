@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 C-RoM Project
+ * Copyright (C) 2014 The C-RoM Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,14 +35,17 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
-import com.android.settings.crom.SystemappRemover;
+import com.android.settings.crom.BatterySaverSettings;
+import com.android.settings.crom.MiscOptions;
+import com.android.settings.crom.InitD;
+import com.android.settings.crom.WakeLockBlocker;
 
 import java.lang.Exception;
 import java.util.ArrayList;
 
-public class SystemappRemoverTab extends SettingsPreferenceFragment {
+public class MiscTab extends SettingsPreferenceFragment {
 
-    private static final String TAG = "App_Remover";
+    private static final String TAG = "Mix_Category";
 
     PagerTabStrip mPagerTabStrip;
     ViewPager mViewPager;
@@ -62,8 +65,8 @@ public class SystemappRemoverTab extends SettingsPreferenceFragment {
         mViewPager = (ViewPager) view.findViewById(R.id.viewPager);
         mPagerTabStrip = (PagerTabStrip) view.findViewById(R.id.pagerTabStrip);
 
-        StatusBarAdapter StatusBarAdapter = new StatusBarAdapter(getFragmentManager());
-        mViewPager.setAdapter(StatusBarAdapter);
+        NavigationAdapter NavigationAdapter = new NavigationAdapter(getFragmentManager());
+        mViewPager.setAdapter(NavigationAdapter);
 
         return view;
     }
@@ -83,13 +86,16 @@ public class SystemappRemoverTab extends SettingsPreferenceFragment {
         }
     }
 
-    class StatusBarAdapter extends FragmentPagerAdapter {
+    class NavigationAdapter extends FragmentPagerAdapter {
         String titles[] = getTitles();
         private Fragment frags[] = new Fragment[titles.length];
 
-        public StatusBarAdapter(FragmentManager fm) {
+        public NavigationAdapter(FragmentManager fm) {
             super(fm);
-            frags[0] = new SystemappRemover();
+            frags[0] = new BatterySaverSettings();
+            frags[1] = new MiscOptions();
+            frags[2] = new InitD();
+            frags[3] = new WakeLockBlocker();
         }
 
         @Override
@@ -110,8 +116,11 @@ public class SystemappRemoverTab extends SettingsPreferenceFragment {
 
     private String[] getTitles() {
         String titleString[];
-        titleString = new String[] {
-                    getString(R.string.system_app_remover_title),};
+        titleString = new String[]{
+                    getString(R.string.battery_saver_title),
+                    getString(R.string.misc_options_title),
+                    getString(R.string.init_d_title),
+                    getString(R.string.wakelock_blocker)};
         return titleString;
     }
 }

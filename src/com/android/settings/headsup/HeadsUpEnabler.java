@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2013 The CyanogenMod Project
+ * Copyright (C) 2012 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,21 +14,20 @@
  * limitations under the License.
  */
 
-package com.android.settings.location;
+package com.android.settings.headsup;
 
 import android.content.Context;
+import android.os.UserHandle;
 import android.provider.Settings;
-import android.util.Log;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 
-public class LocationEnabler implements CompoundButton.OnCheckedChangeListener  {
-    private static final String TAG = "LocationEnabler";
+public class HeadsUpEnabler implements CompoundButton.OnCheckedChangeListener {
     private final Context mContext;
     private Switch mSwitch;
     private boolean mStateMachineEvent;
 
-    public LocationEnabler(Context context, Switch switch_) {
+    public HeadsUpEnabler(Context context, Switch switch_) {
         mContext = context;
         mSwitch = switch_;
     }
@@ -51,10 +50,11 @@ public class LocationEnabler implements CompoundButton.OnCheckedChangeListener  
     }
 
     private void setSwitchState() {
-        int mode = Settings.Secure.getInt(mContext.getContentResolver(),
-                Settings.Secure.LOCATION_MODE, Settings.Secure.LOCATION_MODE_OFF);
+        boolean enabled = Settings.System.getIntForUser(
+                mContext.getContentResolver(),
+                Settings.System.HEADS_UP_NOTIFICATION, 0, UserHandle.USER_CURRENT) == 1;
         mStateMachineEvent = true;
-        mSwitch.setChecked(mode != Settings.Secure.LOCATION_MODE_OFF);
+        mSwitch.setChecked(enabled);
         mStateMachineEvent = false;
     }
 
@@ -63,20 +63,9 @@ public class LocationEnabler implements CompoundButton.OnCheckedChangeListener  
             return;
         }
         // Handle a switch change
-        if (LocationSettingsBase.isRestricted(mContext)) {
-            // Location toggling disabled by user restriction. Read the current location mode to
-            // update the location master switch.
-            if (Log.isLoggable(TAG, Log.INFO)) {
-                Log.i(TAG, "Restricted user, not setting location mode");
-            }
-            return;
-        }
+        Settings.System.putInt(mContext.getContentResolver(),
+                Settings.System.HEADS_UP_NOTIFICATION, isChecked ? 1 : 0);
 
-        int currentMode = Settings.Secure.getInt(mContext.getContentResolver(),
-                Settings.Secure.LOCATION_MODE, Settings.Secure.LOCATION_MODE_OFF);
-        int newMode = isChecked ? Settings.Secure.LOCATION_MODE_HIGH_ACCURACY
-                : Settings.Secure.LOCATION_MODE_OFF;
-        LocationSettingsBase.sendModeChangingIntent(mContext, currentMode, newMode);
     }
 
 }

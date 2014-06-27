@@ -52,7 +52,7 @@
 
     <!-- Advanced settings -->
     <string name="active_display_title">Affichage actif</string>
-    <string name="notification_drawer_title">Panneau de notifications</string>
+	<string name="notification_drawer_title">Panneau de notifications</string>
     <string name="pie_control_title">PIE</string>
 
     <!-- C-ROM OTA -->
@@ -93,6 +93,13 @@
     <!-- About phone screen, C-ROM version -->
     <string name="mod_version_title">Version C-RoM</string>
     <string name="mod_version_default">Inconnue</string>
+    
+    <!-- Performance settings -->
+    <string name="performance_settings_title">Performance</string>
+
+    <!-- Performance Settings | Warning dialog -->
+    <string name="performance_settings_warning_header">Attention</string>
+    <string name="performance_settings_warning_title">Utilisez avec précaution</string>
 	
     <!-- Lockscreen Options -->
 
@@ -286,9 +293,15 @@
     <string name="unlock_quick_unlock_control_summary">Déverrouiller en utilisant le code PIN ou un mot de passe</string>
 
     <!-- Shake to secure -->
-    <string name="shake_to_secure_title">Secouer pour sécuriser</string>
+    <string name="shake_to_secure_title">Agiter pour sécuriser</string>
     <string name="shake_to_secure_summary">La sécurité sera désactivée après chaque déverrouillage</string>
+    <string name="shake_to_secure_dlg_title">Attention:</string>
+    <string name="shake_to_secure_dlg_message">Votre appareil sera non sécurisé jusqu\'à ce que vous l\'agitiez volontairement pour verrouiller temporairement . Une fois sécurisé: si votre appareil est débloqué, il deviendra non sécurisé jusqu\'à ce que vous l\'agitiez de nouveau.</string>
     <string name="shake_secure_timeout_title">Re-sécuriser automatiquement</string>
+    <string name="shake_all">Agiter dans toutes les directions</string>
+    <string name="shake_horizontal">Agiter horizontalement</string>
+    <string name="shake_vertical">Agiter verticalement</string>
+    <string name="shake_back_forth">Agiter par un va et vient</string>
     <string name="shake_secure_timeout_disabled">ne jamais sécuriser automatiquement</string>
     <string name="shake_secure_timeout_1min">1 minute après que l\écran soit éteint</string>
     <string name="shake_secure_timeout_5min">5 minutes après que l\écran soit éteint</string>
@@ -374,12 +387,20 @@
     <string name="wifi_setting_countrycode_disabled">Activer le WI-FI pour changer cette option.</string>
     <!-- WiFi forget all networks -->
     <string name="wifi_menu_forget_all">Oublier tous les réseaux</string>
-
+    <!-- Wi-Fi SSID string limits -->
+    <string name="wifi_ssid_input_limit">Le SSID est supérieur à la longueur maximale</string>
+    <!-- Wi-Fi P2P string limits -->
+    <string name="p2p_device_name_input_limit">Le nom P2P est supérieur à la longueur maximale</string>
+	
     <!-- Status bar -->
     <string name="status_bar_title">Barre d\'état</string>
     <string name="status_bar_style_title">Style</string>
     <string name="status_bar_general_title">Général</string>
-
+	
+    <!-- Statusbar Second Clock -->
+    <string name="clock_use_second">Seconde</string>
+    <string name="clock_use_second_summary">Afficher l\'heure avec les secondes</string>
+	
     <!-- Status bar | Clock -->
     <string name="status_bar_clock">Heure et date</string>
     <string name="status_bar_clock_title">>Style de l\'heure et date</string>
@@ -422,15 +443,15 @@
     <string name="status_bar_toggle_info">La luminosité automatique est activée</string>
 
     <!-- Shake Events -->
-    <string name="shake_events_title">Événement secousse</string>
-    <string name="shake_events_summary">Utiliser différents événements de secousse pour les activités</string>
-    <string name="shake_events_enabled_title">Activer la détection secousse</string>
-    <string name="shake_events_normal_title">Activer les événements secousse</string>
+    <string name="shake_events_title">Événement Agitation</string>
+    <string name="shake_events_summary">Utiliser différents événements d\'agitation pour les activités</string>
+    <string name="shake_events_enabled_title">Activer la détection agitation</string>
+    <string name="shake_events_normal_title">Activer les événements agitation</string>
     <string name="shake_events_disabled_title">Désactiver les apps</string>
-    <string name="shake_events_disabled_summary">La secousse est désactivée pendant avec ces applications</string>
-    <string name="shake_event_x_title">Activité à lancer quand on secoue horizontalement</string>
-    <string name="shake_event_y_title">Activité à lancer quand on secoue verticalement</string>
-    <string name="shake_event_z_title">Activité à lancer quand on secoue dans un va-et-vient</string>
+    <string name="shake_events_disabled_summary">L\'agitation est désactivée avec ces applications</string>
+    <string name="shake_event_x_title">Activité le lancement quand on agite horizontalement</string>
+    <string name="shake_event_y_title">Activité le lancement quand on agite verticalement</string>
+    <string name="shake_event_z_title">Activité le lancement quand on agite dans un va-et-vient</string>
 
     <!-- Shake sensitivity -->
     <string name="shake_sensitivity_title">Sensibilité du mouvement</string>
@@ -558,7 +579,7 @@ Des options supplémentaires sont disponibles en appuyant longtemps sur une lign
 luminosité de l\'écran désiré. Sélectionner \'Diviser\' vous permet de diviser une ligne en 
 deux afin d\'insérer des points de commande supplémentaires. \'Supprimer\' Efface les lignes sélectionnées.
     </string>
-
+	
 	
 	
 	
@@ -999,11 +1020,12 @@ deux afin d\'insérer des points de commande supplémentaires. \'Supprimer\' Eff
     <string name="title_tile_batterysaver">Mode économie énergie</string>
     <string name="title_tile_bluetooth">Bluetooth</string>
     <string name="title_tile_brightness">Luminosité</string>
+    <string name="title_tile_camera">Appareil photo</string>
+    <string name="title_tile_compass">Boussole</string>
     <string name="title_tile_contact">Contact</string>
     <string name="title_tile_custom">Personnalisé</string>
     <string name="title_tile_sleep">Mise en veille</string>
     <string name="title_tile_location">Position</string>
-    <string name="title_tile_compass">Compas</string>
     <string name="title_tile_torch">Lampe torche</string>
     <string name="title_tile_lockscreen">écran de verrouillage</string>
     <string name="title_tile_lte">LTE</string>
@@ -1025,7 +1047,7 @@ deux afin d\'insérer des points de commande supplémentaires. \'Supprimer\' Eff
     <string name="title_tile_music">Musique</string>
     <string name="title_tile_reboot">Redémarrage</string>
     <string name="title_tile_theme">Changeur de thèmes</string>
-    <string name="title_tile_shake">Événement secousse</string>
+    <string name="title_tile_shake">Événement agitation</string>
     <string name="dynamic_tile_ime_switcher">Sélecteur de notifications</string>
     <string name="dynamic_tile_usb_tether">Branchement USB</string>
     <string name="dynamic_tile_alarm">Alarme</string>
@@ -1160,6 +1182,7 @@ deux afin d\'insérer des points de commande supplémentaires. \'Supprimer\' Eff
 
     <!-- Hardware keys -->
     <string name="button_keys_title">Boutons physiques</string>
+    <string name="button_keys_summary">Activer pour les appareils avec touches physiques</string>
     <string name="keys_bindings_title">Fonctions des touches</string>
     <string name="keys_enable_custom_title">Activer des fonctions personnalisées</string>
     <string name="keys_enable_custom_summary">Activer des fonctions personnalisées pour les boutons physiques</string>
@@ -1346,6 +1369,8 @@ deux afin d\'insérer des points de commande supplémentaires. \'Supprimer\' Eff
     <string name="recent_panel_expanded_mode_auto">Auto (défaut)</string>
     <string name="recent_panel_expanded_mode_always">Toujours</string>
     <string name="recent_panel_expanded_mode_never">Jamais</string>
+    <string name="recent_panel_show_topmost_title">Afficher la plus haute tâche</string>
+    <string name="recent_panel_show_topmost_summary">Ne pas exclure la tâche la plus élevée dans la vue des récents</string>
 
     <!-- ATTENTION: RTL languages need to replace left with right -->
     <string name="recent_panel_lefty_mode_title">Montrer sur le bord gauche</string>
@@ -1565,19 +1590,19 @@ deux afin d\'insérer des points de commande supplémentaires. \'Supprimer\' Eff
     <string name="ad_annoying_summary">Limiter la notification à une fois par période de temps</string>
     <string name="ad_double_tap_title">Double appui pour veille</string>
     <string name="ad_double_tap_summary">Éteindre l\'écran par un double appui</string>
-    <string name="ad_shake_event_settings_title">Paramètres secouement</string>
-    <string name="ad_shake_event_title">Secouez pour ré-afficher</string>
-    <string name="ad_shake_event_summary">Secouer téléphone pour ré-afficher les notifications</string>
+    <string name="ad_shake_event_settings_title">Paramètres d\'agitation</string>
+    <string name="ad_shake_event_title">Agitez pour ré-afficher</string>
+    <string name="ad_shake_event_summary">Agiter téléphone pour ré-afficher les notifications</string>
     <string name="ad_shake_force_title">Cas de défaut</string>
-    <string name="ad_shake_force_summary">Après avoir reçu une notification l\'affichage actif ne fonctionnera pas jusqu\'à ce que l\'utilisateur fasse une secousse</string>
+    <string name="ad_shake_force_summary">Après avoir reçu une notification l\'affichage actif ne fonctionnera pas jusqu\'à ce que l\'utilisateur l\'agite</string>
     <string name="ad_shake_threshold_title">Intensité</string>
-    <string name="ad_shake_threshold_summary">Intensité de la secousse nécessaire pour afficher des notifications</string>
+    <string name="ad_shake_threshold_summary">Intensité de l\'agitation nécessaire pour afficher des notifications</string>
     <string name="ad_shake_timeout_title">Temps d\'attente</string>
-    <string name="ad_shake_timeout_summary">Temps en secondes ou le secouage est actif après avoir reçu la notification, 0 veut dire toujours actif</string>
+    <string name="ad_shake_timeout_summary">Temps en secondes ou l\'agitation est active après avoir reçu la notification, 0 veut dire toujours actif</string>
     <string name="ad_shake_quiet_hours_title">Outre passer les heures tranquilles</string>
-    <string name="ad_shake_quiet_hours_summary">Permettre le secouage durant les heures tranquilles</string>
-    <string name="ad_shake_long_threshold_title">Intervale</string>
-    <string name="ad_shake_long_threshold_summary">Temps minimum entre des secousses consécutives</string>
+    <string name="ad_shake_quiet_hours_summary">Permettre l\'agitation durant les heures tranquilles</string>
+    <string name="ad_shake_long_threshold_title">Intervalle</string>
+    <string name="ad_shake_long_threshold_summary">Temps minimum entre des agitations consécutives</string>
     <string name="ad_all_notifications_title">notifications en cours</string>
     <string name="ad_all_notifications_summary">Montrer les notifications en cours et non-effaçables</string>
     <string name="ad_hide_low_priority_title">Cachez les priorités faibles</string>
@@ -1595,7 +1620,7 @@ deux afin d\'insérer des points de commande supplémentaires. \'Supprimer\' Eff
     <string name="ad_show_date_title">Afficher la date</string>
     <string name="ad_show_ampm_title">Afficher AM/PM</string>
     <string name="ad_sunlight_mode_title">Mode plein soleil</string>
-    <string name="ad_brightness_summary">Luminositée Affichage actif (Utilisé seulement quand la luminosité automatique n\'est pas selectionnée)</string>
+    <string name="ad_brightness_summary">Luminosité Affichage active (Utilisé seulement quand la luminosité automatique n\'est pas selectionnée)</string>
     <string name="ad_show_date_summary">afficher la date a coté de l\'horloge</string>
     <string name="ad_show_ampm_summary">Afficher l\'indicateur AM/PM à côté de l\'heure lorsque vous utilisez le format 12 heures</string>
     <string name="ad_sunlight_mode_summary">Inverser les couleurs dans les endroits avec une lumière vive, comme la lumière solaire directe.</string>
@@ -1708,7 +1733,7 @@ deux afin d\'insérer des points de commande supplémentaires. \'Supprimer\' Eff
     <string name="show_network_traffic_1000">1000 ms</string>
     <string name="show_network_traffic_1500">1500 ms</string>
     <string name="show_network_traffic_2000">2000 ms</string>
-
+    
     <!-- Lock Gesture settings -->
     <string name="lockgesture_change_lock_pattern_label">Changer le signe de déverrouillage</string>
     <string name="lockgesture_change_lock_pin_label">Modifier le code PIN de déverrouillage</string>
@@ -1838,13 +1863,6 @@ deux afin d\'insérer des points de commande supplémentaires. \'Supprimer\' Eff
     <string name="battery_bar_animate_title">Animation chargement</string>
     <string name="battery_bar_animate_summary">L\'animation pendant la charge peut entraîner une mauvaise expérience utilisateur. Activer en connaissance de cause.</string>
 
-    <!-- App circle bar -->
-    <string name="category_app_circle_bar_title">Lanceur applications</string>
-    <string name="app_circle_bar_title">Barre circulaire d\'applications</string>
-    <string name="app_circle_bar_summary">Afficher le lanceur circulaire d\'applications après avoir touché le côté droit de l\'écran</string>
-    <string name="app_circle_bar_included_apps_title">Applications incluses</string>
-    <string name="app_circle_bar_included_apps_summary">Les applications seront affichées dans le cercle</string>
-
     <!-- On Click Fliptile animation -->
     <string name="flip_qs_tiles_title">Tuiles tournantes</string>
     <string name="flip_qs_tiles_summary">Faire tourner les tuiles au toucher</string>
@@ -1935,7 +1953,7 @@ deux afin d\'insérer des points de commande supplémentaires. \'Supprimer\' Eff
 
     <!-- Font size sample text -->
     <string name="font_size_sample">Exemple</string>
-
+    
     <!-- Toast Animations -->
     <string name="toast_animation_title">Animation Toast</string>
     <string name="toast_none_animation">Sans</string>
@@ -2024,7 +2042,7 @@ deux afin d\'insérer des points de commande supplémentaires. \'Supprimer\' Eff
     <string name="app_moving_reboot_title">Redémarrer maintenant?</string>
     <string name="app_moving_reboot_enabled_desc">Le déplacement d\'applications a été active avec succès.\n\nL\'appareil 
 doit être redémarré pour une prise en compte du changement.</string>
-    <string name="app_moving_reboot_disabled_desc">Le déplacement d\'applications a été désactivé avec succès.\n\nL\'appareil 
+    <string name="app_moving_reboot_disabled_desc">Le déplacement d\'applications a été désactivé avec succès.\n\nL\'appareil
 doit être redémarré pour une prise en compte du changement.</string>
     <string name="app_moving_reboot_now_button">Redémarrer maintenant</string>
     <string name="app_moving_reboot_later_button">Redémarrer après</string>
@@ -2103,8 +2121,8 @@ doit être redémarré pour une prise en compte du changement.</string>
     <string name="battery_saver_network_cdma_title">Réseau CDMA</string>
     <string name="battery_saver_system_title">Options systèmes</string>
 
-    <!-- Battery options -->
-    <string name="battery_tab">Économie batterie</string>
+    <!-- Mix options -->
+    <string name="mix_tab">MixTab</string>
 
     <!-- Wakelock blocker -->
     <string name="wakelock_blocker">Bloqueur de programme résident</string>
@@ -2145,5 +2163,159 @@ doit être redémarré pour une prise en compte du changement.</string>
     <string name="progressbar_linear">Linéaire</string>
     <string name="progressbar_acceleratedecelerate">Accélérer Décélérer</string>
     <string name="progressbar_decelerate">Décélérer</string>
+    
+    <!-- Sidebars Tab -->
+    <string name="app_bars_title">Barre latérale</string>
+    <string name="app_bars_summary">Afficher les options de la barre latérale</string>
+
+    <!-- App circle bar -->
+    <string name="category_app_circle_bar_title">Lanceur circulaire d\'applications</string>
+    <string name="app_circle_bar_title">Barre circulaire d\'applications</string>
+    <string name="app_circle_bar_summary">Afficher le lanceur d\'applications circulaire après avoir touché le côté droit de l\'écran</string>
+    <string name="app_circle_bar_included_apps_title">Applications incluses</string>
+    <string name="app_circle_bar_included_apps_summary">Les applications seront affichées dans la barre circulaire</string>
+
+    <!-- App sidebar -->
+    <string name="app_sidebar_title">>Barre d\'accès latérale (Appbar)</string>
+    <string name="app_sidebar_enable_title">Activer Appbar</string>
+    <string name="app_sidebar_summary">Personnaliser la barre latérale</string>
+    <string name="app_sidebar_enable_summaryOn">\@Appbar est activée</string>
+    <string name="app_sidebar_enable_summaryOff">\@Appbar est désactivée</string>
+    <string name="app_sidebar_setup_items_title">Configuration contenu Appbar</string>
+    <string name="app_sidebar_setup_items_summary">Ajout, enlèvement, et position des articles dans @Appbar</string>
+    <string name="app_sidebar_transparency_title">Transparence Appbar</string>
+    <string name="app_sidebar_transparency_summary">Ajuster le niveau de transparence de l\'Appbar</string>
+    <string name="app_sidebar_position_title">Position de l\'Appbar</string>
+    <string name="app_sidebar_position_summary">Placer l\'Appbar sur le côté gauche ou droit de l\'écran</string>
+    <string name="app_sidebar_position_left">Gauche</string>
+    <string name="app_sidebar_position_right">Droite</string>
+    <string name="app_sidebar_hide_labels_title">Masquer les icônes étiquettes</string>
+    <string name="app_sidebar_hide_labels_summary">>Masquer les icônes étiquettes de l\'Appbar</string>
+    <string name="trigger_category">Région de déclenchement</string>
+    <string name="trigger_width_title">Largeur de déclenchement</string>
+    <string name="trigger_width_summary">Ajuster la largeur de la zone de déclenchement</string>
+    <string name="trigger_top_title">Position de déclenchement</string>
+    <string name="trigger_top_summary">Ajuster la position verticale de la zone de déclenchement</string>
+    <string name="trigger_bottom_title">Hauteur de déclenchement</string>
+    <string name="trigger_bottom_summary">Ajuster la hauteur de la zone de déclenchement</string>
+
+    <!-- Init.d -->
+    <string name="header_summary_init_d">@null</string>
+    <string name="init_d_title">Init.d</string>
+    <string name="app_name">Config Init.d</string>
+    <string name="pt_general">Général</string>
+    <string name="pt_zipalign_apks">applications Zipalign</string>
+    <string name="ps_zipalign_apks">Zipalign des applications non alignées a chaque démarrage</string>
+    <string name="pt_fix_permissions">Réparer les permissions</string>
+    <string name="ps_fix_permissions">Correction des autorisations sur les applications et de leurs données à chaque démarrage</string>
+    <string name="pt_enable_sysctl">Activer sysctl</string>
+    <string name="ps_enable_sysctl">Activer réglages sysctl au démarrage</string>
+    <string name="pt_free_mem">Memoire libre</string>
+    <string name="ps_free_mem">Définir les valeurs min libre au démarrage</string>
+    <string name="pt_clear_data_cache">Vider le cache</string>
+    <string name="ps_clear_data_cache">Effacer les fichiers cache des applications a chaque démarrage</string>
+    <string name="pt_enable_cron">Activer les tâches planifiées</string>
+    <string name="ps_enable_cron">Activer les tâches planifiées cron</string>
+    <string name="pt_sd_boost">Activer le boost SD</string>
+    <string name="ps_sd_boost">Activer/désactiver boost vitesse carte SD</string>
+    <string name="pt_file_system_speedups">Accélération du système de fichiers</string>
+    <string name="ps_file_system_speedups">Accélérer les systèmes de fichiers au démarrage</string>
+    <string name="pt_foreground_app_mem">Appli mémoire au premier plan</string>
+    <string name="pt_visible_app_mem">App mem visible</string>
+    <string name="pt_perceptible_app_mem">App mem perceptible</string>
+    <string name="pt_heavy_weight_app_mem">App mem lourde</string>
+    <string name="pt_secondary_server_mem">App mem serveur secondaire</string>
+    <string name="pt_backup_app_mem">App mem sauvegarde</string>
+    <string name="pt_home_app_mem">App mem Acceuil</string>
+    <string name="pt_hidden_app_mem">App mem cachées</string>
+    <string name="pt_empty_app_mem">App mem vide</string>
+    <string name="pt_read_ahead_kb">Lire la valeur de tête</string>
+    <string name="pt_minfree_values">Valeurs Minfree</string>
+    <string name="pt_battery">Activer réglages de la batterie</string>
+    <string name="ps_battery">Activer/désactiver des réglages d\'économie de batterie</string>
+    <string name="pt_touch">Activer réglages tactiles</string>
+    <string name="ps_touch">Activer/désactiver les réglages de l\'écran tactile</string>
+    <string name="pt_minfree">Activer valeurs de minfree</string>
+    <string name="ps_minfree">Activer/désactiver les réglages de minfree</string>
+    <string name="pt_gpurender">Activer rendu GPU</string>
+    <string name="ps_gpurender">Activer/désactiver les réglages de rendu gpu</string>
+    <string name="pt_sleepers">Activer veille</string>
+    <string name="ps_sleepers">Activer/désactiver les réglages de veille</string>
+    <string name="pt_journalism">Activer la mise en journal</string>
+    <string name="ps_journalism">Activer/désactiver les réglages de mise en journal</string>
+    <string name="pt_sqlite3">Activer sqlite3</string>
+    <string name="ps_sqlite3">Activer/désactiver les réglages de sqlite3</string>
+    <string name="pt_wifisleep">Activer veille wifi</string>
+    <string name="ps_wifisleep">Activer/désactiver les réglages de la veille WIFI</string>
+    <string name="pt_iostats">Activer iostats</string>
+    <string name="ps_iostats">Activer/désactiver iostats</string>
+    <string name="pt_setrenice">Activer setrenice</string>
+    <string name="ps_setrenice">Activer/désactiver setrenice</string>
+    <string name="pt_tweaks">Activer les super réglages</string>
+    <string name="ps_tweaks">Activer/désactiver les super réglages</string>
+    <string name="pt_speedy_modified">Activer la modification rapide</string>
+    <string name="ps_speedy_modified">Activer/désactiver les réglages de modification rapide</string>
+    <string name="pt_loopy_smoothness_tweak">Activer la régularité folle</string>
+    <string name="ps_loopy_smoothness_tweak">Activer/désactiver les réglages de régularité folle</string>
+    <string name="pt_init_d_credits">Développé par:</string>
+    <string name="ps_init_d_credits">Jared Rummler (JRummy16)</string>
+    <string name="dt_init_d_error">Erreur Init.d</string>
+    <string name="dm_init_d_error">Il semble que init.d n\'est pas configuré correctement.Merci de contacter votre développeur de ROM.</string>
+    <string name="db_exit">Sortie</string>
+	
+    <!-- Text for forcing expanded notifications -->
+    <string name="disable_fc_notifications_title">Désactiver les notifications d\'erreurs</string>
+    <string name="disable_fc_notifications_summary">Cela permet de masquer toutes les notifications de fermetures forcées.</string>
+
+    <!-- Text for Misc Options entry -->
+    <string name="misc_options_system">Système</string>
+    <string name="misc_options">Divers</string>
+    <string name="misc_options_title">Divers</string>
+    <string name="misc_tweaks_hfm">Gestionnaire de fichiers hôtes</string>
+    <string name="hfm_disable_ads_title">Désactiver les pubs</string>
+    <string name="hfm_disable_ads_summary">Modifier le fichier hôte pour désactiver les pubs</string>
+    <string name="hfm_pref_screen_title">Bloqueur de pub</string>
+    <string name="hfm_update_hosts">Mise a jour fichier hôte</string>
+    <string name="hfm_update_hosts_summary">Télécharger et appliquer les nouveaux hôtes</string>
+    <string name="hfm_dialog_wait">En cours, merci d\'attendre...</string>
+    <string name="hfm_dialog_failed">La mise à jour du fichier hôte a échouée. Merci d\'essayer à nouveau.</string>
+    <string name="hfm_dialog_success">/4 sources hôtes appliquées avec succès!</string>
+    <string name="hfm_dialog_conn_error">Erreur: pas de connexion réseau</string>
+
+    <!-- On-the-Go -->
+    <string name="power_menu_onthego_title">Mode OTG</string>
+
+    <!-- Hardware tunables - Vibrator intensity -->
+    <string name="vibrator_intensity_title">Intensité du vibreur</string>
+    <string name="vibrator_warning">Les valeurs supérieures à %1$d ne sont pas recommandées</string>
+
+    <!-- Hardware tunables - Color calibration -->
+    <string name="color_calibration_title">Calibrage des couleurs</string>
+    <string name="color_calibration_summary">Calibrer les couleurs de l\'écran</string>
+    <string name="color_red_title">Rouge</string>
+    <string name="color_green_title">Vert</string>
+    <string name="color_blue_title">Bleu</string>
+
+    <!-- Hardware tunables - Gamma calibration -->
+    <string name="gamma_tuning_title_head">Calibrage du gamma</string>
+    <string name="gamma_tuning_summary_head">Personnaliser les valeurs du gamma</string>
+    <string name="gamma_tuning_control_set_header">Groupe <xliff:g id="index">%d</xliff:g></string> <!-- used if no name provided by overlay -->
+    <string name="gamma_tuning_contrast">Contraste</string>
+    <string name="gamma_tuning_brightness">Luminosité</string>
+    <string name="gamma_tuning_saturation">Saturation</string>
+
+    <!-- Category title for headset specific Settings.
+         [CHAR LIMIT=40] -->
+    <string name="headset_category_title">Casque audio</string>
+
+    <!-- Launch music player when headset is connected -->
+    <string name="headset_connect_player_title">Lancer lecteur de musique</string>
+    <string name="headset_connect_player_summary">Lancer le lecteur de musique par défaut au branchement du casque</string>
+
+    <!--  Other device settings -->
+    <string name="more_device_controls_title">Plus\u2026</string>
+    <string name="more_device_settings_title">Autres options de l\'appareil</string>
+    <string name="sensors_motors_title">Capteurs &amp; vibreur</string>
+    <string name="display_calibration_title">Calibrage de l\'écran</string>
 
 </resources>

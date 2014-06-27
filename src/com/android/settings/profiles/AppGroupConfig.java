@@ -24,9 +24,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.NotificationGroup;
 import android.app.ProfileManager;
-import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.content.DialogInterface;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
@@ -64,21 +62,17 @@ public class AppGroupConfig extends SettingsPreferenceFragment
 
     private static String TAG = "AppGroupConfig";
 
-    //private static final int DIALOG_APPS = 0;
+    private static final int DIALOG_APPS = 0;
 
     private static final int DELETE_CONFIRM = 1;
 
     private static final int DELETE_GROUP_CONFIRM = 2;
 
-    private static final int RESULT_PICK_APP = 1000;
-    
     public static final String PROFILE_SERVICE = "profile";
 
     private ListView mListView;
 
     private PackageManager mPackageManager;
-
-    private List<PackageInfo> mInstalledPackages;
 
     private NotificationGroup mNotificationGroup;
 
@@ -90,7 +84,7 @@ public class AppGroupConfig extends SettingsPreferenceFragment
 
     private static final int MENU_ADD = Menu.FIRST + 1;
 
-    //PackageAdaptor mAppAdapter;
+    PackageAdaptor mAppAdapter;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -103,9 +97,8 @@ public class AppGroupConfig extends SettingsPreferenceFragment
         if (args != null) {
             mNotificationGroup = (NotificationGroup) args.getParcelable("NotificationGroup");
             mPackageManager = getPackageManager();
-            mInstalledPackages = mPackageManager.getInstalledPackages(0);
-            //mAppAdapter = new PackageAdaptor(mInstalledPackages);
-            //mAppAdapter.update();
+            mAppAdapter = new PackageAdaptor(mPackageManager.getInstalledPackages(0));
+            mAppAdapter.update();
 
             updatePackages();
 
@@ -121,7 +114,7 @@ public class AppGroupConfig extends SettingsPreferenceFragment
                 MenuItem.SHOW_AS_ACTION_WITH_TEXT);
 
         MenuItem addApplication = menu.add(0, MENU_ADD, 0, R.string.profiles_add)
-                .setIcon(R.drawable.ic_menu_add_dark)
+                .setIcon(R.drawable.ic_menu_add)
                 .setAlphabeticShortcut('a');
         addApplication.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM |
                 MenuItem.SHOW_AS_ACTION_WITH_TEXT);
@@ -239,24 +232,10 @@ public class AppGroupConfig extends SettingsPreferenceFragment
     }
 
     private void addNewApp() {
-        startActivityForResult(new Intent(getActivity(), ProfilesAppPicker.class), RESULT_PICK_APP);
-        //showDialog(DIALOG_APPS);
+        showDialog(DIALOG_APPS);
         // TODO: switch to using the built in app list rather than dialog box?
     }
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == RESULT_PICK_APP) {
-            if (resultCode == Activity.RESULT_OK) {
-                String packageName = data.getAction();
-                mNotificationGroup.addPackage(packageName);
-                updatePackages();
-            }
-        } else {
-            super.onActivityResult(requestCode, resultCode, data);
-        }
-    }
-    
     private void removeApp(String key) {
         mPackageToDelete = key.toString();
         showDialog(DELETE_CONFIRM);
@@ -271,7 +250,7 @@ public class AppGroupConfig extends SettingsPreferenceFragment
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         final Dialog dialog;
         switch (id) {
- /*           case DIALOG_APPS:
+            case DIALOG_APPS:
                 final ListView list = new ListView(getActivity());
                 list.setAdapter(mAppAdapter);
                 builder.setTitle(R.string.profile_choose_app);
@@ -286,7 +265,7 @@ public class AppGroupConfig extends SettingsPreferenceFragment
                         dialog.cancel();
                     }
                 });
-                break;*/
+                break;
             case DELETE_CONFIRM:
                 builder.setMessage(R.string.profile_app_delete_confirm);
                 builder.setTitle(R.string.profile_menu_delete);
@@ -341,15 +320,21 @@ public class AppGroupConfig extends SettingsPreferenceFragment
     }
 
     class PackageItem implements Comparable<PackageItem> {
-        CharSequence title;
-
+        String title;
         String packageName;
-
         Drawable icon;
+        boolean enabled;
 
         @Override
         public int compareTo(PackageItem another) {
-            return this.title.toString().compareTo(another.title.toString());
+            if (enabled != another.enabled) {
+                return enabled ? -1 : 1;
+            }
+            int titleResult = title.compareToIgnoreCase(another.title);
+            if (titleResult != 0) {
+                return titleResult;
+            }
+            return packageName.compareTo(another.packageName);
         }
     }
 
@@ -370,11 +355,11 @@ public class AppGroupConfig extends SettingsPreferenceFragment
                         for (PackageInfo info : mInstalledPackageInfo) {
                             final PackageItem item = new PackageItem();
                             ApplicationInfo applicationInfo = info.applicationInfo;
-                            item.title = applicationInfo.loadLabel(mPackageManager);
+                            item.title = applicationInfo.loadLabel(mPackageManager).toString();
                             item.icon = applicationInfo.loadIcon(mPackageManager);
                             item.packageName = applicationInfo.packageName;
+                            item.enabled = applicationInfo.enabled;
                             handler.post(new Runnable() {
-
                                 @Override
                                 public void run() {
                                     int index = Collections.binarySearch(mInstalledPackages, item);

@@ -111,7 +111,7 @@ public class Utils {
     private static final int DEVICE_TABLET = 2;
 
     // Device type reference
-    private static int mDeviceType = -1;
+    private static int sDeviceType = -1;
 
     /**
      * Finds a matching activity for a preference's intent. If a matching
@@ -192,8 +192,7 @@ public class Utils {
     public static boolean updatePreferenceToSpecificActivityFromMetaDataOrRemove(Context context,
             PreferenceGroup parentPreferenceGroup, String preferenceKey) {
 
-        IconPreferenceScreen preference = (IconPreferenceScreen)parentPreferenceGroup
-                .findPreference(preferenceKey);
+        Preference preference = parentPreferenceGroup.findPreference(preferenceKey);
         if (preference == null) {
             return false;
         }
@@ -236,9 +235,12 @@ public class Utils {
                     }
 
                     // Set icon, title and summary for the preference
-                    preference.setIcon(icon);
                     preference.setTitle(title);
                     preference.setSummary(summary);
+                    if (preference instanceof IconPreferenceScreen) {
+                        IconPreferenceScreen iconPreference = (IconPreferenceScreen) preference;
+                        iconPreference.setIcon(icon);
+                    }
 
                     // Replace the intent with this specific activity
                     preference.setIntent(new Intent().setClassName(
@@ -615,36 +617,37 @@ public class Utils {
                 .getUsers().size() > 1;
     }
 
-    private static int getScreenType(Context con) {
-        if (mDeviceType == -1) {
-            WindowManager wm = (WindowManager)con.getSystemService(Context.WINDOW_SERVICE);
+    private static int getScreenType(Context context) {
+        if (sDeviceType == -1) {
+            WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
             DisplayInfo outDisplayInfo = new DisplayInfo();
             wm.getDefaultDisplay().getDisplayInfo(outDisplayInfo);
             int shortSize = Math.min(outDisplayInfo.logicalHeight, outDisplayInfo.logicalWidth);
-            int shortSizeDp = shortSize * DisplayMetrics.DENSITY_DEFAULT / outDisplayInfo.logicalDensityDpi;
+            int shortSizeDp = shortSize * DisplayMetrics.DENSITY_DEFAULT
+                    / outDisplayInfo.logicalDensityDpi;
             if (shortSizeDp < 600) {
                 // 0-599dp: "phone" UI with a separate status & navigation bar
-                mDeviceType =  DEVICE_PHONE;
+                sDeviceType =  DEVICE_PHONE;
             } else if (shortSizeDp < 720) {
                 // 600-719dp: "phone" UI with modifications for larger screens
-                mDeviceType = DEVICE_HYBRID;
+                sDeviceType = DEVICE_HYBRID;
             } else {
                 // 720dp: "tablet" UI with a single combined status & navigation bar
-                mDeviceType = DEVICE_TABLET;
+                sDeviceType = DEVICE_TABLET;
             }
         }
-        return mDeviceType;
+        return sDeviceType;
     }
 
-    public static boolean isPhone(Context con) {
-        return getScreenType(con) == DEVICE_PHONE;
+    public static boolean isPhone(Context context) {
+        return getScreenType(context) == DEVICE_PHONE;
     }
 
-    public static boolean isHybrid(Context con) {
-        return getScreenType(con) == DEVICE_HYBRID;
+    public static boolean isHybrid(Context context) {
+        return getScreenType(context) == DEVICE_HYBRID;
     }
 
-    public static boolean isTablet(Context con) {
-        return getScreenType(con) == DEVICE_TABLET;
+    public static boolean isTablet(Context context) {
+        return getScreenType(context) == DEVICE_TABLET;
     }
 }
