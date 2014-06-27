@@ -240,7 +240,7 @@ public class SecuritySettings extends RestrictedSettingsFragment
         mAllowMultiuserPreference.setEnabled(UserHandle.myUserId() == UserHandle.USER_OWNER);
         mAllowMultiuserPreference.setChecked(Settings.System.getIntForUser(getContentResolver(),
             Settings.System.ALLOW_MULTIUSER, 0, UserHandle.USER_OWNER) == 1);
-        if (DeviceUtils.isTablet(getActivity())) {
+        if (Utils.isTablet(getActivity())) {
             root.removePreference(mAllowMultiuserPreference);
         }
 
