@@ -216,7 +216,6 @@ public class CRomSettings extends PreferenceActivity implements ButtonBarHandler
         CustomCarrier.class.getName(),
         InterfaceSettings.class.getName(),
         LockscreenTab.class.getName(),
-        MoreDeviceSettings.class.getName(),
         PowerMenuFragment.class.getName(),
         PowerMenuStyle.class.getName(),
         SbSettings.class.getName(),
