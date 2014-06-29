@@ -54,10 +54,14 @@ import android.widget.TextView;
 
 // fragments import for entry
 import com.android.settings.crom.*;
+import com.android.settings.crom.blacklist.*;
+import com.android.settings.crom.hfm.*;
+import com.android.settings.crom.gestureanywhere.*;
+import com.android.settings.crom.notificationlight.*;
+import com.android.settings.crom.quicksettings.*;
+import com.android.settings.crom.themes.*;
 import com.android.settings.crom.dslv.*;
 import com.android.settings.crom.fragments.*;
-import com.android.settings.crom.fragments.navbar.*;
-import com.android.settings.crom.fragments.pie.*;
 import com.android.settings.crom.batterysaver.*;
 
 public class CRomSettings extends PreferenceActivity implements ButtonBarHandler {
@@ -221,6 +225,7 @@ public class CRomSettings extends PreferenceActivity implements ButtonBarHandler
         SbSettings.class.getName(),
         QuickSettingsTiles.class.getName(),
         QuickSettingsTilesStyle.class.getName(),
+        MiscTab.class.getName(),
         NotificationsShortcutFragment.class.getName(),
         NotificationDrawerStyle.class.getName(),
         NavbarTab.class.getName(),
@@ -238,8 +243,7 @@ public class CRomSettings extends PreferenceActivity implements ButtonBarHandler
         ProgressBar.class.getName(),
         BatterySaverSettings.class.getName(),
         BatterySaverHelper.class.getName(),
-        BatteryCpuSettings.class.getName(),
-        RamBar.class.getName()
+        BatteryCpuSettings.class.getName()
     };
 
     @Override
