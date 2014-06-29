@@ -16,58 +16,81 @@
 
 package com.android.settings.crom;
 
+import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
 import android.content.ContentResolver;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.res.Resources;
+import android.database.ContentObserver;
 import android.os.Bundle;
-import android.os.RemoteException;
-import android.os.SystemProperties;
+import android.os.Handler;
+import android.os.UserHandle;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceCategory;
-import android.preference.PreferenceActivity;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
-import android.text.Spannable;
-import android.view.WindowManagerGlobal;
-import android.widget.EditText;
+import android.view.Gravity;
+
+import com.android.internal.util.slim.DeviceUtils;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
+import com.android.settings.util.Helpers;
 
 public class AdditionalSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
-    private static final String TAG = "AdditionalSettings";
 
-    private static final String KEY_DUAL_PANEL = "force_dualpanel";
+    //private static final String SLIM_RECENT_PANEL_CATEGORY =
+    //        "slim_recent_panel_category";
 
-    private CheckBoxPreference mDualPanel;
+    //private CheckBoxPreference mRecentsCustom;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.additional_settings);
+
         PreferenceScreen prefSet = getPreferenceScreen();
 
-        mDualPanel = (CheckBoxPreference) findPreference(KEY_DUAL_PANEL);
-        mDualPanel.setChecked(Settings.System.getBoolean(getContentResolver(),
-                Settings.System.FORCE_DUAL_PANEL, false));
+        //
 
+        UpdateSettings();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        UpdateSettings();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+    }
+
+    public void UpdateSettings() {
+        //
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
+        //if (preference == mDummy) {
+        //    int value = Integer.parseInt((String) newValue);
+        //    Settings.System.putInt(getContentResolver(),
+        //            Settings.System.RECENT_PANEL_SCALE_FACTOR, value);
+        //    return true;
+        //}
+        return true;
     }
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-
-        if (preference == mDualPanel) {
-			Settings.System.putBoolean(getContentResolver(), Settings.System.FORCE_DUAL_PANEL,
-                    mDualPanel.isChecked() ? true : false);
-			return true;
-        }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 }
