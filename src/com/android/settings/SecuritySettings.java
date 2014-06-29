@@ -72,6 +72,7 @@ public class SecuritySettings extends RestrictedSettingsFragment
     private static final String KEY_LOCK_AFTER_TIMEOUT = "lock_after_timeout";
     private static final String KEY_OWNER_INFO_SETTINGS = "owner_info_settings";
     private static final String LOCK_NUMPAD_RANDOM = "lock_numpad_random";
+    public static final String ALLOW_MULTIUSER = "allow_multiuser";
     private static final String KEY_SHAKE_EVENTS = "shake_events";
     private static final String KEY_SHAKE_TO_SECURE = "shake_to_secure_mode";
     private static final String KEY_SHAKE_AUTO_TIMEOUT = "shake_auto_timeout";
@@ -123,6 +124,7 @@ public class SecuritySettings extends RestrictedSettingsFragment
     private KeyStore mKeyStore;
     private Preference mResetCredentials;
 
+    private CheckBoxPreference mAllowMultiuserPreference;
     private CheckBoxPreference mToggleAppInstallation;
     private DialogInterface mWarnInstallApps;
     private CheckBoxPreference mToggleVerifyApps;
@@ -230,6 +232,14 @@ public class SecuritySettings extends RestrictedSettingsFragment
         if (mLockAfter != null) {
             setupLockAfterPreference();
             updateLockAfterPreferenceSummary();
+        }
+
+        mAllowMultiuserPreference = (CheckBoxPreference) root.findPreference(ALLOW_MULTIUSER);
+        mAllowMultiuserPreference.setEnabled(UserHandle.myUserId() == UserHandle.USER_OWNER);
+        mAllowMultiuserPreference.setChecked(Settings.System.getIntForUser(getContentResolver(),
+            Settings.System.ALLOW_MULTIUSER, 0, UserHandle.USER_OWNER) == 1);
+        if (Utils.isTablet(getActivity())) {
+            root.removePreference(mAllowMultiuserPreference);
         }
 
         // biometric weak liveliness
@@ -370,7 +380,7 @@ public class SecuritySettings extends RestrictedSettingsFragment
 
         mAdvancedReboot = (ListPreference) root.findPreference(KEY_ADVANCED_REBOOT);
         mAdvancedReboot.setValue(String.valueOf(Settings.Secure.getInt(
-                getContentResolver(), Settings.Secure.ADVANCED_REBOOT, 0)));
+                getContentResolver(), Settings.Secure.ADVANCED_REBOOT, 2)));
         mAdvancedReboot.setSummary(mAdvancedReboot.getEntry());
         mAdvancedReboot.setOnPreferenceChangeListener(this);
 
@@ -661,6 +671,8 @@ public class SecuritySettings extends RestrictedSettingsFragment
         } else if (preference == mShowPassword) {
             Settings.System.putInt(getContentResolver(), Settings.System.TEXT_SHOW_PASSWORD,
                     mShowPassword.isChecked() ? 1 : 0);
+        } else if (mAllowMultiuserPreference == preference) {
+            handleMultiUserClick();
         } else if (preference == mToggleAppInstallation) {
             if (mToggleAppInstallation.isChecked()) {
                 mToggleAppInstallation.setChecked(false);
@@ -764,6 +776,11 @@ public class SecuritySettings extends RestrictedSettingsFragment
     @Override
     protected int getHelpResource() {
         return R.string.help_url_security;
+    }
+
+    private void handleMultiUserClick() {
+        Settings.System.putIntForUser(getContentResolver(),
+                Settings.System.ALLOW_MULTIUSER, (mAllowMultiuserPreference.isChecked() ? 1 : 0), UserHandle.USER_OWNER);
     }
 
     public void startBiometricWeakImprove(){
