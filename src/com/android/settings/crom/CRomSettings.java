@@ -52,6 +52,8 @@ import android.widget.ListAdapter;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.android.settings.R;
+
 // fragments import for entry
 import com.android.settings.crom.*;
 import com.android.settings.crom.blacklist.*;
