@@ -72,6 +72,7 @@ public class SecuritySettings extends RestrictedSettingsFragment
     private static final String KEY_LOCK_AFTER_TIMEOUT = "lock_after_timeout";
     private static final String KEY_OWNER_INFO_SETTINGS = "owner_info_settings";
     private static final String LOCK_NUMPAD_RANDOM = "lock_numpad_random";
+    public static final String ALLOW_MULTIUSER = "allow_multiuser";
     private static final String KEY_SHAKE_EVENTS = "shake_events";
     private static final String KEY_SHAKE_TO_SECURE = "shake_to_secure_mode";
     private static final String KEY_SHAKE_AUTO_TIMEOUT = "shake_auto_timeout";
@@ -105,9 +106,6 @@ public class SecuritySettings extends RestrictedSettingsFragment
     private static final String KEY_BLACKLIST = "blacklist";
     private static final String KEY_SMS_SECURITY_CHECK_PREF = "sms_security_check_limit";
 	private static final String KEY_VISIBLE_GESTURE = "visiblegesture";
-
-    // MULTIUSER
-    public static final String ALLOW_MULTIUSER = "allow_multiuser";
 
     private PackageManager mPM;
     private DevicePolicyManager mDPM;
@@ -240,7 +238,7 @@ public class SecuritySettings extends RestrictedSettingsFragment
         mAllowMultiuserPreference.setEnabled(UserHandle.myUserId() == UserHandle.USER_OWNER);
         mAllowMultiuserPreference.setChecked(Settings.System.getIntForUser(getContentResolver(),
             Settings.System.ALLOW_MULTIUSER, 0, UserHandle.USER_OWNER) == 1);
-        if (DeviceUtils.isTablet(getActivity())) {
+        if (Utils.isTablet(getActivity())) {
             root.removePreference(mAllowMultiuserPreference);
         }
 

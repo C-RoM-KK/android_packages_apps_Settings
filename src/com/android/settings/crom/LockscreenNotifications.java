@@ -136,19 +136,15 @@ public class LockscreenNotifications extends SettingsPreferenceFragment
         mLockscreenNotifications.setChecked(Settings.System.getInt(cr,
                     Settings.System.LOCKSCREEN_NOTIFICATIONS, 0) == 1);
 
-        boolean hasProximitySensor = getPackageManager().hasSystemFeature(PackageManager.FEATURE_SENSOR_PROXIMITY);
+        mPocketMode = (CheckBoxPreference) prefs.findPreference(KEY_POCKET_MODE);
+        mPocketMode.setChecked(Settings.System.getInt(cr,
+                    Settings.System.LOCKSCREEN_NOTIFICATIONS_POCKET_MODE, 0) == 1);
+        mPocketMode.setEnabled(mLockscreenNotifications.isChecked());
 
-        if (!hasProximitySensor) {
-            mPocketMode = (CheckBoxPreference) prefs.findPreference(KEY_POCKET_MODE);
-            mPocketMode.setChecked(Settings.System.getInt(cr,
-                        Settings.System.LOCKSCREEN_NOTIFICATIONS_POCKET_MODE, 1) == 1);
-            mPocketMode.setEnabled(mLockscreenNotifications.isChecked());
-
-            mShowAlways = (CheckBoxPreference) prefs.findPreference(KEY_SHOW_ALWAYS);
-            mShowAlways.setChecked(Settings.System.getInt(cr,
-                        Settings.System.LOCKSCREEN_NOTIFICATIONS_SHOW_ALWAYS, 1) == 1);
-            mShowAlways.setEnabled(mPocketMode.isChecked() && mPocketMode.isEnabled());
-        }
+        mShowAlways = (CheckBoxPreference) prefs.findPreference(KEY_SHOW_ALWAYS);
+        mShowAlways.setChecked(Settings.System.getInt(cr,
+                    Settings.System.LOCKSCREEN_NOTIFICATIONS_SHOW_ALWAYS, 0) == 1);
+        mShowAlways.setEnabled(mPocketMode.isChecked() && mPocketMode.isEnabled());
 
         mWakeOnNotification = (CheckBoxPreference) prefs.findPreference(KEY_WAKE_ON_NOTIFICATION);
         mWakeOnNotification.setChecked(Settings.System.getInt(cr,
@@ -225,6 +221,13 @@ public class LockscreenNotifications extends SettingsPreferenceFragment
                     Settings.System.LOCKSCREEN_NOTIFICATIONS_DYNAMIC_WIDTH, 0) == 1);
         mDynamicWidth.setEnabled(mLockscreenNotifications.isChecked());
 
+        boolean hasProximitySensor = getPackageManager().hasSystemFeature(PackageManager.FEATURE_SENSOR_PROXIMITY);
+        if (!hasProximitySensor) {
+            PreferenceCategory general = (PreferenceCategory) prefs.findPreference(KEY_CATEGORY_GENERAL);
+            general.removePreference(mPocketMode);
+            general.removePreference(mShowAlways);
+        }
+
         if (mPackageStatusReceiver == null) {
             mPackageStatusReceiver = new PackageStatusReceiver();
         }
@@ -272,10 +275,8 @@ public class LockscreenNotifications extends SettingsPreferenceFragment
         } else if (preference == mLockscreenNotifications) {
             Settings.System.putInt(cr, Settings.System.LOCKSCREEN_NOTIFICATIONS,
                     mLockscreenNotifications.isChecked() ? 1 : 0);
-            if (mPocketMode != null) {
-              mPocketMode.setEnabled(mLockscreenNotifications.isChecked());
-              mShowAlways.setEnabled(mPocketMode.isChecked() && mPocketMode.isEnabled());
-            }
+            mPocketMode.setEnabled(mLockscreenNotifications.isChecked());
+            mShowAlways.setEnabled(mPocketMode.isChecked() && mPocketMode.isEnabled());
             mWakeOnNotification.setEnabled(mLockscreenNotifications.isChecked());
             mHideLowPriority.setEnabled(mLockscreenNotifications.isChecked());
             mHideNonClearable.setEnabled(mLockscreenNotifications.isChecked());
@@ -332,14 +333,14 @@ public class LockscreenNotifications extends SettingsPreferenceFragment
     public boolean onPreferenceChange(Preference pref, Object value) {
         if (pref == mNotificationsHeight) {
             Settings.System.putInt(getContentResolver(),
-                    Settings.System.LOCKSCREEN_NOTIFICATIONS_HEIGHT, Integer.valueOf((String) value));
+                    Settings.System.LOCKSCREEN_NOTIFICATIONS_HEIGHT, (Integer)value);
         } else if (pref == mOffsetTop) {
             Settings.System.putFloat(getContentResolver(), Settings.System.LOCKSCREEN_NOTIFICATIONS_OFFSET_TOP,
-                    Integer.valueOf((String) value) / 100f);
-            mOffsetTop.setTitle(getResources().getText(R.string.offset_top) + " " + value + "%");
+                    (Integer)value / 100f);
+            mOffsetTop.setTitle(getResources().getText(R.string.offset_top) + " " + (Integer)value + "%");
             Point displaySize = new Point();
             ((WindowManager) getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getSize(displaySize);
-            int max = Math.round((float)displaySize.y * (1f - (Integer.valueOf((String) value) / 100f)) /
+            int max = Math.round((float)displaySize.y * (1f - (mOffsetTop.getProgress() / 100f)) /
                     (float) getResources().getDimensionPixelSize(R.dimen.notification_row_min_height));
             mNotificationsHeight.setMaxValue(max);
         } else if (pref == mNotificationColor) {

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2014 C-RoM
+ * Copyright (C) 2014 The C-RoM Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,25 +40,18 @@ import com.android.internal.util.slim.DeviceUtils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
-import com.android.settings.util.Helpers;
+import com.android.settings.crom.util.Helpers;
 
-public class AdditionalSettings extends SettingsPreferenceFragment implements
+public class NotificationsSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
-
-    //private static final String SLIM_RECENT_PANEL_CATEGORY =
-    //        "slim_recent_panel_category";
-
-    //private CheckBoxPreference mRecentsCustom;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.additional_settings);
+        addPreferencesFromResource(R.xml.notifications_settings);
 
         PreferenceScreen prefSet = getPreferenceScreen();
-
-        //
 
         UpdateSettings();
     }
@@ -80,12 +73,6 @@ public class AdditionalSettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        //if (preference == mDummy) {
-        //    int value = Integer.parseInt((String) newValue);
-        //    Settings.System.putInt(getContentResolver(),
-        //            Settings.System.RECENT_PANEL_SCALE_FACTOR, value);
-        //    return true;
-        //}
         return true;
     }
 

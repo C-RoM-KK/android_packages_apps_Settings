@@ -13,21 +13,46 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings" >
 
     <PreferenceCategory
-            android:title="@string/category_heads_up">
+            android:title="@string/status_bar_general_title">
 
         <com.android.settings.crom.SystemCheckBoxPreference
-                android:key="heads_up_enabled"
-                android:title="@string/title_heads_up_enabled"
-                android:defaultValue="false" />
+                android:key="heads_up_floating_window"
+                android:title="@string/heads_up_floating_window"
+                android:defaultValue="true" />
+
+        <CromSeekBarPreference
+                android:key="heads_up_timeout"
+                android:title="@string/heads_up_timeout"
+                android:defaultValue="37"
+                android:max="100"
+                settings:min="1"
+                settings:unitsLeft=""
+                settings:unitsRight="ms" />
+
+        <CromSeekBarPreference
+                android:key="heads_up_fullscreen_timeout"
+                android:title="@string/heads_up_fullscreen_timeout"
+                android:defaultValue="7"
+                android:max="100"
+                settings:min="1"
+                settings:unitsLeft=""
+                settings:unitsRight="ms" />
 
     </PreferenceCategory>
 
     <PreferenceCategory
-            android:key="applications_list"
-            android:title="@string/heads_up_dnd_title" >
+            android:title="@string/heads_up_dnd_title"
+            android:key="dnd_applications_list">
+    </PreferenceCategory>
+
+    <PreferenceCategory
+            android:title="@string/heads_up_blacklist_title"
+            android:key="blacklist_applications">
     </PreferenceCategory>
 
 </PreferenceScreen>

@@ -2009,19 +2009,15 @@
         <item>15000</item>
     </string-array>
 
-    <string-array name="qs_quick_access_size_entries">
-        <item>Automatic</item>
-        <item>Automatic (narrow)</item>
-        <item>Big</item>
-        <item>Narrow</item>
+    <!-- NavBar IME Cursor Longpress -->
+    <string-array name="ime_cursor_longpress_action_entries">
+        <item>@string/ime_navigation_up_down</item>
+        <item>@string/ime_navigation_home_end</item>
     </string-array>
 
-    <!-- Use 0 as default -->
-    <string-array name="qs_quick_access_size_values" translatable="false">
+    <string-array name="ime_cursor_longpress_action_values">
         <item>0</item>
         <item>1</item>
-        <item>2</item>
-        <item>3</item>
     </string-array>
 
 </resources>

@@ -17,12 +17,24 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-    android:title="@string/shake_events_title">
+    android:title="@string/notifications_settings">
 
-    <com.android.settings.crom.SystemCheckBoxPreference
-        android:key="power_menu_user_enabled"
-        android:title="@string/power_menu_user_title"
-        android:summary="@string/power_menu_user_summary"
-        android:defaultValue="false" />
+     <PreferenceScreen
+        android:key="lock_screen_notifications"
+        android:title="@string/notifications_on_lockscreen"
+        android:summary="@string/notifications_on_lockscreen_summary"
+        android:fragment="com.android.settings.crom.LockscreenNotifications" />
+
+     <PreferenceScreen
+     	android:key="hover_settings"
+        android:title="@string/hover_title"
+        android:summary="@string/hover_summary"
+        android:fragment="com.android.settings.crom.HoverSettings" />
+
+    <!-- Active display -->
+    <PreferenceScreen
+        android:id="@+id/active_display"
+        android:title="@string/active_display_title"
+        android:fragment="com.android.settings.crom.ActiveDisplaySettings" />
 
 </PreferenceScreen>
