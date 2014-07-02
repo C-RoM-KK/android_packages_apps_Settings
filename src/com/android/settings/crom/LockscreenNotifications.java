@@ -193,9 +193,9 @@ public class LockscreenNotifications extends SettingsPreferenceFragment
         mNotificationsHeight.setValue(Settings.System.getInt(cr,
                     Settings.System.LOCKSCREEN_NOTIFICATIONS_HEIGHT, 4));
         Point displaySize = new Point();
-        ((WindowManager) getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getSize(displaySize);
+        ((WindowManager)mContext.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getSize(displaySize);
         int max = Math.round((float)displaySize.y * (1f - (mOffsetTop.getProgress() / 100f)) /
-                (float) getResources().getDimensionPixelSize(R.dimen.notification_row_min_height));
+                (float)mContext.getResources().getDimensionPixelSize(R.dimen.notification_row_min_height));
         mNotificationsHeight.setMinValue(1);
         mNotificationsHeight.setMaxValue(max);
         mNotificationsHeight.setOnPreferenceChangeListener(this);
@@ -339,9 +339,9 @@ public class LockscreenNotifications extends SettingsPreferenceFragment
                     (Integer)value / 100f);
             mOffsetTop.setTitle(getResources().getText(R.string.offset_top) + " " + (Integer)value + "%");
             Point displaySize = new Point();
-            ((WindowManager) getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getSize(displaySize);
+            ((WindowManager)mContext.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay().getSize(displaySize);
             int max = Math.round((float)displaySize.y * (1f - (mOffsetTop.getProgress() / 100f)) /
-                    (float) getResources().getDimensionPixelSize(R.dimen.notification_row_min_height));
+                    (float)mContext.getResources().getDimensionPixelSize(R.dimen.notification_row_min_height));
             mNotificationsHeight.setMaxValue(max);
         } else if (pref == mNotificationColor) {
             String hex = ColorPickerPreference.convertToARGB(
