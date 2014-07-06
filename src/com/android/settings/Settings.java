@@ -436,12 +436,6 @@ public class Settings extends PreferenceActivity
         }
     }
 
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-        mSearchBar.clearFocus();
-        mSearchItem.collapseActionView();
-    }
-
     @Override
     public void onDestroy() {
         super.onDestroy();
@@ -1299,6 +1293,8 @@ public class Settings extends PreferenceActivity
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
+        mSearchBar.clearFocus();
+        mSearchItem.collapseActionView();
 
         if (newConfig.uiThemeMode != mCurrentState && HeaderAdapter.mThemeEnabler != null) {
             mCurrentState = newConfig.uiThemeMode;
