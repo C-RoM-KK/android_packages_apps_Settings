@@ -85,7 +85,6 @@
 
     <!-- Themes settings -->
     <header
-        settings:includeXmlForSearch="@xml/theme_settings"
         android:id="@+id/theme_settings"
 	android:title="@string/theme_settings_title"
         android:fragment="com.android.settings.crom.themes.ThemeSettings"
