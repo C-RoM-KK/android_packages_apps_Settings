@@ -43,6 +43,11 @@
             android:fragment="com.android.settings.crom.SoundSettings"
             android:title="@string/advanced_sound_title" />
 
+    <PreferenceScreen
+            android:key="sound_packages"
+            android:fragment="com.android.settings.sounds.SoundPackageSettings"
+            android:title="@string/sound_packages_title" />
+
     <!-- Headset -->
     <com.android.settings.cyanogenmod.SystemSettingCheckBoxPreference
             android:key="headset_connect_player"
